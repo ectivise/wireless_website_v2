@@ -3,9 +3,18 @@
     <h1>Access Points:</h1>
     <accesspoint_form @add:accesspoint="addaccesspoint" />
     <accesspoint_table
+      v-if="filtering"
+      v-bind:access_points="filtered_access_points"
+      @delete:accesspoint="deleteaccesspoint"
+      @edit:accesspoint="editaccesspoint"
+      @filter:accesspoint="filteraccesspoint"
+    />
+    <accesspoint_table
+      v-else
       v-bind:access_points="access_points"
       @delete:accesspoint="deleteaccesspoint"
       @edit:accesspoint="editaccesspoint"
+      @filter:accesspoint="filteraccesspoint"
     />
   </div>
 </template>
@@ -22,6 +31,8 @@ export default {
   },
   data() {
     return {
+      filtering: false,
+      filtered_access_points: [],
       access_points: [
         {
           id: 1,
@@ -44,7 +55,7 @@ export default {
         {
           id: 3,
           ssid: "wifi3",
-          location: "level1",
+          location: "level2",
           ping: "ping3",
           download: "download3",
           upload: "upload3",
@@ -62,7 +73,7 @@ export default {
         {
           id: 5,
           ssid: "wifi5",
-          location: "level2",
+          location: "level3",
           ping: "ping5",
           download: "download5",
           upload: "upload5",
@@ -71,7 +82,7 @@ export default {
         {
           id: 6,
           ssid: "wifi6",
-          location: "level2",
+          location: "level3",
           ping: "ping6",
           download: "download6",
           upload: "upload6",
@@ -80,7 +91,7 @@ export default {
         {
           id: 7,
           ssid: "wifi7",
-          location: "level2",
+          location: "level4",
           ping: "ping7",
           download: "download7",
           upload: "upload7",
@@ -104,12 +115,21 @@ export default {
         (access_point) => access_point.id !== id
       );
     },
-    editEmployee(id, updatedaccesspoint) {
-    this.access_points = this.access_points.map(access_point =>
-    access_point.id === id ? updatedaccesspoint : access_point
-  )
-}
-
+    filteraccesspoint(level) {
+      if (level == "nofilter") {
+        this.filtering = false;
+      } else {
+        this.filtering = true;
+        this.filtered_access_points = this.access_points.filter(
+          (access_point) => access_point.location == level
+        );
+      }
+    },
+    editaccesspoint(id, updatedaccesspoint) {
+      this.access_points = this.access_points.map((access_point) =>
+        access_point.id === id ? updatedaccesspoint : access_point
+      );
+    },
   },
 };
 </script>
@@ -121,6 +141,6 @@ button {
 }
 
 .small-container {
-  max-width: 680px;
+  max-width: 1000px;
 }
 </style>

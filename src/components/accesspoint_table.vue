@@ -9,6 +9,27 @@
           <th>Download:</th>
           <th>Upload:</th>
           <th>Runtime:</th>
+          <th id="filter-col">
+            <form>
+              <label>Filter:</label>
+              <select v-model="filter">
+                <option value="nofilter">No Filter</option>
+                <option>level1</option>
+                <option>level2</option>
+                <option>level3</option>
+                <option>level4</option>
+                <option>level5</option>
+                <option>level6</option>
+                <option>level7</option>
+                <option>level8</option>
+                <option>level9</option>
+              </select>
+              <input
+                type="submit"
+                @click.prevent="$emit('filter:accesspoint', filter)"
+              />
+            </form>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -73,6 +94,7 @@ export default {
   data() {
     return {
       editing: null,
+      filter: "",
     };
   },
   methods: {
@@ -105,6 +127,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#filter-col {
+  width: 250px;
+}
+select {
+  float: left;
+  max-width: 100px;
+}
 button {
   margin: 0 0.5rem 0 0;
 }
