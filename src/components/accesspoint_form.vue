@@ -131,9 +131,6 @@ export default {
       error: false,
       success: false,
       access_point: {
-        _id: {
-          $oid: "",
-        },
         location: {
           site: "",
           building: "",
@@ -188,35 +185,32 @@ export default {
         this.$refs.first.focus();
         // reset
         this.access_point = {
-        _id: {
-          $oid: "",
-        },
-        location: {
-          site: "",
-          building: "",
-          level: "",
-        },
-        last_speedtest: {
-          ping: 0,
-          download: 0,
-          upload: 0,
-          jitter: 0,
-          timestamp: 0,
-        },
-        runtime: 0,
-        ip: "",
-        device_id: "",
-        ssid: "",
-        os: "",
-        hardware: "",
-        ignore: 0,
-        status: 1,
-        quality: 0,
-        mac: "",
-        desc: "",
-        password: "",
-        raspi: "",
-      };
+          location: {
+            site: "",
+            building: "",
+            level: "",
+          },
+          last_speedtest: {
+            ping: 0,
+            download: 0,
+            upload: 0,
+            jitter: 0,
+            timestamp: 0,
+          },
+          runtime: 0,
+          ip: "",
+          device_id: "",
+          ssid: "",
+          os: "",
+          hardware: "",
+          ignore: 0,
+          status: 1,
+          quality: 0,
+          mac: "",
+          desc: "",
+          password: "",
+          raspi: "",
+        };
         this.error = false;
         this.success = true;
         this.submitting = false;

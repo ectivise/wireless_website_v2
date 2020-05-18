@@ -1,5 +1,36 @@
 <template>
   <div id="accesspoint_table">
+    <div class="filter_form">
+      <form>
+        <h3>Filter:</h3>
+        <label>Building:</label>
+        <select v-model="filterbuildings">
+          <option value="nofilter">No Filter</option>
+          <option v-for="(option, index) in filter_buildings" :key="index">{{
+            option
+          }}</option>
+        </select>
+        <label>Story:</label>
+        <select v-model="filterlevel">
+          <option value="nofilter">No Filter</option>
+          <option v-for="(option, index) in filter_level" :key="index">{{
+            option
+          }}</option>
+        </select>
+        <input
+          type="submit"
+          v-if="editing == null"
+          @click.prevent="
+            $emit('filter:accesspoint', filterbuildings, filterlevel)
+          "
+        />
+        <input type="submit" v-else @click.prevent="filtererror()" />
+        <p v-if="filter_error">
+          ❗Please save before filter
+        </p>
+      </form>
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -17,32 +48,6 @@
           <th>Download(mb/s):</th>
           <th>Jitter(ms):</th>
           <!-- last table head is filter col -->
-          <th id="filter-col">
-            <form>
-              <label>Filter:</label>
-              <select v-model="filter">
-                <option value="nofilter">No Filter</option>
-                <option>level1</option>
-                <option>level2</option>
-                <option>level3</option>
-                <option>level4</option>
-                <option>level5</option>
-                <option>level6</option>
-                <option>level7</option>
-                <option>level8</option>
-                <option>level9</option>
-              </select>
-              <input
-                type="submit"
-                v-if="editing == null"
-                @click.prevent="$emit('filter:accesspoint', filter)"
-              />
-              <input type="submit" v-else @click.prevent="filtererror()" />
-              <p v-if="filter_error">
-                ❗Please save before filter
-              </p>
-            </form>
-          </th>
         </tr>
       </thead>
       <!-- table body -->
@@ -130,7 +135,9 @@
           </td>
           <td v-else>
             <button @click="editmode(access_point)">Edit</button>
-            <button @click="$emit('delete:accesspoint', access_point.device_id)">
+            <button
+              @click="$emit('delete:accesspoint', access_point.device_id)"
+            >
               Delete
             </button>
           </td>
@@ -145,13 +152,34 @@ export default {
   name: "accesspoint_table",
   props: {
     access_points: Array,
+    // take a copy of the access_points_array so that the options will not change
+    access_points_copy: Array,
   },
   data() {
     return {
+      filterbuildings: "",
+      filterlevel: "",
       filter_error: false,
       editing: null,
-      filter: "",
     };
+  },
+  computed: {
+    filter_buildings() {
+      var unfiltered_array = [];
+      for (let i = 0; i < this.access_points_copy.length; i++) {
+        unfiltered_array.push(this.access_points_copy[i].location.building);
+      }
+      const building_options = [...new Set(unfiltered_array)];
+      return Array.from(building_options);
+    },
+    filter_level() {
+      var unfiltered_array = [];
+      for (let i = 0; i < this.access_points_copy.length; i++) {
+        unfiltered_array.push(this.access_points_copy[i].location.level);
+      }
+      const level_options = [...new Set(unfiltered_array)];
+      return Array.from(level_options);
+    },
   },
   methods: {
     editmode(access_point) {
@@ -208,5 +236,16 @@ select {
 }
 button {
   margin: 0 0.5rem 0 0;
+}
+.filter_form label,
+select {
+  float: left;
+}
+.filter_form label {
+  font-size: 20px;
+}
+.filter_form {
+  position: relative;
+  margin: 10px;
 }
 </style>
