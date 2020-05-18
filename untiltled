@@ -1,0 +1,7535 @@
+
+  "apdevices": [
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edbf"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465318
+      },
+      "runtime": 8435972,
+      "ip": "10.12.80.124",
+      "device_id": "82",
+      "ssid": "lg-p04-402-wap259",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc3"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465307
+      },
+      "runtime": 0,
+      "ip": "10.12.80.118",
+      "device_id": "10",
+      "ssid": "10.12.80.118",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc1"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465314
+      },
+      "runtime": 0,
+      "ip": "10.12.80.121",
+      "device_id": "194",
+      "ssid": "10.12.80.121",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edcb"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465327
+      },
+      "runtime": 8437331,
+      "ip": "10.12.80.131",
+      "device_id": "85",
+      "ssid": "lg-m06-608-wap110",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc0"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465319
+      },
+      "runtime": 0,
+      "ip": "10.12.80.127",
+      "device_id": "197",
+      "ssid": "10.12.80.127",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edcd"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465315
+      },
+      "runtime": 8437440,
+      "ip": "10.12.80.122",
+      "device_id": "195",
+      "ssid": "lg-p01-105-wap227",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc9"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465306
+      },
+      "runtime": 8182544,
+      "ip": "10.12.80.117",
+      "device_id": "81",
+      "ssid": "lg-m03-cor-wap65",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc7"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465312
+      },
+      "runtime": 8437359,
+      "ip": "10.12.80.119",
+      "device_id": "79",
+      "ssid": "lg-m07-cor-wap152",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465313
+      },
+      "runtime": 0,
+      "ip": "10.12.80.12",
+      "device_id": "137",
+      "ssid": "10.12.80.12",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edbe"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465304
+      },
+      "runtime": 8437490,
+      "ip": "10.12.80.110",
+      "device_id": "77",
+      "ssid": "lg-p03-cor-wap255",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edbd"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465283
+      },
+      "runtime": 8005779,
+      "ip": "10.12.80.102",
+      "device_id": "17",
+      "ssid": "lg-m04-422-wap82",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edcf"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465333
+      },
+      "runtime": 8435709,
+      "ip": "10.12.80.134",
+      "device_id": "86",
+      "ssid": "lg-m10-1021-wap217",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edcc"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465326
+      },
+      "runtime": 8437843,
+      "ip": "10.12.80.13",
+      "device_id": "32",
+      "ssid": "lg-m07-cor-wap150",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc8"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465305
+      },
+      "runtime": 3422344,
+      "ip": "10.12.80.111",
+      "device_id": "193",
+      "ssid": "lg-m03-316-wap53",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd1"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465323
+      },
+      "runtime": 716992,
+      "ip": "10.12.80.129",
+      "device_id": "198",
+      "ssid": "lg-p03-303-wap248",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc6"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465301
+      },
+      "runtime": 8182503,
+      "ip": "10.12.80.108",
+      "device_id": "75",
+      "ssid": "lg-m03-cor-wap62",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd0"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465329
+      },
+      "runtime": 8437287,
+      "ip": "10.12.80.132",
+      "device_id": "154",
+      "ssid": "lg-m05-519-wap100",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd6"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465317
+      },
+      "runtime": 0,
+      "ip": "10.12.80.123",
+      "device_id": "196",
+      "ssid": "10.12.80.123",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc2"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465300
+      },
+      "runtime": 8437732,
+      "ip": "10.12.80.107",
+      "device_id": "192",
+      "ssid": "lg-m10-1017-wap210",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd2"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465334
+      },
+      "runtime": 8437317,
+      "ip": "10.12.80.135",
+      "device_id": "87",
+      "ssid": "lg-p02-201-wap234",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edc5"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465293
+      },
+      "runtime": 0,
+      "ip": "10.12.80.103",
+      "device_id": "156",
+      "ssid": "10.12.80.103",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd5"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465335
+      },
+      "runtime": 2813756,
+      "ip": "10.12.80.137",
+      "device_id": "88",
+      "ssid": "lg-m08-816-wap163",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edca"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465303
+      },
+      "runtime": 8435765,
+      "ip": "10.12.80.11",
+      "device_id": "35",
+      "ssid": "lg-p01-104-wap226",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edce"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465321
+      },
+      "runtime": 8435756,
+      "ip": "10.12.80.128",
+      "device_id": "84",
+      "ssid": "lg-p02-203-wap237",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd9"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465337
+      },
+      "runtime": 0,
+      "ip": "10.12.80.14",
+      "device_id": "138",
+      "ssid": "10.12.80.14",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716eddb"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465349
+      },
+      "runtime": 183836,
+      "ip": "10.12.80.152",
+      "device_id": "91",
+      "ssid": "lg-m04-cor-wap87",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edda"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465368
+      },
+      "runtime": 7076115,
+      "ip": "10.12.80.166",
+      "device_id": "206",
+      "ssid": "lg-m04-408-wap66",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd3"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465336
+      },
+      "runtime": 8437432,
+      "ip": "10.12.80.138",
+      "device_id": "90",
+      "ssid": "lg-m07-720-wap145",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd8"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465387
+      },
+      "runtime": 8437457,
+      "ip": "10.12.80.183",
+      "device_id": "210",
+      "ssid": "lg-m10-1010-wap202",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede3"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465359
+      },
+      "runtime": 3924571,
+      "ip": "10.12.80.156",
+      "device_id": "95",
+      "ssid": "lg-m05-512-wap93",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede6"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465361
+      },
+      "runtime": 2813661,
+      "ip": "10.12.80.159",
+      "device_id": "96",
+      "ssid": "lg-m08-818-wap165",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465330
+      },
+      "runtime": 0,
+      "ip": "10.12.80.133",
+      "device_id": "199",
+      "ssid": "10.12.80.133",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716eddd"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465363
+      },
+      "runtime": 8435786,
+      "ip": "10.12.80.16",
+      "device_id": "42",
+      "ssid": "lg-m06-cor-wap130",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edd7"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465338
+      },
+      "runtime": 8437292,
+      "ip": "10.12.80.147",
+      "device_id": "200",
+      "ssid": "lg-p01-103-wap225",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465347
+      },
+      "runtime": 8435548,
+      "ip": "10.12.80.150",
+      "device_id": "202",
+      "ssid": "lg-m02-211-wap28",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede0"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465379
+      },
+      "runtime": 8437306,
+      "ip": "10.12.80.174",
+      "device_id": "104",
+      "ssid": "lg-m04-412-wap71",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede5"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465350
+      },
+      "runtime": 0,
+      "ip": "10.12.80.153",
+      "device_id": "204",
+      "ssid": "10.12.80.153",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716eddc"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465383
+      },
+      "runtime": 0,
+      "ip": "10.12.80.18",
+      "device_id": "159",
+      "ssid": "10.12.80.18",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede1"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465372
+      },
+      "runtime": 753661,
+      "ip": "10.12.80.172",
+      "device_id": "103",
+      "ssid": "lg-m06-620-wap124",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edee"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465418
+      },
+      "runtime": 8435789,
+      "ip": "10.12.80.208",
+      "device_id": "123",
+      "ssid": "lg-m07-719-wap144",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede9"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465348
+      },
+      "runtime": 8008618,
+      "ip": "10.12.80.151",
+      "device_id": "203",
+      "ssid": "lg-m08-811-wap158",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf1"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465398
+      },
+      "runtime": 8436879,
+      "ip": "10.12.80.193",
+      "device_id": "113",
+      "ssid": "lg-m06-611-wap114",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edde"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465346
+      },
+      "runtime": 0,
+      "ip": "10.12.80.15",
+      "device_id": "158",
+      "ssid": "10.12.80.15",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716eded"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465393
+      },
+      "runtime": 0,
+      "ip": "10.12.80.19",
+      "device_id": "160",
+      "ssid": "10.12.80.19",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edef"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465417
+      },
+      "runtime": 8437483,
+      "ip": "10.12.80.206",
+      "device_id": "215",
+      "ssid": "lg-m10-1008-wap198",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edea"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465371
+      },
+      "runtime": 2869815,
+      "ip": "10.12.80.17",
+      "device_id": "43",
+      "ssid": "lg-m08-808-wap154",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716eddf"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465407
+      },
+      "runtime": 0,
+      "ip": "10.12.80.199",
+      "device_id": "143",
+      "ssid": "10.12.80.199",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede2"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465341
+      },
+      "runtime": 8437416,
+      "ip": "10.12.80.148",
+      "device_id": "201",
+      "ssid": "lg-p01-101-wap222",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf8"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465351
+      },
+      "runtime": 8005982,
+      "ip": "10.12.80.154",
+      "device_id": "94",
+      "ssid": "lg-m04-cor-wap85",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf3"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465438
+      },
+      "runtime": 8437495,
+      "ip": "10.12.80.225",
+      "device_id": "218",
+      "ssid": "lg-p04-407-wap265",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede7"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465385
+      },
+      "runtime": 8437315,
+      "ip": "10.12.80.181",
+      "device_id": "209",
+      "ssid": "lg-m06-621-wap125",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edfa"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465367
+      },
+      "runtime": 8437350,
+      "ip": "10.12.80.164",
+      "device_id": "205",
+      "ssid": "lg-m10-1015-wap208",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edec"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465431
+      },
+      "runtime": 8437472,
+      "ip": "10.12.80.22",
+      "device_id": "34",
+      "ssid": "lg-m10-1021-wap216",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee02"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465406
+      },
+      "runtime": 5213605,
+      "ip": "10.12.80.197",
+      "device_id": "117",
+      "ssid": "lg-p03-305-wap251",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf2"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465440
+      },
+      "runtime": 3951493,
+      "ip": "10.12.80.229",
+      "device_id": "219",
+      "ssid": "lg-m05-511-wap91",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ede8"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465364
+      },
+      "runtime": 0,
+      "ip": "10.12.80.163",
+      "device_id": "141",
+      "ssid": "10.12.80.163",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edff"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465295
+      },
+      "runtime": 6695624,
+      "ip": "10.12.80.106",
+      "device_id": "76",
+      "ssid": "lg-m08-cor-wap174",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edeb"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465354
+      },
+      "runtime": 0,
+      "ip": "10.12.80.155",
+      "device_id": "140",
+      "ssid": "10.12.80.155",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf0"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-mb1"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465430
+      },
+      "runtime": 5645130,
+      "ip": "10.12.80.216",
+      "device_id": "217",
+      "ssid": "lg-mb1-m&e-wap01",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-mb1"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee0c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465488
+      },
+      "runtime": 8435552,
+      "ip": "10.12.80.37",
+      "device_id": "20",
+      "ssid": "lg-m10-1009-wap201",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee09"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465382
+      },
+      "runtime": 8437295,
+      "ip": "10.12.80.179",
+      "device_id": "207",
+      "ssid": "lg-m02-211-wap27",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee04"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465384
+      },
+      "runtime": 8437412,
+      "ip": "10.12.80.180",
+      "device_id": "208",
+      "ssid": "lg-m03-310-wap46",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf5"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465422
+      },
+      "runtime": 8435644,
+      "ip": "10.12.80.21",
+      "device_id": "36",
+      "ssid": "lg-m09-911-wap179",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf9"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465406
+      },
+      "runtime": 0,
+      "ip": "10.12.80.198",
+      "device_id": "214",
+      "ssid": "10.12.80.198",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edfd"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465449
+      },
+      "runtime": 0,
+      "ip": "10.12.80.232",
+      "device_id": "25",
+      "ssid": "10.12.80.232",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf7"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465392
+      },
+      "runtime": 8437757,
+      "ip": "10.12.80.189",
+      "device_id": "110",
+      "ssid": "lg-m07-713-wap138",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee11"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465380
+      },
+      "runtime": 3924685,
+      "ip": "10.12.80.175",
+      "device_id": "108",
+      "ssid": "lg-m05-513-wap94",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465427
+      },
+      "runtime": 8437526,
+      "ip": "10.12.80.212",
+      "device_id": "125",
+      "ssid": "lg-p02-204-wap238",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edf6"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465369
+      },
+      "runtime": 0,
+      "ip": "10.12.80.167",
+      "device_id": "142",
+      "ssid": "10.12.80.167",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee01"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465450
+      },
+      "runtime": 717143,
+      "ip": "10.12.80.234",
+      "device_id": "27",
+      "ssid": "lg-p03-302-wap247",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee00"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465417
+      },
+      "runtime": 8437373,
+      "ip": "10.12.80.207",
+      "device_id": "122",
+      "ssid": "lg-m10-1010-wap203",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edfc"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465403
+      },
+      "runtime": 8435574,
+      "ip": "10.12.80.195",
+      "device_id": "116",
+      "ssid": "lg-p02-206-wap240",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee0e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465381
+      },
+      "runtime": 8435724,
+      "ip": "10.12.80.176",
+      "device_id": "105",
+      "ssid": "lg-m03-309-wap45",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee07"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465409
+      },
+      "runtime": 8437507,
+      "ip": "10.12.80.201",
+      "device_id": "118",
+      "ssid": "lg-m10-1019-wap212",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edfb"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465397
+      },
+      "runtime": 8437294,
+      "ip": "10.12.80.192",
+      "device_id": "213",
+      "ssid": "lg-m10-cor-wap221",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee13"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465437
+      },
+      "runtime": 8437415,
+      "ip": "10.12.80.223",
+      "device_id": "129",
+      "ssid": "lg-m09-912-wap181",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee05"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465429
+      },
+      "runtime": 8431887,
+      "ip": "10.12.80.215",
+      "device_id": "127",
+      "ssid": "lg-m09-cor-wap196",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee03"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465419
+      },
+      "runtime": 8437371,
+      "ip": "10.12.80.209",
+      "device_id": "216",
+      "ssid": "lg-m02-219-wap36",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716edfe"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465433
+      },
+      "runtime": 8435612,
+      "ip": "10.12.80.220",
+      "device_id": "128",
+      "ssid": "lg-p01-102-wap223",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee08"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465444
+      },
+      "runtime": 8437412,
+      "ip": "10.12.80.231",
+      "device_id": "24",
+      "ssid": "lg-m06-609-wap111",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee0f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465497
+      },
+      "runtime": 4207026,
+      "ip": "10.12.80.44",
+      "device_id": "170",
+      "ssid": "lg-m08-821-wap169",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee1b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465473
+      },
+      "runtime": 4805300,
+      "ip": "10.12.80.27",
+      "device_id": "40",
+      "ssid": "lg-m04-411-wap70",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee12"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465456
+      },
+      "runtime": 621206,
+      "ip": "10.12.80.240",
+      "device_id": "28",
+      "ssid": "lg-m05-cor-wap109",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee17"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465452
+      },
+      "runtime": 6695605,
+      "ip": "10.12.80.236",
+      "device_id": "19",
+      "ssid": "lg-m08-cor-wap173",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee1e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465467
+      },
+      "runtime": 8436865,
+      "ip": "10.12.80.251",
+      "device_id": "136",
+      "ssid": "lg-m10-1012-wap205",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee24"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465463
+      },
+      "runtime": 8435750,
+      "ip": "10.12.80.244",
+      "device_id": "132",
+      "ssid": "lg-m04-421-wap81",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee06"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465451
+      },
+      "runtime": 8437283,
+      "ip": "10.12.80.235",
+      "device_id": "220",
+      "ssid": "lg-m09-908-wap176",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee2f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465455
+      },
+      "runtime": 3104380,
+      "ip": "10.12.80.239",
+      "device_id": "221",
+      "ssid": "lg-p02-cor-wap243",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee0d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465441
+      },
+      "runtime": 8437381,
+      "ip": "10.12.80.23",
+      "device_id": "161",
+      "ssid": "lg-m06-611-wap113",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee29"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465462
+      },
+      "runtime": 8182651,
+      "ip": "10.12.80.243",
+      "device_id": "133",
+      "ssid": "lg-m03-320-wap58",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee18"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465386
+      },
+      "runtime": 8437308,
+      "ip": "10.12.80.182",
+      "device_id": "111",
+      "ssid": "lg-m04-410-wap68",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee36"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465556
+      },
+      "runtime": 8435809,
+      "ip": "10.12.80.94",
+      "device_id": "69",
+      "ssid": "lg-p03-cor-wap257",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee40"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465511
+      },
+      "runtime": 8437475,
+      "ip": "10.12.80.55",
+      "device_id": "177",
+      "ssid": "lg-m02-cor-wap41",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee0b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465472
+      },
+      "runtime": 8437425,
+      "ip": "10.12.80.253",
+      "device_id": "222",
+      "ssid": "lg-p02-202-wap235",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee22"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465491
+      },
+      "runtime": 8437459,
+      "ip": "10.12.80.40",
+      "device_id": "54",
+      "ssid": "lg-m02-220-wap37",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee33"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465508
+      },
+      "runtime": 7860335,
+      "ip": "10.12.80.52",
+      "device_id": "175",
+      "ssid": "lg-p04-403-wap260",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee0a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465460
+      },
+      "runtime": 8437803,
+      "ip": "10.12.80.242",
+      "device_id": "130",
+      "ssid": "lg-p01-107-wap229",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee3a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465538
+      },
+      "runtime": 8437507,
+      "ip": "10.12.80.76",
+      "device_id": "67",
+      "ssid": "lg-m07-718-wap143",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee15"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465466
+      },
+      "runtime": 534628,
+      "ip": "10.12.80.250",
+      "device_id": "135",
+      "ssid": "lg-m05-514-wap95",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee10"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465426
+      },
+      "runtime": 8437704,
+      "ip": "10.12.80.210",
+      "device_id": "124",
+      "ssid": "lg-m10-1016-wap209",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee16"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465439
+      },
+      "runtime": 0,
+      "ip": "10.12.80.227",
+      "device_id": "21",
+      "ssid": "10.12.80.227",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee4a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465484
+      },
+      "runtime": 8435824,
+      "ip": "10.12.80.33",
+      "device_id": "164",
+      "ssid": "lg-m09-923-wap193",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee1c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465464
+      },
+      "runtime": 7859780,
+      "ip": "10.12.80.25",
+      "device_id": "162",
+      "ssid": "lg-m09-cor-wap197",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee1d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465442
+      },
+      "runtime": 0,
+      "ip": "10.12.80.230",
+      "device_id": "23",
+      "ssid": "10.12.80.230",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee20"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465391
+      },
+      "runtime": 0,
+      "ip": "10.12.80.185",
+      "device_id": "211",
+      "ssid": "10.12.80.185",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee25"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465474
+      },
+      "runtime": 8435652,
+      "ip": "10.12.80.28",
+      "device_id": "37",
+      "ssid": "lg-m10-1021-wap215",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee3f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465530
+      },
+      "runtime": 8435865,
+      "ip": "10.12.80.65",
+      "device_id": "30",
+      "ssid": "lg-m04-414-wap73",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee23"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465489
+      },
+      "runtime": 7859492,
+      "ip": "10.12.80.38",
+      "device_id": "167",
+      "ssid": "lg-m09-920-wap190",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15522522d8712b716ee14"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465500
+      },
+      "runtime": 8437100,
+      "ip": "10.12.80.46",
+      "device_id": "171",
+      "ssid": "lg-m06-610-wap112",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee19"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465394
+      },
+      "runtime": 8437431,
+      "ip": "10.12.80.191",
+      "device_id": "212",
+      "ssid": "lg-m07-709-wap133",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee46"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465415
+      },
+      "runtime": 8437469,
+      "ip": "10.12.80.204",
+      "device_id": "121",
+      "ssid": "lg-m09-911-wap180",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee2c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465525
+      },
+      "runtime": 7859695,
+      "ip": "10.12.80.63",
+      "device_id": "50",
+      "ssid": "lg-m09-914-wap183",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee1a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465476
+      },
+      "runtime": 0,
+      "ip": "10.12.80.30",
+      "device_id": "157",
+      "ssid": "10.12.80.30",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee1f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465453
+      },
+      "runtime": 0,
+      "ip": "10.12.80.238",
+      "device_id": "16",
+      "ssid": "10.12.80.238",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee28"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465486
+      },
+      "runtime": 7860867,
+      "ip": "10.12.80.35",
+      "device_id": "44",
+      "ssid": "lg-m05-517-wap98",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee21"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465414
+      },
+      "runtime": 8435822,
+      "ip": "10.12.80.203",
+      "device_id": "119",
+      "ssid": "lg-m05-520-wap102",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee52"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465523
+      },
+      "runtime": 8435801,
+      "ip": "10.12.80.61",
+      "device_id": "180",
+      "ssid": "lg-m09-913-wap182",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee27"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465473
+      },
+      "runtime": 8437320,
+      "ip": "10.12.80.26",
+      "device_id": "31",
+      "ssid": "lg-m10-cor-wap219",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee34"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465541
+      },
+      "runtime": 8437421,
+      "ip": "10.12.80.78",
+      "device_id": "63",
+      "ssid": "lg-m07-710-wap134",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee2a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465490
+      },
+      "runtime": 7860734,
+      "ip": "10.12.80.39",
+      "device_id": "168",
+      "ssid": "lg-m04-417-wap76",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee4e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465537
+      },
+      "runtime": 0,
+      "ip": "10.12.80.75",
+      "device_id": "185",
+      "ssid": "10.12.80.75",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee55"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465518
+      },
+      "runtime": 2753609,
+      "ip": "10.12.80.56",
+      "device_id": "56",
+      "ssid": "lg-m08-819-wap166",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee26"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465501
+      },
+      "runtime": 8437260,
+      "ip": "10.12.80.47",
+      "device_id": "172",
+      "ssid": "lg-p04-407-wap266",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee3e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465542
+      },
+      "runtime": 8435684,
+      "ip": "10.12.80.80",
+      "device_id": "64",
+      "ssid": "lg-m07-cor-wap151",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee31"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465532
+      },
+      "runtime": 8437408,
+      "ip": "10.12.80.67",
+      "device_id": "58",
+      "ssid": "lg-m03-312-wap49",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee2b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465495
+      },
+      "runtime": 7861018,
+      "ip": "10.12.80.43",
+      "device_id": "169",
+      "ssid": "lg-m07-716-wap141",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee2d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465534
+      },
+      "runtime": 8435950,
+      "ip": "10.12.80.72",
+      "device_id": "60",
+      "ssid": "lg-m09-922-wap192",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee5e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465450
+      },
+      "runtime": 0,
+      "ip": "10.12.80.233",
+      "device_id": "26",
+      "ssid": "10.12.80.233",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee32"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465535
+      },
+      "runtime": 0,
+      "ip": "10.12.80.73",
+      "device_id": "184",
+      "ssid": "10.12.80.73",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee39"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465510
+      },
+      "runtime": 892638,
+      "ip": "10.12.80.54",
+      "device_id": "176",
+      "ssid": "lg-m09-920-wap189",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee38"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465583
+      },
+      "runtime": 8435652,
+      "ip": "10.12.81.125",
+      "device_id": "271",
+      "ssid": "lg-m02-220-wap38",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee3b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465543
+      },
+      "runtime": 0,
+      "ip": "10.12.80.83",
+      "device_id": "187",
+      "ssid": "10.12.80.83",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee68"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465582
+      },
+      "runtime": 8437512,
+      "ip": "10.12.81.121",
+      "device_id": "270",
+      "ssid": "lg-m02-212-wap29",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee48"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465475
+      },
+      "runtime": 8437397,
+      "ip": "10.12.80.29",
+      "device_id": "163",
+      "ssid": "lg-p01-cor-wap232",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee30"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465524
+      },
+      "runtime": 6373079,
+      "ip": "10.12.80.62",
+      "device_id": "48",
+      "ssid": "lg-m04-418-wap77",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee2e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465487
+      },
+      "runtime": 0,
+      "ip": "10.12.80.36",
+      "device_id": "166",
+      "ssid": "10.12.80.36",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee70"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465599
+      },
+      "runtime": 8435505,
+      "ip": "10.12.81.136",
+      "device_id": "277",
+      "ssid": "lg-m10-1013-wap206",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee37"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465589
+      },
+      "runtime": 8437335,
+      "ip": "10.12.81.128",
+      "device_id": "273",
+      "ssid": "lg-m02-209-wap25",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee35"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465498
+      },
+      "runtime": 8437539,
+      "ip": "10.12.80.45",
+      "device_id": "52",
+      "ssid": "lg-m06-617-wap120",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee3d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-mb1"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465509
+      },
+      "runtime": 7805915,
+      "ip": "10.12.80.53",
+      "device_id": "53",
+      "ssid": "lg-mb1-col-wap03",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-mb1"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee7a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465619
+      },
+      "runtime": 0,
+      "ip": "10.12.81.173",
+      "device_id": "149",
+      "ssid": "10.12.81.173",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee44"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465485
+      },
+      "runtime": 0,
+      "ip": "10.12.80.34",
+      "device_id": "165",
+      "ssid": "10.12.80.34",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee5a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465506
+      },
+      "runtime": 8437335,
+      "ip": "10.12.80.49",
+      "device_id": "174",
+      "ssid": "lg-p03-cor-wap256",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee43"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465568
+      },
+      "runtime": 8437452,
+      "ip": "10.12.81.100",
+      "device_id": "262",
+      "ssid": "lg-m05-521-wap103",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee45"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465477
+      },
+      "runtime": 8437805,
+      "ip": "10.12.80.31",
+      "device_id": "41",
+      "ssid": "lg-m06-622-wap126",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee4f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465547
+      },
+      "runtime": 8437398,
+      "ip": "10.12.80.86",
+      "device_id": "62",
+      "ssid": "lg-m07-711-wap135",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee5b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465491
+      },
+      "runtime": 8372132,
+      "ip": "10.12.80.42",
+      "device_id": "46",
+      "ssid": "lg-m09-915-wap184",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee4d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465543
+      },
+      "runtime": 0,
+      "ip": "10.12.80.82",
+      "device_id": "186",
+      "ssid": "10.12.80.82",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee3c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465480
+      },
+      "runtime": 7859955,
+      "ip": "10.12.80.32",
+      "device_id": "39",
+      "ssid": "lg-p04-403-wap261",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee4c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465522
+      },
+      "runtime": 8437406,
+      "ip": "10.12.80.59",
+      "device_id": "49",
+      "ssid": "lg-m02-216-wap33",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee41"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465533
+      },
+      "runtime": 2813651,
+      "ip": "10.12.80.68",
+      "device_id": "182",
+      "ssid": "lg-m08-815-wap162",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee42"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465553
+      },
+      "runtime": 8436039,
+      "ip": "10.12.80.88",
+      "device_id": "70",
+      "ssid": "lg-m06-cor-wap129",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee62"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465576
+      },
+      "runtime": 8435974,
+      "ip": "10.12.81.115",
+      "device_id": "267",
+      "ssid": "lg-m05-520-wap101",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee49"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465552
+      },
+      "runtime": 8435584,
+      "ip": "10.12.80.87",
+      "device_id": "189",
+      "ssid": "lg-m02-217-wap34",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee53"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465555
+      },
+      "runtime": 8005943,
+      "ip": "10.12.80.89",
+      "device_id": "71",
+      "ssid": "lg-m04-cor-wap86",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee89"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465402
+      },
+      "runtime": 4206989,
+      "ip": "10.12.80.194",
+      "device_id": "114",
+      "ssid": "lg-m08-820-wap168",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee47"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465507
+      },
+      "runtime": 7859222,
+      "ip": "10.12.80.51",
+      "device_id": "47",
+      "ssid": "lg-m09-916-wap185",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee4b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465557
+      },
+      "runtime": 8436087,
+      "ip": "10.12.80.96",
+      "device_id": "190",
+      "ssid": "lg-m07-714-wap139",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee93"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465638
+      },
+      "runtime": 0,
+      "ip": "10.12.81.207",
+      "device_id": "300",
+      "ssid": "10.12.81.207",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee5c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465531
+      },
+      "runtime": 5185822,
+      "ip": "10.12.80.66",
+      "device_id": "57",
+      "ssid": "lg-p01-cor-wap231",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee54"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465519
+      },
+      "runtime": 7860369,
+      "ip": "10.12.80.57",
+      "device_id": "51",
+      "ssid": "lg-p01-107-wap230",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee51"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465536
+      },
+      "runtime": 8437690,
+      "ip": "10.12.80.74",
+      "device_id": "65",
+      "ssid": "lg-m07-cor-wap153",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee6a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465572
+      },
+      "runtime": 8437355,
+      "ip": "10.12.81.113",
+      "device_id": "266",
+      "ssid": "lg-m01-gym-wap15",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee50"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465522
+      },
+      "runtime": 8435888,
+      "ip": "10.12.80.60",
+      "device_id": "179",
+      "ssid": "lg-p02-203-wap236",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee66"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465570
+      },
+      "runtime": 8435826,
+      "ip": "10.12.81.106",
+      "device_id": "264",
+      "ssid": "lg-m01-109-wap09",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee6d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465571
+      },
+      "runtime": 8437378,
+      "ip": "10.12.81.109",
+      "device_id": "265",
+      "ssid": "lg-m03-308-wap44",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee71"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465605
+      },
+      "runtime": 8435620,
+      "ip": "10.12.81.153",
+      "device_id": "282",
+      "ssid": "lg-p04-cor-wap269",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee57"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465545
+      },
+      "runtime": 8437328,
+      "ip": "10.12.80.84",
+      "device_id": "188",
+      "ssid": "lg-p01-103-wap224",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee59"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465526
+      },
+      "runtime": 0,
+      "ip": "10.12.80.64",
+      "device_id": "181",
+      "ssid": "10.12.80.64",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee61"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465558
+      },
+      "runtime": 0,
+      "ip": "10.12.80.99",
+      "device_id": "191",
+      "ssid": "10.12.80.99",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee77"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465600
+      },
+      "runtime": 8435708,
+      "ip": "10.12.81.139",
+      "device_id": "278",
+      "ssid": "lg-m02-210-wap26",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee9a"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465650
+      },
+      "runtime": 8371943,
+      "ip": "10.12.81.23",
+      "device_id": "234",
+      "ssid": "lg-m09-918-wap187",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee63"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-mb1"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465567
+      },
+      "runtime": 6364686,
+      "ip": "10.12.81.10",
+      "device_id": "231",
+      "ssid": "lg-mb1-cof-wap02",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-mb1"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee6b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465593
+      },
+      "runtime": 8437228,
+      "ip": "10.12.81.132",
+      "device_id": "275",
+      "ssid": "lg-p04-cor-wap268",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee58"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465457
+      },
+      "runtime": 0,
+      "ip": "10.12.80.241",
+      "device_id": "29",
+      "ssid": "10.12.80.241",
+      "os": "ruckuswireless-hotzone",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee56"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465520
+      },
+      "runtime": 8437405,
+      "ip": "10.12.80.58",
+      "device_id": "178",
+      "ssid": "lg-p02-207-wap241",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465690
+      },
+      "runtime": 0,
+      "ip": "10.12.81.49",
+      "device_id": "245",
+      "ssid": "10.12.81.49",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee86"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465667
+      },
+      "runtime": 0,
+      "ip": "10.12.81.249",
+      "device_id": "313",
+      "ssid": "10.12.81.249",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee7b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465580
+      },
+      "runtime": 8437362,
+      "ip": "10.12.81.12",
+      "device_id": "232",
+      "ssid": "lg-m10-1008-wap199",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee72"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-mb1"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465617
+      },
+      "runtime": 8435851,
+      "ip": "10.12.81.170",
+      "device_id": "290",
+      "ssid": "lg-mb1-ldm-wap04",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-mb1"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee75"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465627
+      },
+      "runtime": 0,
+      "ip": "10.12.81.193",
+      "device_id": "294",
+      "ssid": "10.12.81.193",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee60"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465577
+      },
+      "runtime": 8437728,
+      "ip": "10.12.81.116",
+      "device_id": "268",
+      "ssid": "lg-m01-108-wap08",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeae"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465616
+      },
+      "runtime": 8182540,
+      "ip": "10.12.81.167",
+      "device_id": "289",
+      "ssid": "lg-m03-319-wap56",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee7c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465584
+      },
+      "runtime": 8435804,
+      "ip": "10.12.81.127",
+      "device_id": "272",
+      "ssid": "lg-m02-215-wap32",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee7f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465607
+      },
+      "runtime": 313484,
+      "ip": "10.12.81.157",
+      "device_id": "284",
+      "ssid": "lg-m08-823-wap171",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb1"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465679
+      },
+      "runtime": 8431897,
+      "ip": "10.12.81.34",
+      "device_id": "239",
+      "ssid": "lg-m09-cor-wap195",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee81"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465595
+      },
+      "runtime": 8437544,
+      "ip": "10.12.81.133",
+      "device_id": "276",
+      "ssid": "lg-m06-618-wap121",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee67"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465569
+      },
+      "runtime": 3924694,
+      "ip": "10.12.81.103",
+      "device_id": "263",
+      "ssid": "lg-m05-511-wap92",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee84"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465641
+      },
+      "runtime": 8435864,
+      "ip": "10.12.81.219",
+      "device_id": "151",
+      "ssid": "lg-m05-515-wap96",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee87"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465642
+      },
+      "runtime": 0,
+      "ip": "10.12.81.221",
+      "device_id": "303",
+      "ssid": "10.12.81.221",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee5d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465534
+      },
+      "runtime": 8435773,
+      "ip": "10.12.80.69",
+      "device_id": "183",
+      "ssid": "lg-m02-218-wap35",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee90"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465655
+      },
+      "runtime": 0,
+      "ip": "10.12.81.232",
+      "device_id": "307",
+      "ssid": "10.12.81.232",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee5f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465506
+      },
+      "runtime": 8435677,
+      "ip": "10.12.80.50",
+      "device_id": "55",
+      "ssid": "lg-m04-420-wap80",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee69"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465590
+      },
+      "runtime": 3104230,
+      "ip": "10.12.81.129",
+      "device_id": "150",
+      "ssid": "lg-p02-cor-wap245",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee65"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465601
+      },
+      "runtime": 8437273,
+      "ip": "10.12.81.143",
+      "device_id": "279",
+      "ssid": "lg-p04-401-wap258",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee6f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465630
+      },
+      "runtime": 0,
+      "ip": "10.12.81.196",
+      "device_id": "296",
+      "ssid": "10.12.81.196",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee64"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465566
+      },
+      "runtime": 0,
+      "ip": "10.12.81.1",
+      "device_id": "224",
+      "ssid": "10.12.81.1",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb8"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465696
+      },
+      "runtime": 0,
+      "ip": "10.12.81.55",
+      "device_id": "247",
+      "ssid": "10.12.81.55",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee8e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465651
+      },
+      "runtime": 8435848,
+      "ip": "10.12.81.231",
+      "device_id": "153",
+      "ssid": "lg-p04-404-wap262",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee76"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465608
+      },
+      "runtime": 8435697,
+      "ip": "10.12.81.159",
+      "device_id": "285",
+      "ssid": "lg-m02-221-wap39",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee8b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465665
+      },
+      "runtime": 0,
+      "ip": "10.12.81.242",
+      "device_id": "311",
+      "ssid": "10.12.81.242",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee96"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465408
+      },
+      "runtime": 8437400,
+      "ip": "10.12.80.20",
+      "device_id": "33",
+      "ssid": "lg-p01-106-wap228",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee98"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465667
+      },
+      "runtime": 8435749,
+      "ip": "10.12.81.25",
+      "device_id": "235",
+      "ssid": "lg-m10-1019-wap213",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee95"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465634
+      },
+      "runtime": 0,
+      "ip": "10.12.81.202",
+      "device_id": "299",
+      "ssid": "10.12.81.202",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea2"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465691
+      },
+      "runtime": 8435672,
+      "ip": "10.12.81.5",
+      "device_id": "228",
+      "ssid": "lg-m01-coc-wap16",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea0"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465615
+      },
+      "runtime": 8005830,
+      "ip": "10.12.81.164",
+      "device_id": "288",
+      "ssid": "lg-m04-423-wap83",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeaa"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465666
+      },
+      "runtime": 0,
+      "ip": "10.12.81.246",
+      "device_id": "312",
+      "ssid": "10.12.81.246",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee6c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465581
+      },
+      "runtime": 717067,
+      "ip": "10.12.81.120",
+      "device_id": "269",
+      "ssid": "lg-p03-301-wap246",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee6e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "ruckus"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465565
+      },
+      "runtime": 8437422,
+      "ip": "10.12.81.0",
+      "device_id": "223",
+      "ssid": "ruckusap",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-ruckus"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee79"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465606
+      },
+      "runtime": 1464642,
+      "ip": "10.12.81.156",
+      "device_id": "283",
+      "ssid": "lg-m04-416-wap75",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee74"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465629
+      },
+      "runtime": 0,
+      "ip": "10.12.81.194",
+      "device_id": "295",
+      "ssid": "10.12.81.194",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee73"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465615
+      },
+      "runtime": 5213685,
+      "ip": "10.12.81.161",
+      "device_id": "287",
+      "ssid": "lg-p03-304-wap250",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465673
+      },
+      "runtime": 8165412,
+      "ip": "10.12.81.27",
+      "device_id": "147",
+      "ssid": "lg-m09-921-wap191",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeac"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m08"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465613
+      },
+      "runtime": 2869773,
+      "ip": "10.12.81.16",
+      "device_id": "233",
+      "ssid": "lg-m08-811-wap157",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m08"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee9d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465639
+      },
+      "runtime": 0,
+      "ip": "10.12.81.209",
+      "device_id": "301",
+      "ssid": "10.12.81.209",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eebf"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465632
+      },
+      "runtime": 0,
+      "ip": "10.12.81.2",
+      "device_id": "225",
+      "ssid": "10.12.81.2",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee9f"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465675
+      },
+      "runtime": 7519115,
+      "ip": "10.12.81.30",
+      "device_id": "236",
+      "ssid": "lg-m09-cor-wap194",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee82"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465661
+      },
+      "runtime": 0,
+      "ip": "10.12.81.235",
+      "device_id": "309",
+      "ssid": "10.12.81.235",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee85"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465663
+      },
+      "runtime": 0,
+      "ip": "10.12.81.241",
+      "device_id": "310",
+      "ssid": "10.12.81.241",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eec2"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m01"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465674
+      },
+      "runtime": 8435436,
+      "ip": "10.12.81.3",
+      "device_id": "226",
+      "ssid": "lg-m01-caf-wap14(b)",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m01"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee78"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465618
+      },
+      "runtime": 8437429,
+      "ip": "10.12.81.172",
+      "device_id": "291",
+      "ssid": "lg-m02-213-wap30",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea7"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465698
+      },
+      "runtime": 0,
+      "ip": "10.12.81.58",
+      "device_id": "249",
+      "ssid": "10.12.81.58",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee8c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465657
+      },
+      "runtime": 0,
+      "ip": "10.12.81.234",
+      "device_id": "308",
+      "ssid": "10.12.81.234",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea9"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465591
+      },
+      "runtime": 8437500,
+      "ip": "10.12.81.130",
+      "device_id": "274",
+      "ssid": "lg-m04-419-wap78",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee7d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-mb1"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465614
+      },
+      "runtime": 3871374,
+      "ip": "10.12.81.160",
+      "device_id": "286",
+      "ssid": "lg-mb1-chk-wap07",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-mb1"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee80"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465558
+      },
+      "runtime": 8435770,
+      "ip": "10.12.80.97",
+      "device_id": "73",
+      "ssid": "lg-m02-214-wap31",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee7e"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465626
+      },
+      "runtime": 0,
+      "ip": "10.12.81.185",
+      "device_id": "293",
+      "ssid": "10.12.81.185",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee92"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465502
+      },
+      "runtime": 7860774,
+      "ip": "10.12.80.48",
+      "device_id": "173",
+      "ssid": "lg-m05-516-wap97",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee9c"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465640
+      },
+      "runtime": 8182601,
+      "ip": "10.12.81.214",
+      "device_id": "152",
+      "ssid": "lg-m03-320-wap57",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb3"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465707
+      },
+      "runtime": 0,
+      "ip": "10.12.81.75",
+      "device_id": "255",
+      "ssid": "10.12.81.75",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee83"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465650
+      },
+      "runtime": 0,
+      "ip": "10.12.81.230",
+      "device_id": "306",
+      "ssid": "10.12.81.230",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb6"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465699
+      },
+      "runtime": 0,
+      "ip": "10.12.81.6",
+      "device_id": "229",
+      "ssid": "10.12.81.6",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea6"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-p04"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465602
+      },
+      "runtime": 8435752,
+      "ip": "10.12.81.151",
+      "device_id": "280",
+      "ssid": "lg-p04-405-wap263",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-p04"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee88"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465631
+      },
+      "runtime": 0,
+      "ip": "10.12.81.198",
+      "device_id": "297",
+      "ssid": "10.12.81.198",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb0"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465701
+      },
+      "runtime": 0,
+      "ip": "10.12.81.64",
+      "device_id": "251",
+      "ssid": "10.12.81.64",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee8d"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465375
+      },
+      "runtime": 8182516,
+      "ip": "10.12.80.173",
+      "device_id": "106",
+      "ssid": "lg-m03-317-wap54",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee91"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465405
+      },
+      "runtime": 1178387,
+      "ip": "10.12.80.196",
+      "device_id": "115",
+      "ssid": "lg-m03-313-wap50",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeba"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m02"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465688
+      },
+      "runtime": 8436351,
+      "ip": "10.12.81.43",
+      "device_id": "243",
+      "ssid": "lg-m02-208-wap24",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m02"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee9b"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465657
+      },
+      "runtime": 2231954,
+      "ip": "10.12.81.233",
+      "device_id": "155",
+      "ssid": "lg-m03-cor-wap64",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716ee97"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m05"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465455
+      },
+      "runtime": 621224,
+      "ip": "10.12.80.24",
+      "device_id": "38",
+      "ssid": "lg-m05-cor-wap106",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m05"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eebe"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465709
+      },
+      "runtime": 8008177,
+      "ip": "10.12.81.8",
+      "device_id": "230",
+      "ssid": "lg-m07-715-wap140",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea5"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465672
+      },
+      "runtime": 0,
+      "ip": "10.12.81.254",
+      "device_id": "315",
+      "ssid": "10.12.81.254",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eea1"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465677
+      },
+      "runtime": 8435844,
+      "ip": "10.12.81.32",
+      "device_id": "238",
+      "ssid": "lg-m10-cor-wap218",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeab"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m10"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465684
+      },
+      "runtime": 8437813,
+      "ip": "10.12.81.37",
+      "device_id": "241",
+      "ssid": "lg-m10-1020-wap214",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m10"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeaf"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m07"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465703
+      },
+      "runtime": 8437330,
+      "ip": "10.12.81.72",
+      "device_id": "254",
+      "ssid": "lg-m07-723-wap149",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m07"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb5"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m09"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465681
+      },
+      "runtime": 8436011,
+      "ip": "10.12.81.35",
+      "device_id": "240",
+      "ssid": "lg-m09-910-wap178",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m09"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eeb9"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465644
+      },
+      "runtime": 0,
+      "ip": "10.12.81.223",
+      "device_id": "305",
+      "ssid": "10.12.81.223",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eebd"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465702
+      },
+      "runtime": 0,
+      "ip": "10.12.81.70",
+      "device_id": "253",
+      "ssid": "10.12.81.70",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eec4"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m06"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465719
+      },
+      "runtime": 8435353,
+      "ip": "10.12.81.96",
+      "device_id": "260",
+      "ssid": "lg-m06-614-wap117",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m06"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eec3"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": "lg-m03"
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465720
+      },
+      "runtime": 8435994,
+      "ip": "10.12.81.97",
+      "device_id": "261",
+      "ssid": "lg-m03-311-wap47",
+      "os": "",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-lg-m03"
+    },
+    {
+      "_id": {
+        "$oid": "5ec15523522d8712b716eec7"
+      },
+      "location": {
+        "site": "Le Grove",
+        "building": "Tower A",
+        "level": ""
+      },
+      "last_speedtest": {
+        "ping": 86,
+        "download": 203,
+        "upload": 80,
+        "jitter": 20,
+        "timestamp": 1589728465708
+      },
+      "runtime": 0,
+      "ip": "10.12.81.78",
+      "device_id": "256",
+      "ssid": "10.12.81.78",
+      "os": "ping",
+      "hardware": "",
+      "ignore": 0,
+      "status": 1,
+      "quality": 0,
+      "mac": "",
+      "desc": "",
+      "password": "Admin@123",
+      "raspi": "iot-"
+    }
+  ]
+
+

@@ -3,18 +3,26 @@
     <table>
       <thead>
         <tr>
+          <!-- <th>AP:</th> -->
           <th>SSID:</th>
-          <th>Location:</th>
-          <th>Ping:</th>
-          <th>Download:</th>
-          <th>Upload:</th>
+          <th>Password:</th>
+          <th>IP address:</th>
+          <th>Building</th>
+          <th>Story:</th>
+          <th>Status:</th>
           <th>Runtime:</th>
+          <th>iotdevice:</th>
+          <th>Ping(ms):</th>
+          <th>Upload(mb/s):</th>
+          <th>Download(mb/s):</th>
+          <th>Jitter(ms):</th>
+          <!-- last table head is filter col -->
           <th id="filter-col">
             <form>
               <label>Filter:</label>
               <select v-model="filter">
                 <option value="nofilter">No Filter</option>
-                <option >level1</option>
+                <option>level1</option>
                 <option>level2</option>
                 <option>level3</option>
                 <option>level4</option>
@@ -29,11 +37,7 @@
                 v-if="editing == null"
                 @click.prevent="$emit('filter:accesspoint', filter)"
               />
-              <input
-                type="submit"
-                v-else
-                @click.prevent="filtererror()"
-              />
+              <input type="submit" v-else @click.prevent="filtererror()" />
               <p v-if="filter_error">
                 ❗Please save before filter
               </p>
@@ -41,42 +45,84 @@
           </th>
         </tr>
       </thead>
+      <!-- table body -->
       <tbody>
         <p v-if="access_points.length < 1" class="empty-table">
           No Access Points
         </p>
-        <tr v-else v-for="access_point in access_points" :key="access_point.id">
-          <td v-if="editing === access_point.id">
+        <!-- database UUID -->
+        <tr
+          v-else
+          v-for="access_point in access_points"
+          :key="access_point._id.$oid"
+        >
+          <!-- ap col-->
+          <!-- <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.device_id" />
+          </td>
+          <td v-else>{{ access_point.device_id }}</td> -->
+          <!-- ssid col-->
+          <td v-if="editing == access_point._id.$oid">
             <input type="text" v-model="access_point.ssid" />
           </td>
           <td v-else>{{ access_point.ssid }}</td>
-
-          <td v-if="editing === access_point.id">
-            <input type="text" v-model="access_point.location" />
+          <!-- password col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.password" />
           </td>
-          <td v-else>{{ access_point.location }}</td>
-
-          <td v-if="editing === access_point.id">
-            <input type="text" v-model="access_point.ping" />
+          <td v-else>{{ access_point.password }}</td>
+          <!-- ip col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.ip" />
           </td>
-          <td v-else>{{ access_point.ping }}</td>
-
-          <td v-if="editing === access_point.id">
-            <input type="text" v-model="access_point.download" />
+          <td v-else>{{ access_point.ip }}</td>
+          <!-- building col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.location.building" />
           </td>
-          <td v-else>{{ access_point.download }}</td>
-
-          <td v-if="editing === access_point.id">
-            <input type="text" v-model="access_point.upload" />
+          <td v-else>{{ access_point.location.building }}</td>
+          <!-- level col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.location.level" />
           </td>
-          <td v-else>{{ access_point.upload }}</td>
-
-          <td v-if="editing === access_point.id">
+          <td v-else>{{ access_point.location.level }}</td>
+          <!-- status col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.status" />
+          </td>
+          <td v-else>{{ access_point.status }}</td>
+          <!-- runtime col -->
+          <td v-if="editing == access_point._id.$oid">
             <input type="text" v-model="access_point.runtime" />
           </td>
           <td v-else>{{ access_point.runtime }}</td>
-
-          <td v-if="editing === access_point.id">
+          <!-- iotdevice col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.raspi" />
+          </td>
+          <td v-else>{{ access_point.raspi }}</td>
+          <!-- Ping col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.last_speedtest.ping" />
+          </td>
+          <td v-else>{{ access_point.last_speedtest.ping }}</td>
+          <!-- upload col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.last_speedtest.upload" />
+          </td>
+          <td v-else>{{ access_point.last_speedtest.upload }}</td>
+          <!-- download col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.last_speedtest.download" />
+          </td>
+          <td v-else>{{ access_point.last_speedtest.download }}</td>
+          <!-- jitter col -->
+          <td v-if="editing == access_point._id.$oid">
+            <input type="text" v-model="access_point.last_speedtest.jitter" />
+          </td>
+          <td v-else>{{ access_point.last_speedtest.jitter }}</td>
+          <!-- editing and delete buttons -->
+          <td v-if="editing == access_point._id.$oid">
             <button @click="editaccesspoint(access_point)">Save</button>
             <button class="muted-button" @click="canceledit(access_point)">
               Cancel
@@ -84,7 +130,7 @@
           </td>
           <td v-else>
             <button @click="editmode(access_point)">Edit</button>
-            <button @click="$emit('delete:accesspoint', access_point.id)">
+            <button @click="$emit('delete:accesspoint', access_point._id.$oid)">
               Delete
             </button>
           </td>
@@ -110,7 +156,7 @@ export default {
   methods: {
     editmode(access_point) {
       this.cachedaccesspoint = Object.assign({}, access_point);
-      this.editing = access_point.id;
+      this.editing = access_point._id.$oid;
     },
     canceledit(access_point) {
       Object.assign(access_point, this.cachedaccesspoint);
@@ -118,16 +164,19 @@ export default {
     },
     editaccesspoint(access_point) {
       if (
+        access_point.device_id === "" ||
         access_point.ssid === "" ||
-        access_point.location === "" ||
-        access_point.ping === "" ||
-        access_point.download === "" ||
-        access_point.upload === "" ||
-        access_point.runtime === ""
+        access_point.password === "" ||
+        access_point.ip === "" ||
+        access_point.location.building === "" ||
+        access_point.location.level === "" ||
+        access_point.status === "" ||
+        access_point.runtime === "" ||
+        access_point.raspi === ""
       ) {
         return;
       } else {
-        this.$emit("edit:accesspoint", access_point.id, access_point);
+        this.$emit("edit:accesspoint", access_point._id.$oid, access_point);
         this.editing = null;
         this.filter_error = false;
       }
@@ -143,6 +192,15 @@ export default {
 <style scoped>
 #filter-col {
   width: 250px;
+}
+table {
+  counter-set: row-num 1;
+}
+table tr {
+  counter-increment: row-num;
+}
+table tr td:first-child::before {
+  content: counter(row-num) ". ";
 }
 select {
   float: left;

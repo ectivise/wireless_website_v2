@@ -1,6 +1,7 @@
 <template>
   <div id="accesspoint-form">
     <form v-on:submit.prevent="handlesubmit">
+      <!-- ssid input-->
       <label>SSID</label>
       <input
         v-model="access_point.ssid"
@@ -10,43 +11,102 @@
         @keypress="clearstatus"
         ref="first"
       />
-      <label>Location</label>
+      <!-- password input -->
+      <label>Password</label>
       <input
-        v-model="access_point.location"
+        v-model="access_point.password"
         type="text"
-        :class="{ 'has-error': submitting && invalidlocation }"
+        :class="{ 'has-error': submitting && invalidpassword }"
         @focus="clearstatus"
         @keypress="clearstatus"
       />
-      <label>Ping</label>
+      <!-- ip input -->
+      <label>IP Address</label>
       <input
-        v-model="access_point.ping"
+        v-model="access_point.ip"
         type="text"
-        :class="{ 'has-error': submitting && invalidping }"
+        :class="{ 'has-error': submitting && invalidip }"
         @focus="clearstatus"
         @keypress="clearstatus"
       />
-      <label>Download</label>
+      <!-- Building input -->
+      <label>Building</label>
       <input
-        v-model="access_point.download"
+        v-model="access_point.location.building"
         type="text"
-        :class="{ 'has-error': submitting && invaliddownload }"
+        :class="{ 'has-error': submitting && invalidbuilding }"
         @focus="clearstatus"
         @keypress="clearstatus"
       />
-      <label>Upload</label>
+      <!-- level input -->
+      <label>Level</label>
       <input
-        v-model="access_point.upload"
+        v-model="access_point.location.level"
         type="text"
-        :class="{ 'has-error': submitting && invalidupload }"
+        :class="{ 'has-error': submitting && invalidlevel }"
         @focus="clearstatus"
         @keypress="clearstatus"
       />
+      <!-- status input -->
+      <label>Status</label>
+      <input
+        v-model="access_point.status"
+        type="text"
+        :class="{ 'has-error': submitting && invalidstatus }"
+        @focus="clearstatus"
+        @keypress="clearstatus"
+      />
+      <!-- runtime input -->
       <label>Runtime</label>
       <input
         v-model="access_point.runtime"
         type="text"
         :class="{ 'has-error': submitting && invalidruntime }"
+        @focus="clearstatus"
+        @keypress="clearstatus"
+      />
+      <!-- iot device -->
+      <label>iot device</label>
+      <input
+        v-model="access_point.raspi"
+        type="text"
+        :class="{ 'has-error': submitting && invalidraspi }"
+        @focus="clearstatus"
+        @keypress="clearstatus"
+      />
+      <!-- ping input -->
+      <label>Ping</label>
+      <input
+        v-model="access_point.last_speedtest.ping"
+        type="text"
+        :class="{ 'has-error': submitting && invalidping }"
+        @focus="clearstatus"
+        @keypress="clearstatus"
+      />
+      <!-- upload input -->
+      <label>Upload</label>
+      <input
+        v-model="access_point.last_speedtest.upload"
+        type="text"
+        :class="{ 'has-error': submitting && invalidupload }"
+        @focus="clearstatus"
+        @keypress="clearstatus"
+      />
+      <!-- download input -->
+      <label>Download</label>
+      <input
+        v-model="access_point.last_speedtest.download"
+        type="text"
+        :class="{ 'has-error': submitting && invaliddownload }"
+        @focus="clearstatus"
+        @keypress="clearstatus"
+      />
+      <!-- jitter input -->
+      <label>Jitter</label>
+      <input
+        v-model="access_point.last_speedtest.jitter"
+        type="text"
+        :class="{ 'has-error': submitting && invalidjitter }"
         @focus="clearstatus"
         @keypress="clearstatus"
       />
@@ -71,12 +131,34 @@ export default {
       error: false,
       success: false,
       access_point: {
+        _id: {
+          $oid: "",
+        },
+        location: {
+          site: "",
+          building: "",
+          level: "",
+        },
+        last_speedtest: {
+          ping: 0,
+          download: 0,
+          upload: 0,
+          jitter: 0,
+          timestamp: 0,
+        },
+        runtime: 0,
+        ip: "",
+        device_id: "",
         ssid: "",
-        location: "",
-        ping: "",
-        download: "",
-        upload: "",
-        runtime: "",
+        os: "",
+        hardware: "",
+        ignore: 0,
+        status: 1,
+        quality: 0,
+        mac: "",
+        desc: "",
+        password: "",
+        raspi: "",
       },
     };
   },
@@ -86,27 +168,55 @@ export default {
       this.clearstatus();
       if (
         this.invalidssid ||
-        this.invalidlocation ||
+        this.invalidpassword ||
+        this.invalidip ||
+        this.invalidbuilding ||
+        this.invalidlevel ||
+        this.invalidstatus ||
+        this.invalidruntime ||
+        this.invalidraspi ||
         this.invalidping ||
-        this.invaliddownload ||
         this.invalidupload ||
-        this.invalidruntime
+        this.invaliddownload ||
+        this.invalidjitter
       ) {
         this.error = true;
-        return
+        return;
       } else {
         this.$emit("add:accesspoint", this.access_point);
         // refer to the first input
-        this.$refs.first.focus()
+        this.$refs.first.focus();
         // reset
         this.access_point = {
-          ssid: "",
-          location: "",
-          ping: "",
-          download: "",
-          upload: "",
-          runtime: "",
-        };
+        _id: {
+          $oid: "",
+        },
+        location: {
+          site: "",
+          building: "",
+          level: "",
+        },
+        last_speedtest: {
+          ping: 0,
+          download: 0,
+          upload: 0,
+          jitter: 0,
+          timestamp: 0,
+        },
+        runtime: 0,
+        ip: "",
+        device_id: "",
+        ssid: "",
+        os: "",
+        hardware: "",
+        ignore: 0,
+        status: 1,
+        quality: 0,
+        mac: "",
+        desc: "",
+        password: "",
+        raspi: "",
+      };
         this.error = false;
         this.success = true;
         this.submitting = false;
@@ -122,24 +232,47 @@ export default {
       return this.access_point.ssid === "";
     },
 
-    invalidlocation() {
-      return this.access_point.location === "";
+    invalidpassword() {
+      return this.access_point.password === "";
     },
 
-    invalidping() {
-      return this.access_point.ping === "";
+    invalidip() {
+      return this.access_point.ip === "";
+    },
+    invalidbuilding() {
+      return this.access_point.location.building === "";
     },
 
-    invaliddownload() {
-      return this.access_point.download === "";
+    invalidlevel() {
+      return this.access_point.location.level === "";
     },
 
-    invalidupload() {
-      return this.access_point.upload === "";
+    invalidstatus() {
+      return this.access_point.status === "";
     },
 
     invalidruntime() {
       return this.access_point.runtime === "";
+    },
+
+    invalidraspi() {
+      return this.access_point.raspi === "";
+    },
+
+    invalidping() {
+      return this.access_point.last_speedtest.ping === "";
+    },
+
+    invalidupload() {
+      return this.access_point.last_speedtest.upload === "";
+    },
+
+    invaliddownload() {
+      return this.access_point.last_speedtest.download === "";
+    },
+
+    invalidjitter() {
+      return this.access_point.last_speedtest.jitter === "";
     },
   },
 };
