@@ -14,7 +14,7 @@
               <label>Filter:</label>
               <select v-model="filter">
                 <option value="nofilter">No Filter</option>
-                <option>level1</option>
+                <option >level1</option>
                 <option>level2</option>
                 <option>level3</option>
                 <option>level4</option>
@@ -26,8 +26,17 @@
               </select>
               <input
                 type="submit"
+                v-if="editing == null"
                 @click.prevent="$emit('filter:accesspoint', filter)"
               />
+              <input
+                type="submit"
+                v-else
+                @click.prevent="filtererror()"
+              />
+              <p v-if="filter_error">
+                ❗Please save before filter
+              </p>
             </form>
           </th>
         </tr>
@@ -93,6 +102,7 @@ export default {
   },
   data() {
     return {
+      filter_error: false,
       editing: null,
       filter: "",
     };
@@ -119,7 +129,11 @@ export default {
       } else {
         this.$emit("edit:accesspoint", access_point.id, access_point);
         this.editing = null;
+        this.filter_error = false;
       }
+    },
+    filtererror() {
+      this.filter_error = true;
     },
   },
 };
