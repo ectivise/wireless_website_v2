@@ -237,11 +237,11 @@ export default {
 }
 
 .modal-content {
-  width: 800px;
-  height: 900px;
+  width: 60%;
   background-color: white;
   border-radius: 4px;
   position: relative;
+  margin: 400px 0px 0px 0px;
   border: solid 1px;
 }
 
