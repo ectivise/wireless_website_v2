@@ -108,25 +108,13 @@
           </td>
           <td v-else>{{ access_point.raspi }}</td>
           <!-- Ping col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.last_speedtest.ping" />
-          </td>
-          <td v-else>{{ access_point.last_speedtest.ping }}</td>
+          <td>{{ access_point.last_speedtest.ping }}</td>
           <!-- upload col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.last_speedtest.upload" />
-          </td>
-          <td v-else>{{ access_point.last_speedtest.upload }}</td>
+          <td>{{ access_point.last_speedtest.upload }}</td>
           <!-- download col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.last_speedtest.download" />
-          </td>
-          <td v-else>{{ access_point.last_speedtest.download }}</td>
+          <td>{{ access_point.last_speedtest.download }}</td>
           <!-- jitter col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.last_speedtest.jitter" />
-          </td>
-          <td v-else>{{ access_point.last_speedtest.jitter }}</td>
+          <td>{{ access_point.last_speedtest.jitter }}</td>
           <!-- editing and delete buttons -->
           <td v-if="editing == access_point.device_id">
             <button @click="editaccesspoint(access_point)">Save</button>
@@ -260,8 +248,7 @@ select {
 table {
   border-collapse: collapse;
 }
-td,
-th {
+td,th {
   border: 1px solid black;
   padding: 5px;
   line-height: 80%;

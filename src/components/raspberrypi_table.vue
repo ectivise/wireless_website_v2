@@ -1,0 +1,248 @@
+<template>
+  <div id="raspberrypi_table">
+    <div class="filter_form">
+      <form>
+        <h3>Filter:</h3>
+        <label>Building:</label>
+        <select v-model="filterbuildings">
+          <option value="nofilter">No Filter</option>
+          <option v-for="(option, index) in filter_buildings" :key="index">{{option}}</option>
+        </select>
+        <label>Story:</label>
+        <select v-model="filterlevel">
+          <option value="nofilter">No Filter</option>
+          <option v-for="(option, index) in filter_level" :key="index">{{option}}</option>
+        </select>
+        <input
+          type="submit"
+          v-if="editing == null"
+          @click.prevent="
+            $emit('filter:raspberrypi', filterbuildings, filterlevel)
+          "
+        />
+        <input type="submit" v-else @click.prevent="filtererror()" />
+        <p v-if="filter_error">
+          ❗Please save before filter
+        </p>
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Device ID:</th>
+          <th>IP:</th>
+          <th>Password:</th>
+          <th>Status:</th>
+          <th>Building</th>
+          <th>Storey:</th>
+          <th>Runtime:</th>
+          <th>User:</th>
+          <th>Password:</th>
+        </tr>
+      </thead>
+      <!-- table body -->
+      <tbody>
+        <p v-if="raspberrypis.length < 1" class="empty-table">
+          No Raspberry Pi
+        </p>
+        <!-- database UUID -->
+        <tr v-else v-for="(raspberrypi, index) in raspberrypis" :key="index">
+          <!-- device ID col-->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.raspi_id" />
+          </td>
+          <td v-else>{{ raspberrypi.raspi_id }}</td>
+          <!-- IP col-->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.ip" />
+          </td>
+          <td v-else>{{ raspberrypi.ip }}</td>
+          <!-- password col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.password2" />
+          </td>
+          <td v-else>{{ raspberrypi.password2 }}</td>
+          <!-- status col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.status" />
+          </td>
+          <td v-else>
+            <div class="square">
+              <div v-if="raspberrypi.status == 1" id="square-green"></div>
+              <div v-if="raspberrypi.status == 0" id="square-red"></div>
+            </div>
+          </td>
+          <!-- building col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.location.building" />
+          </td>
+          <td v-else>{{ raspberrypi.location.building }}</td>
+          <!-- level col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.location.level" />
+          </td>
+          <td v-else>{{ raspberrypi.location.level }}</td>
+          <!-- runtime col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.runtime" />
+          </td>
+          <td v-else>{{ convertruntime[index] }}</td>
+          <!-- user col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.user" />
+          </td>
+          <td v-else>{{ raspberrypi.user }}</td>
+          <!-- password col -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <input type="text" v-model="raspberrypi.password" />
+          </td>
+          <td v-else>{{ raspberrypi.password }}</td>
+          <!-- editing and delete buttons -->
+          <td v-if="editing == raspberrypi.raspi_id">
+            <button @click="editraspberrypi(raspberrypi)">Save</button>
+            <button class="muted-button" @click="canceledit(raspberrypi)">Cancel</button>
+          </td>
+          <td v-else>
+            <button @click="editmode(raspberrypi)">Edit</button>
+            <button @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "raspberrypi_table",
+  props: {
+    raspberrypis: Array,
+    raspberrypis_copy: Array,
+  },
+  data() {
+    return {
+      filterbuildings: "",
+      filterlevel: "",
+      filter_error: false,
+      editing: null,
+    };
+  },
+  computed: {
+    filter_buildings() {
+      var unfiltered_array = [];
+      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
+        unfiltered_array.push(this.raspberrypis_copy[i].location.building);
+      }
+      const building_options = [...new Set(unfiltered_array)];
+      return Array.from(building_options);
+    },
+    filter_level() {
+      var unfiltered_array = [];
+      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
+        unfiltered_array.push(this.raspberrypis_copy[i].location.level);
+      }
+      const level_options = [...new Set(unfiltered_array)];
+      return Array.from(level_options);
+    },
+    convertruntime() {
+      const converted_runtime = [];
+      var array_timestmp = [];
+      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
+        array_timestmp.push(this.raspberrypis_copy[i].runtime);
+      }
+      for (let i = 0; i < array_timestmp.length; i++) {
+        var days = Math.floor(array_timestmp[i] / (3600 * 24));
+        array_timestmp[i] = array_timestmp[i] - days * (3600 * 24);
+        var hours = Math.floor(array_timestmp[i] / 3600);
+        array_timestmp[i] = array_timestmp[i] - hours * 3600;
+        // var minutes = Math.floor(array_timestmp[i] / 60);
+        // var seconds = array_timestmp[i] - (minutes * 60);
+
+        var time = days + "days " + hours + "hrs";
+        // console.log(time);
+        converted_runtime[i] = time;
+      }
+      return converted_runtime;
+    },
+  },
+  methods: {
+    editmode(raspberrypi) {
+      this.cachedraspberrypi = Object.assign({}, raspberrypi);
+      this.editing = raspberrypi.raspi_id;
+    },
+    canceledit(raspberrypi) {
+      Object.assign(raspberrypi, this.cachedraspberrypi);
+      this.editing = null;
+    },
+    editraspberrypi(raspberrypi) {
+      if (
+        raspberrypi.raspi_id === "" ||
+        raspberrypi.ip === "" ||
+        raspberrypi.password2 === "" ||
+        raspberrypi.status === "" ||
+        raspberrypi.location.building === "" ||
+        raspberrypi.location.level === "" ||
+        raspberrypi.runtime === "" ||
+        raspberrypi.user === "" ||
+        raspberrypi.password === ""
+      ) {
+        return;
+      } else {
+        this.$emit("edit:raspberrypi", raspberrypi.raspi_id, raspberrypi);
+        this.editing = null;
+        this.filter_error = false;
+      }
+    },
+    filtererror() {
+      this.filter_error = true;
+    },
+  },
+};
+</script>
+
+<style>
+select {
+  float: left;
+  max-width: 100px;
+}
+button {
+  margin: 0 0.5rem 0 0;
+}
+.filter_form label,select {
+  float: left;
+}
+.filter_form label {
+  font-size: 20px;
+}
+.filter_form {
+  position: relative;
+  margin: 10px;
+}
+table {
+  border-collapse: collapse;
+}
+td,th {
+  border: 1px solid black;
+  padding: 5px;
+  line-height: 80%;
+}
+
+table .square {
+  text-align: center;
+}
+
+#square-green {
+  background-color: #44cf6c;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+#square-red {
+  background-color: #e26d5c;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+</style>

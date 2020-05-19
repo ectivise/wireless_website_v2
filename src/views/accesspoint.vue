@@ -1,45 +1,46 @@
 <template>
-  <div id="app" class="small-container">
-    <h1>Ectivise Wireless Monitor</h1>
-    <h2>Access Points</h2>
-    <create_ap_button @open:popupwindow="openpopupwindow" />
-    <popup_window
-      v-if="popupwindow"
-      @add:accesspoint="addaccesspoint"
-      @close:popupwindow="closepopupwindow"
-    />
-    <!-- <accesspoint_form @add:accesspoint="addaccesspoint" /> -->
-    <accesspoint_table
-      v-if="filtering"
-      v-bind:access_points_copy="access_points_copy"
-      v-bind:access_points="filtered_access_points"
-      @delete:accesspoint="deleteaccesspoint"
-      @edit:accesspoint="editaccesspoint"
-      @filter:accesspoint="filteraccesspoint"
-    />
-    <accesspoint_table
-      v-else
-      v-bind:access_points_copy="access_points_copy"
-      v-bind:access_points="access_points"
-      @delete:accesspoint="deleteaccesspoint"
-      @edit:accesspoint="editaccesspoint"
-      @filter:accesspoint="filteraccesspoint"
-    />
+  <div class="home">
+    <div id="app" class="small-container">
+      <h2>Access Points Overview</h2>
+      <create_ap_button @open:popupwindow="openpopupwindow" />
+      <popup_window
+        v-if="popupwindow"
+        @add:accesspoint="addaccesspoint"
+        @close:popupwindow="closepopupwindow"
+      />
+      <!-- <accesspoint_form @add:accesspoint="addaccesspoint" /> -->
+      <accesspoint_table
+        v-if="filtering"
+        v-bind:access_points_copy="access_points_copy"
+        v-bind:access_points="filtered_access_points"
+        @delete:accesspoint="deleteaccesspoint"
+        @edit:accesspoint="editaccesspoint"
+        @filter:accesspoint="filteraccesspoint"
+      />
+      <accesspoint_table
+        v-else
+        v-bind:access_points_copy="access_points_copy"
+        v-bind:access_points="access_points"
+        @delete:accesspoint="deleteaccesspoint"
+        @edit:accesspoint="editaccesspoint"
+        @filter:accesspoint="filteraccesspoint"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import create_ap_button from "./components/create_ap_button";
-import accesspoint_table from "./components/accesspoint_table.vue";
+import create_ap_button from "@/components/create_ap_button";
+import accesspoint_table from "@/components/accesspoint_table.vue";
 // import accesspoint_form from "./components/accesspoint_form.vue";
-import popup_window from "./components/accesspoint_modal_popup.vue";
+import popup_window from "@/components/accesspoint_modal_popup.vue";
+
 export default {
-  name: "App",
+  name: "accesspoint_overview",
   components: {
-    accesspoint_table,
-    // accesspoint_form,
-    popup_window,
     create_ap_button,
+    accesspoint_table,
+    popup_window,
   },
   data() {
     return {
