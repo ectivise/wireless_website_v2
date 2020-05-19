@@ -74,42 +74,6 @@
         @focus="clearstatus"
         @keypress="clearstatus"
       />
-      <!-- ping input -->
-      <label>Ping</label>
-      <input
-        v-model="access_point.last_speedtest.ping"
-        type="text"
-        :class="{ 'has-error': submitting && invalidping }"
-        @focus="clearstatus"
-        @keypress="clearstatus"
-      />
-      <!-- upload input -->
-      <label>Upload</label>
-      <input
-        v-model="access_point.last_speedtest.upload"
-        type="text"
-        :class="{ 'has-error': submitting && invalidupload }"
-        @focus="clearstatus"
-        @keypress="clearstatus"
-      />
-      <!-- download input -->
-      <label>Download</label>
-      <input
-        v-model="access_point.last_speedtest.download"
-        type="text"
-        :class="{ 'has-error': submitting && invaliddownload }"
-        @focus="clearstatus"
-        @keypress="clearstatus"
-      />
-      <!-- jitter input -->
-      <label>Jitter</label>
-      <input
-        v-model="access_point.last_speedtest.jitter"
-        type="text"
-        :class="{ 'has-error': submitting && invalidjitter }"
-        @focus="clearstatus"
-        @keypress="clearstatus"
-      />
 
       <p v-if="error && submitting" class="error-message">
         ❗Please fill out all required fields
@@ -171,11 +135,7 @@ export default {
         this.invalidlevel ||
         this.invalidstatus ||
         this.invalidruntime ||
-        this.invalidraspi ||
-        this.invalidping ||
-        this.invalidupload ||
-        this.invaliddownload ||
-        this.invalidjitter
+        this.invalidraspi 
       ) {
         this.error = true;
         return;
@@ -251,22 +211,6 @@ export default {
 
     invalidraspi() {
       return this.access_point.raspi === "";
-    },
-
-    invalidping() {
-      return this.access_point.last_speedtest.ping === "";
-    },
-
-    invalidupload() {
-      return this.access_point.last_speedtest.upload === "";
-    },
-
-    invaliddownload() {
-      return this.access_point.last_speedtest.download === "";
-    },
-
-    invalidjitter() {
-      return this.access_point.last_speedtest.jitter === "";
     },
   },
 };

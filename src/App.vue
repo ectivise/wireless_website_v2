@@ -1,8 +1,14 @@
 <template>
   <div id="app" class="small-container">
     <h1>Ectivise Wireless Monitor</h1>
-    <h2>Access Points:</h2>
-    <accesspoint_form @add:accesspoint="addaccesspoint" />
+    <h2>Access Points</h2>
+    <create_ap_button @open:popupwindow="openpopupwindow" />
+    <popup_window
+      v-if="popupwindow"
+      @add:accesspoint="addaccesspoint"
+      @close:popupwindow="closepopupwindow"
+    />
+    <!-- <accesspoint_form @add:accesspoint="addaccesspoint" /> -->
     <accesspoint_table
       v-if="filtering"
       v-bind:access_points_copy="access_points_copy"
@@ -23,17 +29,21 @@
 </template>
 
 <script>
+import create_ap_button from "./components/create_ap_button";
 import accesspoint_table from "./components/accesspoint_table.vue";
-import accesspoint_form from "./components/accesspoint_form.vue";
-
+// import accesspoint_form from "./components/accesspoint_form.vue";
+import popup_window from "./components/accesspoint_modal_popup.vue";
 export default {
   name: "App",
   components: {
     accesspoint_table,
-    accesspoint_form,
+    // accesspoint_form,
+    popup_window,
+    create_ap_button,
   },
   data() {
     return {
+      popupwindow: false,
       filtering: false,
       filtered_access_points: [],
       access_points: [],
@@ -64,10 +74,10 @@ export default {
 
         const data = await response.json();
         this.access_points = data.data;
-        
 
-        this.access_points.sort(function(a,b){
-          return a["device_id"]-b["device_id"]});
+        this.access_points.sort(function(a, b) {
+          return a["device_id"] - b["device_id"];
+        });
         this.access_points_copy = data.data;
         // console.log(data.data)
       } catch (error) {
@@ -82,6 +92,7 @@ export default {
       const id = lastId + 1;
       const newaccess_point = { ...access_point, id };
       this.access_points = [...this.access_points, newaccess_point];
+      this.popupwindow = false;
     },
     deleteaccesspoint(id) {
       this.access_points = this.access_points.filter(
@@ -114,6 +125,12 @@ export default {
       this.access_points = this.access_points.map((access_point) =>
         access_point.device_id === id ? updatedaccesspoint : access_point
       );
+    },
+    openpopupwindow() {
+      this.popupwindow = true;
+    },
+    closepopupwindow() {
+      this.popupwindow = false;
     },
   },
 };
