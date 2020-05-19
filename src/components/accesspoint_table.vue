@@ -34,12 +34,12 @@
     <table>
       <thead>
         <tr>
-          <!-- <th>AP:</th> -->
+          <th>Device ID:</th>
           <th>SSID:</th>
           <th>Password:</th>
-          <th>IP address:</th>
+          <th>IP:</th>
           <th>Building</th>
-          <th>Story:</th>
+          <th>Storey:</th>
           <th>Status:</th>
           <th>Runtime:</th>
           <th>iotdevice:</th>
@@ -56,16 +56,12 @@
           No Access Points
         </p>
         <!-- database UUID -->
-        <tr
-          v-else
-          v-for="access_point in access_points"
-          :key="access_point.device_id"
-        >
+        <tr v-else v-for="(access_point, index) in access_points" :key="index">
           <!-- ap col-->
-          <!-- <td v-if="editing == access_point._id.$oid">
+          <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.device_id" />
           </td>
-          <td v-else>{{ access_point.device_id }}</td> -->
+          <td v-else>{{ access_point.device_id }}</td>
           <!-- ssid col-->
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.ssid" />
@@ -95,12 +91,17 @@
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.status" />
           </td>
-          <td v-else>{{ access_point.status }}</td>
+          <td v-else>
+            <div class="square">
+              <div v-if="access_point.status == 1" id="square-green"></div>
+              <div v-if="access_point.status == 0" id="square-red"></div>
+            </div>
+          </td>
           <!-- runtime col -->
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.runtime" />
           </td>
-          <td v-else>{{ access_point.runtime }}</td>
+          <td v-else>{{ convertruntime[index] }}</td>
           <!-- iotdevice col -->
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.raspi" />
@@ -180,6 +181,26 @@ export default {
       const level_options = [...new Set(unfiltered_array)];
       return Array.from(level_options);
     },
+    convertruntime() {
+      const converted_runtime = [];
+      var array_timestmp = [];
+      for (let i = 0; i < this.access_points_copy.length; i++) {
+        array_timestmp.push(this.access_points_copy[i].runtime);
+      }
+      for (let i = 0; i < array_timestmp.length; i++) {
+        var days = Math.floor(array_timestmp[i] / (3600 * 24));
+        array_timestmp[i] = array_timestmp[i] - days * (3600 * 24);
+        var hours = Math.floor(array_timestmp[i] / 3600);
+        array_timestmp[i] = array_timestmp[i] - hours * 3600;
+        // var minutes = Math.floor(array_timestmp[i] / 60);
+        // var seconds = array_timestmp[i] - (minutes * 60);
+
+        var time = days + "days " + hours + "hrs";
+        // console.log(time);
+        converted_runtime[i] = time;
+      }
+      return converted_runtime;
+    },
   },
   methods: {
     editmode(access_point) {
@@ -218,18 +239,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#filter-col {
-  width: 250px;
-}
-table {
-  counter-set: row-num 1;
-}
-table tr {
-  counter-increment: row-num;
-}
-table tr td:first-child::before {
-  content: counter(row-num) ". ";
-}
 select {
   float: left;
   max-width: 100px;
@@ -247,5 +256,33 @@ select {
 .filter_form {
   position: relative;
   margin: 10px;
+}
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid black;
+  padding: 5px;
+  line-height: 80%;
+}
+
+table .square {
+  text-align: center;
+}
+
+#square-green{
+  background-color:#44cf6c;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+#square-red{
+  background-color:#e26d5c;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
 }
 </style>

@@ -64,6 +64,10 @@ export default {
 
         const data = await response.json();
         this.access_points = data.data;
+        
+
+        this.access_points.sort(function(a,b){
+          return a["device_id"]-b["device_id"]});
         this.access_points_copy = data.data;
         // console.log(data.data)
       } catch (error) {
