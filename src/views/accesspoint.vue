@@ -2,6 +2,7 @@
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
       <h2>Access Points Overview</h2>
+      <h1>raspi-id is {{ $route.params.raspi_id }}</h1>
       <create_ap_button @open:popupwindow="openpopupwindow" />
       <popup_window
         v-if="popupwindow"
@@ -54,6 +55,7 @@ export default {
   },
   mounted() {
     this.get_aplist();
+    this.manageraspi();
   },
   methods: {
     async get_aplist() {
@@ -168,6 +170,12 @@ export default {
     closepopupwindow() {
       this.popupwindow = false;
     },
+    manageraspi() {
+      if(this.$route.params.raspi_id !== ""){
+        this.filtering = true;
+        this.filteraccesspoint(this.$route.params.raspi_id,"nofilter","nofilter");
+      }
+    }
   },
 };
 </script>

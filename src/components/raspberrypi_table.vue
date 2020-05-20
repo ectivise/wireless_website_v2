@@ -84,14 +84,18 @@
           <!-- ssid(ap_list) col -->
 
           <!-- editing and delete buttons -->
-          <td v-if="editing == raspberrypi.raspi_id">
+          
+          <td v-if="editing == raspberrypi.raspi_id" >
             <button @click="editraspberrypi(raspberrypi)">Save</button>
-            <button class="muted-button" @click="canceledit(raspberrypi)">Cancel</button>
+            <button  class="muted-button" @click="canceledit(raspberrypi)">Cancel</button>
           </td>
-          <td v-else>
-            <button @click="editmode(raspberrypi)">Edit</button>
-            <button @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
+          <td v-else >
+            <button  @click="editmode(raspberrypi)">Edit</button>
+            <button  @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
+            <button  @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)">Manage</button>
           </td>
+
+
         </tr>
       </tbody> 
     </table>
@@ -182,6 +186,10 @@ export default {
     filtererror() {
       this.filter_error = true;
     },
+    gotoaccesspoint(id) {
+      let url = "/accesspoint/" + id;
+      this.$router.push(url);
+    }
   },
 };
 </script>
@@ -212,13 +220,15 @@ table {
 }
 td,th {
   border: 1px solid black;
-  padding: 5px;
+  margin: 0px;
+  padding: 3px;
   line-height: 100%;
 }
 
 tr:nth-child(even) {
   background-color: #d7fdf0;
 }
+
 
 table .square {
   text-align: center;
@@ -238,4 +248,5 @@ table .square {
   width: 30px;
   display: inline-block;
 }
+
 </style>

@@ -35,6 +35,7 @@ import create_raspi_button from "../components/create_raspi_button.vue"
 import popup_window from "../components/raspberrypi_modal_popup.vue"
 
 export default {
+  name: "raspberrypi_overview",
   components: {
     raspberrypi_table,
     create_raspi_button,
@@ -91,6 +92,21 @@ export default {
           user: "admin",
           password: "admin@123",
         },
+        {
+          raspi_id: "lg-m04",
+          ip: "10.12.80.223",
+          password2: "abcd-1324",
+          status: 1,
+          location: {
+            site: "le grove",
+            building: "tower a",
+            level: "1",
+          },
+          runtime: 8437490,
+          aplist: [],
+          user: "admin",
+          password: "admin@123",
+        },
       ],
       raspberrypis_copy: [
         {
@@ -125,6 +141,21 @@ export default {
         },
         {
           raspi_id: "lg-m03",
+          ip: "10.12.80.223",
+          password2: "abcd-1324",
+          status: 1,
+          location: {
+            site: "le grove",
+            building: "tower a",
+            level: "1",
+          },
+          runtime: 8437490,
+          aplist: [],
+          user: "admin",
+          password: "admin@123",
+        },
+        {
+          raspi_id: "lg-m04",
           ip: "10.12.80.223",
           password2: "abcd-1324",
           status: 1,

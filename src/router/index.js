@@ -7,7 +7,8 @@ Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/accesspoint',
+    // '?' at the end of the params make it optional/ or query
+    path: '/accesspoint/:raspi_id?',
     name: 'accesspoint',
     component: accesspoint_overview
   },
@@ -19,7 +20,8 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 })
 
 export default router
