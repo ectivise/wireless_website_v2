@@ -30,14 +30,12 @@
       <thead>
         <tr>
           <th>Device ID:</th>
-          <th>IP:</th>
           <th>Password:</th>
-          <th>Status:</th>
+          <th>IP:</th>
           <th>Building</th>
           <th>Storey:</th>
-          <th>Runtime:</th>
-          <th>User:</th>
-          <th>Password:</th>
+          <th>Status:</th>
+          <!-- <th>aplist:</th> -->
         </tr>
       </thead>
       <!-- table body -->
@@ -52,26 +50,16 @@
             <input type="text" v-model="raspberrypi.raspi_id" />
           </td>
           <td v-else>{{ raspberrypi.raspi_id }}</td>
-          <!-- IP col-->
-          <td v-if="editing == raspberrypi.raspi_id">
-            <input type="text" v-model="raspberrypi.ip" />
-          </td>
-          <td v-else>{{ raspberrypi.ip }}</td>
           <!-- password col -->
           <td v-if="editing == raspberrypi.raspi_id">
             <input type="text" v-model="raspberrypi.password2" />
           </td>
           <td v-else>{{ raspberrypi.password2 }}</td>
-          <!-- status col -->
+          <!-- IP col-->
           <td v-if="editing == raspberrypi.raspi_id">
-            <input type="text" v-model="raspberrypi.status" />
+            <input type="text" v-model="raspberrypi.ip" />
           </td>
-          <td v-else>
-            <div class="square">
-              <div v-if="raspberrypi.status == 1" id="square-green"></div>
-              <div v-if="raspberrypi.status == 0" id="square-red"></div>
-            </div>
-          </td>
+          <td v-else>{{ raspberrypi.ip }}</td>
           <!-- building col -->
           <td v-if="editing == raspberrypi.raspi_id">
             <input type="text" v-model="raspberrypi.location.building" />
@@ -82,21 +70,19 @@
             <input type="text" v-model="raspberrypi.location.level" />
           </td>
           <td v-else>{{ raspberrypi.location.level }}</td>
-          <!-- runtime col -->
+          <!-- status col -->
           <td v-if="editing == raspberrypi.raspi_id">
-            <input type="text" v-model="raspberrypi.runtime" />
+            <input type="text" v-model="raspberrypi.status" />
           </td>
-          <td v-else>{{ convertruntime[index] }}</td>
-          <!-- user col -->
-          <td v-if="editing == raspberrypi.raspi_id">
-            <input type="text" v-model="raspberrypi.user" />
+          <td v-else>
+            <div class="square">
+              <div v-if="raspberrypi.status == 1" id="square-green"></div>
+              <div v-if="raspberrypi.status == 0" id="square-red"></div>
+            </div>
           </td>
-          <td v-else>{{ raspberrypi.user }}</td>
-          <!-- password col -->
-          <td v-if="editing == raspberrypi.raspi_id">
-            <input type="text" v-model="raspberrypi.password" />
-          </td>
-          <td v-else>{{ raspberrypi.password }}</td>
+
+          <!-- ssid(ap_list) col -->
+
           <!-- editing and delete buttons -->
           <td v-if="editing == raspberrypi.raspi_id">
             <button @click="editraspberrypi(raspberrypi)">Save</button>
@@ -107,7 +93,7 @@
             <button @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
           </td>
         </tr>
-      </tbody>
+      </tbody> 
     </table>
   </div>
 </template>
@@ -200,7 +186,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 select {
   float: left;
   max-width: 100px;
@@ -208,7 +194,8 @@ select {
 button {
   margin: 0 0.5rem 0 0;
 }
-.filter_form label,select {
+.filter_form label,
+select {
   float: left;
 }
 .filter_form label {
@@ -231,15 +218,15 @@ table .square {
   text-align: center;
 }
 
-#square-green {
-  background-color: #44cf6c;
+#square-green{
+  background-color:#44cf6c;
   border-radius: 10px;
   height: 30px;
   width: 30px;
   display: inline-block;
 }
-#square-red {
-  background-color: #e26d5c;
+#square-red{
+  background-color:#e26d5c;
   border-radius: 10px;
   height: 30px;
   width: 30px;

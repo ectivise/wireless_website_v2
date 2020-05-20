@@ -2,10 +2,10 @@
   <div class="about">
     <div id="app" class="small-container">
       <h2>Raspberry Pi Overview</h2>
-      <!-- <create_ap_button @open:popupwindow="openpopupwindow" /> -->
+      <create_raspi_button @open:popupwindow="openpopupwindow" />
       <popup_window
         v-if="popupwindow"
-        @add:raspberrypi="raspberrypi"
+        @add:raspberrypi="addraspberrypi"
         @close:popupwindow="closepopupwindow"
       />
       <!-- <accesspoint_form @add:accesspoint="addaccesspoint" /> -->
@@ -31,19 +31,20 @@
 
 <script>
 import raspberrypi_table from "../components/raspberrypi_table.vue";
+import create_raspi_button from "../components/create_raspi_button.vue"
+import popup_window from "../components/raspberrypi_modal_popup.vue"
 
 export default {
   components: {
     raspberrypi_table,
+    create_raspi_button,
+    popup_window,
   },
   data() {
     return {
       popupwindow: false,
       filtering: false,
       filtered_raspberrypis: [],
-      // access_points: [],
-      // take a copy of the access_points_array so that the options will not change
-      // access_points_copy: [],
       raspberrypis: [
         {
           raspi_id: "lg-m01",
@@ -144,7 +145,7 @@ export default {
     addraspberrypi(raspberrypi) {
       const lastId =
         this.raspberrypis.length > 0
-          ? this.raspberrypis[this.raspberrypis.length - 1].device_id
+          ? this.raspberrypis[this.raspberrypis.length - 1].raspi_id
           : 0;
       const id = lastId + 1;
       const newraspberrypi = { ...raspberrypi, id };
