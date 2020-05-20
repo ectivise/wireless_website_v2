@@ -156,7 +156,9 @@ export default {
       this.raspberrypis = this.raspberrypis.filter(
         (raspberrypi) => raspberrypi.raspi_id !== id
       );
-      this.filtered_raspberrypis = this.raspberrypis
+      this.filtered_raspberrypis = this.filtered_raspberrypis.filter(
+        (raspberrypi) => raspberrypi.raspi_id !== id
+      );
     },
     filterraspberrypi(building, level) {
       if (building == "nofilter" && level == "nofilter") {

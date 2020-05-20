@@ -3,16 +3,21 @@
     <div class="filter_form">
       <form>
         <h3>Filter:</h3>
+        <label>Raspberry Pi ID:</label>
+        <select v-model="filterraspi_id" >
+          <option value="nofilter" >No Filter</option>
+          <option v-for="(option, index) in filter_raspi_id" :key="index">{{option}}</option>
+        </select>
         <label>Building:</label>
         <select v-model="filterbuildings">
-          <option value="nofilter">No Filter</option>
+          <option value="nofilter" >No Filter</option>
           <option v-for="(option, index) in filter_buildings" :key="index">{{
             option
           }}</option>
         </select>
         <label>Storey:</label>
         <select v-model="filterlevel">
-          <option value="nofilter">No Filter</option>
+          <option value="nofilter" >No Filter</option>
           <option v-for="(option, index) in filter_level" :key="index">{{
             option
           }}</option>
@@ -21,7 +26,7 @@
           type="submit"
           v-if="editing == null"
           @click.prevent="
-            $emit('filter:accesspoint', filterbuildings, filterlevel)
+            $emit('filter:accesspoint', filterraspi_id, filterbuildings, filterlevel)
           "
         />
         <input type="submit" v-else @click.prevent="filtererror()" />
@@ -148,11 +153,20 @@ export default {
     return {
       filterbuildings: "",
       filterlevel: "",
+      filterraspi_id: "",
       filter_error: false,
       editing: null,
     };
   },
   computed: {
+    filter_raspi_id() {
+      var unfiltered_array = [];
+      for (let i = 0; i < this.access_points_copy.length; i++) {
+        unfiltered_array.push(this.access_points_copy[i].raspi);
+      }
+      const raspi_options = [...new Set(unfiltered_array)];
+      return Array.from(raspi_options);
+    },
     filter_buildings() {
       var unfiltered_array = [];
       for (let i = 0; i < this.access_points_copy.length; i++) {
@@ -256,6 +270,10 @@ td,th {
   border: 1px solid black;
   padding: 5px;
   line-height: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #d7fdf0;
 }
 
 table .square {

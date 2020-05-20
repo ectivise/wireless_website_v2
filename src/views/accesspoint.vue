@@ -99,29 +99,61 @@ export default {
       this.access_points = this.access_points.filter(
         (access_point) => access_point.device_id !== id
       );
-      // update to copy
-      this.filtered_access_points = this.access_points;
+      // filtered side also delete
+      this.filtered_access_points = this.filtered_access_points.filter(
+        (access_point) => access_point.device_id !== id
+      );
     },
-    filteraccesspoint(building, level) {
-      if (building == "nofilter" && level == "nofilter") {
-        this.filtering = false;
-      } else if (building !== "nofilter" && level !== "nofilter") {
-        this.filtering = true;
-        this.filtered_access_points = this.access_points.filter(
-          (access_point) =>
-            access_point.location.building == building &&
-            access_point.location.level == level
-        );
-      } else if (building !== "nofilter" && level == "nofilter") {
-        this.filtering = true;
-        this.filtered_access_points = this.access_points.filter(
-          (access_point) => access_point.location.building == building
-        );
-      } else if (building == "nofilter" && level !== "nofilter") {
-        this.filtering = true;
-        this.filtered_access_points = this.access_points.filter(
-          (access_point) => access_point.location.level == level
-        );
+    filteraccesspoint(raspi_id, building, level) {
+      if (raspi_id == "nofilter") {
+        if (building == "nofilter" && level == "nofilter") {
+          this.filtering = false;
+        } else if (building !== "nofilter" && level !== "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.location.building == building &&
+              access_point.location.level == level
+          );
+        } else if (building !== "nofilter" && level == "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.location.building == building
+          );
+        } else if (building == "nofilter" && level !== "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.location.level == level
+          );
+        }
+      } else {
+        if (building == "nofilter" && level == "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.raspi == raspi_id
+          );
+        } else if (building !== "nofilter" && level !== "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.location.building == building &&
+              access_point.location.level == level && 
+              access_point.raspi == raspi_id
+          );
+        } else if (building !== "nofilter" && level == "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.location.building == building &&
+            access_point.raspi == raspi_id
+          );
+        } else if (building == "nofilter" && level !== "nofilter") {
+          this.filtering = true;
+          this.filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.location.level == level &&
+            access_point.raspi == raspi_id
+          );
+        }
       }
     },
     editaccesspoint(id, updatedaccesspoint) {
@@ -142,6 +174,6 @@ export default {
 
 <style scoped>
 .small-container {
-  margin: 0px
+  margin: 0px;
 }
 </style>

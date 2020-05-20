@@ -216,6 +216,10 @@ td,th {
   line-height: 100%;
 }
 
+tr:nth-child(even) {
+  background-color: #d7fdf0;
+}
+
 table .square {
   text-align: center;
 }
