@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="accesspoint-overview">
     <div id="app" class="small-container">
       <h2>Access Points Overview</h2>
       <create_ap_button @open:popupwindow="openpopupwindow" />
@@ -99,6 +99,8 @@ export default {
       this.access_points = this.access_points.filter(
         (access_point) => access_point.device_id !== id
       );
+      // update to copy
+      this.filtered_access_points = this.access_points;
     },
     filteraccesspoint(building, level) {
       if (building == "nofilter" && level == "nofilter") {
@@ -126,6 +128,7 @@ export default {
       this.access_points = this.access_points.map((access_point) =>
         access_point.device_id === id ? updatedaccesspoint : access_point
       );
+      this.access_points_copy = this.access_points;
     },
     openpopupwindow() {
       this.popupwindow = true;
@@ -137,13 +140,8 @@ export default {
 };
 </script>
 
-<style>
-button {
-  background: #009435;
-  border: 1px solid #009435;
-}
-
+<style scoped>
 .small-container {
-  max-width: 2000px;
+  margin: 0px
 }
 </style>

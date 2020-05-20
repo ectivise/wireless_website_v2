@@ -8,7 +8,7 @@
           <option value="nofilter">No Filter</option>
           <option v-for="(option, index) in filter_buildings" :key="index">{{option}}</option>
         </select>
-        <label>Story:</label>
+        <label>Storey:</label>
         <select v-model="filterlevel">
           <option value="nofilter">No Filter</option>
           <option v-for="(option, index) in filter_level" :key="index">{{option}}</option>
@@ -29,7 +29,7 @@
     <table>
       <thead>
         <tr>
-          <th>Device ID:</th>
+          <th>Raspi ID:</th>
           <th>Password:</th>
           <th>IP:</th>
           <th>Building</th>
@@ -191,11 +191,13 @@ select {
   float: left;
   max-width: 100px;
 }
-button {
-  margin: 0 0.5rem 0 0;
+button, .filter_form input{
+  margin: 0 0.5rem 0 0;  
+  background: #009435;
+  border: 1px solid #009435;
 }
-.filter_form label,
-select {
+
+.filter_form label, select {
   float: left;
 }
 .filter_form label {
@@ -211,7 +213,7 @@ table {
 td,th {
   border: 1px solid black;
   padding: 5px;
-  line-height: 80%;
+  line-height: 100%;
 }
 
 table .square {

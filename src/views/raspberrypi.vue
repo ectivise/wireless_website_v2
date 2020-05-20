@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="raspberrypi-overview">
     <div id="app" class="small-container">
       <h2>Raspberry Pi Overview</h2>
       <create_raspi_button @open:popupwindow="openpopupwindow" />
@@ -156,6 +156,7 @@ export default {
       this.raspberrypis = this.raspberrypis.filter(
         (raspberrypi) => raspberrypi.raspi_id !== id
       );
+      this.filtered_raspberrypis = this.raspberrypis
     },
     filterraspberrypi(building, level) {
       if (building == "nofilter" && level == "nofilter") {
@@ -183,6 +184,7 @@ export default {
       this.raspberrypis = this.raspberrypis.map((raspberrypi) =>
         raspberrypi.raspi_id === id ? updatedraspberrypi : raspberrypi
       );
+      this.raspberrypis_copy = this.raspberrypis;
     },
     openpopupwindow() {
       this.popupwindow = true;
@@ -194,4 +196,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.small-container {
+  margin: 0px
+}
+</style>
