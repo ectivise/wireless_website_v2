@@ -7,7 +7,7 @@
         
         <form v-on:submit.prevent="handlesubmit">
           <!-- ssid input-->
-          <label>SSID</label>
+          <label>AP</label>
           <input
             v-model="access_point.ssid"
             type="text"

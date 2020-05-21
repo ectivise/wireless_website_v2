@@ -9,7 +9,6 @@
         @add:accesspoint="addaccesspoint"
         @close:popupwindow="closepopupwindow"
       />
-      <!-- <accesspoint_form @add:accesspoint="addaccesspoint" /> -->
       <accesspoint_table
         v-if="filtering"
         v-bind:access_points_copy="access_points_copy"
@@ -17,6 +16,7 @@
         @delete:accesspoint="deleteaccesspoint"
         @edit:accesspoint="editaccesspoint"
         @filter:accesspoint="filteraccesspoint"
+        @manage:accesspoint="manageaccesspoint"
       />
       <accesspoint_table
         v-else
@@ -25,6 +25,8 @@
         @delete:accesspoint="deleteaccesspoint"
         @edit:accesspoint="editaccesspoint"
         @filter:accesspoint="filteraccesspoint"
+        @manage:accesspoint="manageaccesspoint"
+      
       />
     </div>
   </div>
@@ -53,9 +55,8 @@ export default {
       access_points_copy: [],
     };
   },
-  mounted() {
+  created() {
     this.get_aplist();
-    this.manageraspi();
   },
   methods: {
     async get_aplist() {
@@ -84,7 +85,7 @@ export default {
         this.access_points_copy = data.data;
         // console.log(data.data)
       } catch (error) {
-        console.error(error);
+        console.error(error.message);
       }
     },
     addaccesspoint(access_point) {
@@ -164,18 +165,19 @@ export default {
       );
       this.access_points_copy = this.access_points;
     },
+    manageaccesspoint(id) {
+      this.filtering = true;
+      this.filtered_access_points = this.access_points.filter(
+        (access_point) => access_point.raspi == id
+      );
+      console.log(this.$refs)
+    },
     openpopupwindow() {
       this.popupwindow = true;
     },
     closepopupwindow() {
       this.popupwindow = false;
     },
-    manageraspi() {
-      if(this.$route.params.raspi_id !== ""){
-        this.filtering = true;
-        this.filteraccesspoint(this.$route.params.raspi_id,"nofilter","nofilter");
-      }
-    }
   },
 };
 </script>

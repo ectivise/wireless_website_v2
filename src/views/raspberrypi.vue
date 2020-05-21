@@ -48,7 +48,7 @@ export default {
       filtered_raspberrypis: [],
       raspberrypis: [
         {
-          raspi_id: "lg-m01",
+          raspi_id: "iot-lg-m01",
           ip: "10.12.80.221",
           password2: "abcd-1324",
           status: 1,
@@ -63,7 +63,7 @@ export default {
           password: "admin@123",
         },
         {
-          raspi_id: "lg-m02",
+          raspi_id: "iot-lg-m02",
           ip: "10.12.80.222",
           password2: "abcd-1324",
           status: 1,
@@ -78,7 +78,7 @@ export default {
           password: "admin@123",
         },
         {
-          raspi_id: "lg-m03",
+          raspi_id: "iot-lg-m03",
           ip: "10.12.80.223",
           password2: "abcd-1324",
           status: 1,
@@ -93,7 +93,7 @@ export default {
           password: "admin@123",
         },
         {
-          raspi_id: "lg-m04",
+          raspi_id: "iot-lg-m04",
           ip: "10.12.80.223",
           password2: "abcd-1324",
           status: 1,
@@ -103,14 +103,14 @@ export default {
             level: "1",
           },
           runtime: 8437490,
-          aplist: [],
+          aplist: [17,30,40,48,55,91,94,104,111,168,206,274,283],
           user: "admin",
           password: "admin@123",
         },
       ],
       raspberrypis_copy: [
         {
-          raspi_id: "lg-m01",
+          raspi_id: "iot-lg-m01",
           ip: "10.12.80.221",
           password2: "abcd-1324",
           status: 1,
@@ -125,7 +125,7 @@ export default {
           password: "admin@123",
         },
         {
-          raspi_id: "lg-m02",
+          raspi_id: "iot-lg-m02",
           ip: "10.12.80.222",
           password2: "abcd-1324",
           status: 1,
@@ -140,7 +140,7 @@ export default {
           password: "admin@123",
         },
         {
-          raspi_id: "lg-m03",
+          raspi_id: "iot-lg-m03",
           ip: "10.12.80.223",
           password2: "abcd-1324",
           status: 1,
@@ -155,7 +155,7 @@ export default {
           password: "admin@123",
         },
         {
-          raspi_id: "lg-m04",
+          raspi_id: "iot-lg-m04",
           ip: "10.12.80.223",
           password2: "abcd-1324",
           status: 1,
@@ -165,7 +165,7 @@ export default {
             level: "1",
           },
           runtime: 8437490,
-          aplist: [],
+          aplist: [17,30,40,48,55,91,94,104,111,168,206,274,283],
           user: "admin",
           password: "admin@123",
         },

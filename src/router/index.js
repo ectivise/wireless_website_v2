@@ -8,15 +8,21 @@ Vue.use(VueRouter)
   const routes = [
   {
     // '?' at the end of the params make it optional/ or query
-    path: '/accesspoint/:raspi_id?',
-    name: 'accesspoint',
+    path: '/accesspoint/',
+    name: 'accesspoint_main',
+    component: accesspoint_overview
+  },
+  {
+    // '?' at the end of the params make it optional/ or query
+    path: '/accesspoint/manage/:raspi_id?',
+    name: 'accesspoint_manage',
     component: accesspoint_overview
   },
   {
     path: '/raspberrypi',
-    name: 'raspberrypi',
+    name: 'raspberrypi_main',
     component: raspberrypi_overview
-  }
+  },
 ]
 
 const router = new VueRouter({

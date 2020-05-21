@@ -5,26 +5,27 @@
         <h3>Filter:</h3>
         <label>Raspberry Pi ID:</label>
         <select v-model="filterraspi_id">
-          <option value="nofilter">No Filter</option>
+          <option value="nofilter" selected>No Filter</option>
           <option v-for="(option, index) in filter_raspi_id" :key="index">{{
             option
           }}</option>
         </select>
         <label>Building:</label>
         <select v-model="filterbuildings">
-          <option value="nofilter">No Filter</option>
+          <option value="nofilter" selected>No Filter</option>
           <option v-for="(option, index) in filter_buildings" :key="index">{{
             option
           }}</option>
         </select>
         <label>Storey:</label>
         <select v-model="filterlevel">
-          <option value="nofilter">No Filter</option>
+          <option value="nofilter" selected>No Filter</option>
           <option v-for="(option, index) in filter_level" :key="index">{{
             option
           }}</option>
         </select>
-        <input
+        <button
+        ref="submit"
           type="submit"
           v-if="editing == null"
           @click.prevent="
@@ -35,11 +36,9 @@
               filterlevel
             )
           "
-        />
-        <input type="submit" v-else @click.prevent="filtererror()" />
-        <p v-if="filter_error">
-          ❗Please save before filter
-        </p>
+        
+        >Submit</button>
+        <button v-else @click.prevent="filtererror()" >Submit</button>
       </form>
     </div>
 
@@ -47,7 +46,7 @@
       <thead>
         <tr>
           <th>Device ID:</th>
-          <th>SSID:</th>
+          <th>AP:</th>
           <th>Password:</th>
           <th>IP:</th>
           <th>Building</th>
@@ -164,7 +163,12 @@ export default {
       filterraspi_id: "",
       filter_error: false,
       editing: null,
+      raspi_id: this.$route.params.raspi_id
     };
+  },
+  mounted() {
+    this.reset_option();
+    this.manageaccesspoint();
   },
   computed: {
     filter_raspi_id() {
@@ -242,7 +246,21 @@ export default {
     },
     filtererror() {
       this.filter_error = true;
+      alert('❗Please save before filter');
     },
+    reset_option() {
+      this.filterbuildings = "nofilter";
+      this.filterlevel = "nofilter";
+      this.filterraspi_id = "nofilter";
+    },
+    manageaccesspoint() {
+      if(this.$route.path.includes("/accesspoint/manage/")){
+        this.filterbuildings = "nofilter";
+        this.filterlevel = "nofilter";
+        this.filterraspi_id = this.$route.params.raspi_id;
+        this.$emit('manage:accesspoint',this.filterraspi_id);
+      }
+    }
   },
 };
 </script>
@@ -253,7 +271,7 @@ select {
   float: left;
   max-width: 100px;
 }
-button, .filter_form input{
+button, .filter_form button{
   margin: 0 0.5rem 0 0;  
   background: #009435;
   border: 1px solid #009435;

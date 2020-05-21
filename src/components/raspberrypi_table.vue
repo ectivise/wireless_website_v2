@@ -13,17 +13,13 @@
           <option value="nofilter">No Filter</option>
           <option v-for="(option, index) in filter_level" :key="index">{{option}}</option>
         </select>
-        <input
-          type="submit"
+        <button
           v-if="editing == null"
           @click.prevent="
             $emit('filter:raspberrypi', filterbuildings, filterlevel)
           "
-        />
-        <input type="submit" v-else @click.prevent="filtererror()" />
-        <p v-if="filter_error">
-          ❗Please save before filter
-        </p>
+        >Submit</button>
+        <button v-else @click.prevent="filtererror()">Submit</button>
       </form>
     </div>
     <table>
@@ -85,14 +81,14 @@
 
           <!-- editing and delete buttons -->
           
-          <td v-if="editing == raspberrypi.raspi_id" >
+          <td v-if="editing == raspberrypi.raspi_id" class="last-td">
             <button @click="editraspberrypi(raspberrypi)">Save</button>
             <button  class="muted-button" @click="canceledit(raspberrypi)">Cancel</button>
           </td>
-          <td v-else >
+          <td v-else class="last-td">
             <button  @click="editmode(raspberrypi)">Edit</button>
             <button  @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
-            <button  @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)">Manage</button>
+            <button  @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)">Manage AP list</button>
           </td>
 
 
@@ -115,7 +111,11 @@ export default {
       filterlevel: "",
       filter_error: false,
       editing: null,
+      empty_aplist:false,
     };
+  },
+  mounted() {
+    this.reset_option();
   },
   computed: {
     filter_buildings() {
@@ -185,10 +185,22 @@ export default {
     },
     filtererror() {
       this.filter_error = true;
+      alert("❗Please save before filter")
     },
     gotoaccesspoint(id) {
-      let url = "/accesspoint/" + id;
-      this.$router.push(url);
+      // first chk if the raspi got any ap list
+      let target = this.raspberrypis.filter((raspberrypi) => raspberrypi.raspi_id == id);
+      if(target[0].aplist.length < 1){
+        this.empty_aplist = true;
+        alert("❗ The selected Raspberry Pi have empty AP list")
+      } else{
+        let url = "/accesspoint/manage/" + id;
+        this.$router.push(url);
+      }
+    },
+    reset_option() {
+      this.filterbuildings = 'nofilter';
+      this.filterlevel = 'nofilter';
     }
   },
 };
@@ -199,7 +211,7 @@ select {
   float: left;
   max-width: 100px;
 }
-button, .filter_form input{
+button, .filter_form button{
   margin: 0 0.5rem 0 0;  
   background: #009435;
   border: 1px solid #009435;
@@ -229,7 +241,9 @@ tr:nth-child(even) {
   background-color: #d7fdf0;
 }
 
-
+.last-td {
+  
+}
 table .square {
   text-align: center;
 }
