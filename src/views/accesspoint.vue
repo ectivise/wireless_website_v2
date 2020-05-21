@@ -2,7 +2,6 @@
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
       <h2>Access Points Overview</h2>
-      <h1>raspi-id is {{ $route.params.raspi_id }}</h1>
       <create_ap_button @open:popupwindow="openpopupwindow" />
       <popup_window
         v-if="popupwindow"
@@ -96,6 +95,7 @@ export default {
       const id = lastId + 1;
       const newaccess_point = { ...access_point, id };
       this.access_points = [...this.access_points, newaccess_point];
+      this.access_points_copy = [...this.access_points_copy, newaccess_point];
       this.popupwindow = false;
     },
     deleteaccesspoint(id) {

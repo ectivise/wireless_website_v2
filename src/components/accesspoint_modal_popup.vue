@@ -70,8 +70,8 @@
             @focus="clearstatus"
             @keypress="clearstatus"
           />
-          <!-- iot device -->
-          <label>iot device</label>
+          <!-- raspi  -->
+          <label>Rasberry Pi ID</label>
           <input
             v-model="access_point.raspi"
             type="text"

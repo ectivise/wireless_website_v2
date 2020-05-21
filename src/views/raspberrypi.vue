@@ -181,6 +181,7 @@ export default {
       const id = lastId + 1;
       const newraspberrypi = { ...raspberrypi, id };
       this.raspberrypis = [...this.raspberrypis, newraspberrypi];
+      this.raspberrypis_copy = [...this.raspberrypis_copy, newraspberrypi];
       this.popupwindow = false;
     },
     deleteraspberrypi(id) {
