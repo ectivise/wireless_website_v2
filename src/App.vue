@@ -8,7 +8,7 @@
       </div>
     </header>
     <body>
-    <login_form v-if="!logged_in" @login="login" />
+    <login_form v-if="!logged_in" @login="login" @signup="signup"/>
     <router-view v-else />
     </body>
   </div>
@@ -23,36 +23,31 @@ export default {
   },
   data() {
     return {
-      user_type: "",
       logged_in: false,
-      users: [
-        {
-          username: "admin",
-          password: "admin@123",
-          type: "admin",
-        },
-        {
-          username: "operator",
-          password: "operator@123",
-          type: "operator",
-        },
-      ],
+      users: [],
     };
   },
+  // computed: {
+  //   getusers(){
+  //     return
+  //   }
+  // }
   methods: {
     login(username, password) {
-      var target = this.users.filter(
+      var target = this.$store.state.users.filter(
         (user) => user.username == username && user.password == password
       );
-      if (target == "") {
+      console.log(target);
+      if (target == "" ) {
         alert("invalid username and password");
       } else {
-        this.user_type = target.type;
         this.logged_in = true;
-        let url = "/accesspoint/";
-        this.$router.push(url);
+        this.$store.commit('login',target.type);
       }
     },
+    signup(user){
+      this.$store.commit('register',user)
+    }
   },
 };
 </script>

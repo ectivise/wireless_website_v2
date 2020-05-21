@@ -54,6 +54,12 @@ export default {
       access_points_copy: [],
     };
   },
+  computed: {
+    getuser_type(){
+      var user_type = this.$store.user_type;
+      return user_type;
+    }
+  },
   created() {
     this.get_aplist();
   },
