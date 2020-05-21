@@ -152,6 +152,10 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    margin-left: 300px;
+}
+
 #admin,
 #operator {
   margin: 10px;
