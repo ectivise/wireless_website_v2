@@ -9,7 +9,7 @@
     </header>
     <body>
     <login_form v-if="!logged_in" @login="login" @signup="signup"/>
-    <router-view v-else @logout="logout"/>
+    <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
       var target = this.$store.state.users.filter(
         (user) => user.username == username && user.password == password
       );
-      console.log(target);
+      // console.log(target);
       if (target == "" ) {
         alert("invalid username and password");
       } else {

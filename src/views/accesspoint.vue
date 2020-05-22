@@ -180,7 +180,7 @@ export default {
       this.filtered_access_points = this.access_points.filter(
         (access_point) => access_point.raspi == id
       );
-      console.log(this.$refs)
+      console.log(this.access_points);
     },
     openpopupwindow() {
       this.popupwindow = true;

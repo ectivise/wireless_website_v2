@@ -306,6 +306,7 @@ button, .filter_form button{
 table {
   table-layout: fixed;
   border-collapse: collapse;
+  word-wrap: break-word;
 }
 td,th {
   border: 1px solid black;
