@@ -107,7 +107,7 @@ export default {
       this.loging_in = true;
       if (this.invalidusername_login || this.invalidpassword_login) {
         this.error = true;
-        alert("fill in username and password")
+        alert("Enter username and password")
         return;
       } else{
           this.$emit("login", this.username, this.password);

@@ -45,20 +45,20 @@
     <table>
       <thead>
         <tr>
-          <th>Device ID:</th>
-          <th>AP:</th>
-          <th>Password:</th>
-          <th>IP:</th>
-          <th>Building</th>
-          <th>Storey:</th>
-          <th>Status:</th>
-          <th>Runtime:</th>
-          <th>Raspi ID:</th>
-          <th>Ping(ms):</th>
-          <th>Upload(mb/s):</th>
-          <th>Download(mb/s):</th>
-          <th>Jitter(ms):</th>
-          <!-- last table head is filter col -->
+          <th style="width:90px">Device ID:</th>
+          <th style="width:160px">AP:</th>
+          <th style="width:110px" v-if="usertype == 'admin'">Password:</th>
+          <th style="width:110px" v-if="usertype == 'admin'">IP:</th>
+          <th style="width:130px">Building</th>
+          <th style="width:100px">Storey:</th>
+          <th style="width:70px">Status:</th>
+          <th style="width:100px">Runtime:</th>
+          <th style="width:100px">Raspi ID:</th>
+          <th style="width:90px">Ping(ms):</th>
+          <th style="width:120px">Upload(mb/s):</th>
+          <th style="width:140px">Download(mb/s):</th>
+          <th style="width:100px">Jitter(ms):</th>
+          
         </tr>
       </thead>
 
@@ -80,15 +80,15 @@
           </td>
           <td v-else>{{ access_point.ssid }}</td>
           <!-- password col -->
-          <td v-if="editing == access_point.device_id">
+          <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.password" />
           </td>
-          <td v-else>{{ access_point.password }}</td>
+          <td v-else-if="usertype == 'admin'">{{ access_point.password }}</td>
           <!-- ip col -->
-          <td v-if="editing == access_point.device_id">
+          <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.ip" />
           </td>
-          <td v-else>{{ access_point.ip }}</td>
+          <td v-else-if="usertype == 'admin'">{{ access_point.ip }}</td>
           <!-- building col -->
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.location.building" />
@@ -128,15 +128,16 @@
           <!-- jitter col -->
           <td>{{ access_point.last_speedtest.jitter }}</td>
           <!-- editing and delete buttons -->
-          <td v-if="editing == access_point.device_id">
+          <td v-if="editing == access_point.device_id" class="last-td">
             <button @click="editaccesspoint(access_point)">Save</button>
             <button class="muted-button" @click="canceledit(access_point)">
               Cancel
             </button>
           </td>
-          <td v-else>
-            <button @click="editmode(access_point)">Edit</button>
+          <td v-else class="last-td">
+            <button id="edit" @click="editmode(access_point)">Edit</button>
             <button
+            id="delete"
               @click="$emit('delete:accesspoint', access_point.device_id)"
             >
               Delete
@@ -163,7 +164,8 @@ export default {
       filterraspi_id: "",
       filter_error: false,
       editing: null,
-      raspi_id: this.$route.params.raspi_id
+      raspi_id: this.$route.params.raspi_id,
+      usertype: this.$store.state.user_type
     };
   },
   mounted() {
@@ -287,7 +289,22 @@ button, .filter_form button{
   position: relative;
   margin: 10px;
 }
+
+.last-td{
+  border:unset;
+}
+
+#edit{
+  display: inline-block;
+  float: left;
+}
+
+#delete{
+  display: inline-block;
+}
+
 table {
+  table-layout: fixed;
   border-collapse: collapse;
 }
 td,th {

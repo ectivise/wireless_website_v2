@@ -3,13 +3,13 @@
     <header>
       <h1>Ectivise Wireless Monitor</h1>
       <div id="nav" v-if="logged_in">
-        <router-link to="/accesspoint">Access Point</router-link> |
+        <router-link to="/accesspoint" >Access Point</router-link> |
         <router-link to="/raspberrypi">Raspberry Pi</router-link>
       </div>
     </header>
     <body>
     <login_form v-if="!logged_in" @login="login" @signup="signup"/>
-    <router-view v-else />
+    <router-view v-else @logout="logout"/>
     </body>
   </div>
 </template>
@@ -24,14 +24,8 @@ export default {
   data() {
     return {
       logged_in: false,
-      users: [],
     };
   },
-  // computed: {
-  //   getusers(){
-  //     return
-  //   }
-  // }
   methods: {
     login(username, password) {
       var target = this.$store.state.users.filter(
@@ -41,12 +35,19 @@ export default {
       if (target == "" ) {
         alert("invalid username and password");
       } else {
+        this.$store.commit('login',target[0].type);
         this.logged_in = true;
-        this.$store.commit('login',target.type);
+        let url = "/accesspoint";
+        this.$router.push(url);
       }
     },
     signup(user){
       this.$store.commit('register',user)
+    },
+    logout(){
+      this.logged_in = false;
+      let url = "/";
+      this.$router.push(url);
     }
   },
 };
@@ -67,7 +68,7 @@ header {
   /* remove website default margins and padding */
   margin: 0px;
   padding: 0px;
-  max-width: 100%;
+
 }
 
 #nav a {

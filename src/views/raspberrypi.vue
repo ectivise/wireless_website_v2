@@ -2,6 +2,10 @@
   <div class="raspberrypi-overview">
     <div id="app" class="small-container">
       <h2>Raspberry Pi Overview</h2>
+      <span>
+        <h5>User Type: {{ this.user_type }} | <button id="logout" @click.prevent="$emit('logout')">Log out</button></h5>
+      </span>
+      
       <create_raspi_button @open:popupwindow="openpopupwindow" />
       <popup_window
         v-if="popupwindow"
@@ -46,6 +50,7 @@ export default {
       popupwindow: false,
       filtering: false,
       filtered_raspberrypis: [],
+      user_type:this.$store.state.user_type,
       raspberrypis: [
         {
           raspi_id: "iot-lg-m01",
@@ -232,6 +237,14 @@ export default {
 
 <style scoped>
 .small-container {
-  margin: 0px
+  margin: 0px;
+  max-width: unset;
 }
+
+span{
+  position: absolute;
+  top: 120px;
+  right: 10px;
+}
+
 </style>

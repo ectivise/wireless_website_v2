@@ -25,6 +25,7 @@ export default new Vuex.Store({
     },
     login(state, type){
       state.user_type = type;
+      state.login = true;
     },
   },
   actions: {

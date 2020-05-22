@@ -2,6 +2,9 @@
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
       <h2>Access Points Overview</h2>
+      <span>
+        <h5>User Type: {{ this.user_type }} | <button @click.prevent="$emit('logout')" id="logout">Log out</button></h5>
+      </span>
       <create_ap_button @open:popupwindow="openpopupwindow" />
       <popup_window
         v-if="popupwindow"
@@ -48,6 +51,7 @@ export default {
     return {
       popupwindow: false,
       filtering: false,
+      user_type:this.$store.state.user_type,
       filtered_access_points: [],
       access_points: [],
       // take a copy of the access_points_array so that the options will not change
@@ -191,5 +195,12 @@ export default {
 <style scoped>
 .small-container {
   margin: 0px;
+  max-width: unset;
+}
+
+span{
+  position: absolute;
+  top: 120px;
+  right: 10px;
 }
 </style>

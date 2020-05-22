@@ -25,12 +25,12 @@
     <table>
       <thead>
         <tr>
-          <th>Raspi ID:</th>
-          <th>Password:</th>
-          <th>IP:</th>
-          <th>Building</th>
-          <th>Storey:</th>
-          <th>Status:</th>
+          <th style="width:100px">Raspi ID:</th>
+          <th style="width:100px">Password:</th>
+          <th style="width:110px">IP:</th>
+          <th style="width:80px">Building</th>
+          <th style="width:70px">Storey:</th>
+          <th style="width:70px"> Status:</th>
           <!-- <th>aplist:</th> -->
         </tr>
       </thead>
@@ -86,9 +86,9 @@
             <button  class="muted-button" @click="canceledit(raspberrypi)">Cancel</button>
           </td>
           <td v-else class="last-td">
-            <button  @click="editmode(raspberrypi)">Edit</button>
-            <button  @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
-            <button  @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)">Manage AP list</button>
+            <button id="edit" @click="editmode(raspberrypi)">Edit</button>
+            <button id="delete" @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
+            <button id="manage" @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)">Manage AP list</button>
           </td>
 
 
@@ -207,6 +207,10 @@ export default {
 </script>
 
 <style scoped>
+.raspberrypi_table {
+  width: 900px;
+}
+
 select {
   float: left;
   max-width: 100px;
@@ -215,6 +219,10 @@ button, .filter_form button{
   margin: 0 0.5rem 0 0;  
   background: #009435;
   border: 1px solid #009435;
+}
+
+.last-td{
+  border:unset;
 }
 
 .filter_form label, select {
@@ -237,13 +245,24 @@ td,th {
   line-height: 100%;
 }
 
+#edit{
+  float: left;
+}
+
+#delete{
+  float: left;
+  
+}
+
+#manage{
+ float: left;
+ position: absolute;
+}
+
 tr:nth-child(even) {
   background-color: #d7fdf0;
 }
 
-.last-td {
-  
-}
 table .square {
   text-align: center;
 }
