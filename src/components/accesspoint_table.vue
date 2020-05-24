@@ -45,7 +45,7 @@
     <table>
       <thead>
         <tr>
-          <th style="width:90px">Device ID:</th>
+          <th style="width:90px" v-if="usertype == 'admin'">Device ID:</th>
           <th style="width:160px">AP:</th>
           <th style="width:110px" v-if="usertype == 'admin'">Password:</th>
           <th style="width:110px" v-if="usertype == 'admin'">IP:</th>
@@ -70,10 +70,10 @@
         <!-- database UUID -->
         <tr v-else v-for="(access_point, index) in access_points" :key="index">
           <!-- ap col-->
-          <td v-if="editing == access_point.device_id">
+          <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.device_id" />
           </td>
-          <td v-else>{{ access_point.device_id }}</td>
+          <td v-else-if="usertype == 'admin'">{{ access_point.device_id }}</td>
           <!-- ssid col-->
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.ssid" />

@@ -3,8 +3,8 @@
     <header>
       <h1>Ectivise Wireless Monitor</h1>
       <div id="nav" v-if="logged_in">
-        <router-link to="/accesspoint" >Access Point</router-link> |
-        <router-link to="/raspberrypi">Raspberry Pi</router-link>
+        <router-link to="/accesspoint" >Access Point</router-link><strong v-if="this.user_type == 'admin'" style=""> | </strong>
+        <router-link to="/raspberrypi" v-if="this.user_type == 'admin'">Raspberry Pi</router-link>
       </div>
     </header>
     <body>
@@ -23,7 +23,8 @@ export default {
   },
   data() {
     return {
-      logged_in: false,
+      logged_in: this.$store.state.login,
+      user_type:"",
     };
   },
   methods: {
@@ -36,7 +37,8 @@ export default {
         alert("invalid username and password");
       } else {
         this.$store.commit('login',target[0].type);
-        this.logged_in = true;
+        this.user_type = target[0].type;
+        this.logged_in = this.$store.state.login;
         let url = "/accesspoint";
         this.$router.push(url);
       }
