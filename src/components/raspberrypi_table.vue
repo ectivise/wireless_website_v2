@@ -20,6 +20,9 @@
           "
         >Submit</button>
         <button v-else @click.prevent="filtererror()">Submit</button>
+        <span class="status_button" id="normal" @click.prevent="$emit('filter:status',0)">Normal: {{ status_summary[0] }} </span> 
+      <span class="status_button" id="warning" @click.prevent="$emit('filter:status',1)">Warning: {{ status_summary[1] }} </span> 
+      <span class="status_button" id="critical" @click.prevent="$emit('filter:status',2)">Critical: {{ status_summary[2] }} </span> 
       </form>
     </div>
     <table>
@@ -66,7 +69,7 @@
           <td v-if="editing == raspberrypi.raspi_id">
             <input type="text" v-model="raspberrypi.location.level" />
           </td>
-          <td v-else>{{ raspberrypi.location.level }}</td>
+          <td v-else>{{ convertstorey[index] }}</td>
           <!-- status col -->
           <td v-if="editing == raspberrypi.raspi_id">
             <input type="text" v-model="raspberrypi.status" />
@@ -156,6 +159,69 @@ export default {
       }
       return converted_runtime;
     },
+    convertstorey() {
+      var array_storey = [];
+      var converted_storey = [];
+      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
+        array_storey.push(this.raspberrypis_copy[i].location.level);
+      }
+      for (let i = 0; i < array_storey.length; i++) {
+        switch (array_storey[i]) {
+          case "1":
+            converted_storey[i] = "Level 1";
+            break;
+          case "2":
+            converted_storey[i] = "Level 2";
+            break;
+          case "3":
+            converted_storey[i] = "Level 3";
+            break;
+          case "4":
+            converted_storey[i] = "Level 4";
+            break;
+          case "5":
+            converted_storey[i] = "Level 5";
+            break;
+          case "6":
+            converted_storey[i] = "Level 6";
+            break;
+          case "7":
+            converted_storey[i] = "Level 7";
+            break;
+          case "8":
+            converted_storey[i] = "Level 8";
+            break;
+          case "9":
+            converted_storey[i] = "Level 9";
+            break;
+          case "10":
+            converted_storey[i] = "Level 10";
+            break;
+          case "-1":
+            converted_storey[i] = "Basement 1";
+            break;
+        }
+      }
+      return converted_storey;
+    },
+    status_summary() {
+      var status = [];
+      var normal = 0, warning = 0, critical = 0;
+
+      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
+        if (this.raspberrypis_copy[i].status == 0) {
+          normal++;
+        } else if (this.raspberrypis_copy[i].status == 1) {
+          warning++;
+        } else {
+          critical++;
+        }
+      }
+
+      status = [normal, warning, critical];
+
+      return status;
+    },
   },
   methods: {
     editmode(raspberrypi) {
@@ -225,6 +291,35 @@ button, .filter_form button{
 
 .last-td{
   border:unset;
+}
+
+.filter_form .status_button {
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#normal{
+  background-color: #3DBD61;
+}
+#warning{
+  background-color: #D4B445;
+}
+#critical{
+  background-color: #ec0b43;
+}
+
+#normal:hover{
+  background-color: #319D4E;
+}
+#warning:hover{
+  background-color: #B19037;
+}
+#critical:hover{
+  background-color: #CD0936;
 }
 
 .filter_form label, select, h3 {

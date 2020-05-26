@@ -1,7 +1,7 @@
 <template>
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
-      <h2>Speed Test Overview <br><small>Normal:</small> {{this.status_summary[0]}} <small>Warning:</small> {{this.status_summary[1]}} <small>Critical:</small> {{this.status_summary[2]}}</h2>
+      <h2>Speed Test Overview</h2>
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
@@ -19,6 +19,7 @@
         @edit:accesspoint="editaccesspoint"
         @filter:accesspoint="filteraccesspoint"
         @manage:accesspoint="manageaccesspoint"
+        @filter:status="filterstatus"
       />
       <accesspoint_table
         v-else
@@ -28,7 +29,7 @@
         @edit:accesspoint="editaccesspoint"
         @filter:accesspoint="filteraccesspoint"
         @manage:accesspoint="manageaccesspoint"
-      
+        @filter:status="filterstatus"
       />
     </div>
   </div>
@@ -62,25 +63,6 @@ export default {
     getuser_type(){
       var user_type = this.$store.user_type;
       return user_type;
-    },
-    status_summary(){
-      var status = [];
-      var normal = 0,warning = 0, critical = 0;
-
-      for(let i =0; i < this.access_points.length;i++){
-        if(this.access_points[i].status == 0){
-          normal++;
-        }else if(this.access_points[i].status == 1){
-          warning++;
-        }
-        else{
-          critical++;
-        }
-      }
-
-      status = [normal,warning,critical];
-
-      return status;
     },
   },
   created() {
@@ -200,6 +182,12 @@ export default {
         (access_point) => access_point.raspi == id
       );
       console.log(this.access_points);
+    },
+    filterstatus(status) {
+      this.filtering = true;
+      this.filtered_access_points = this.access_points.filter(
+        (access_point) => access_point.status == status
+      );
     },
     openpopupwindow() {
       this.popupwindow = true;

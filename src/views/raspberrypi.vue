@@ -20,6 +20,7 @@
         @delete:raspberrypi="deleteraspberrypi"
         @edit:raspberrypi="editraspberrypi"
         @filter:raspberrypi="filterraspberrypi"
+        @filter:status="filterstatus"
       />
       <raspberrypi_table
         v-else
@@ -28,6 +29,7 @@
         @delete:raspberrypi="deleteraspberrypi"
         @edit:raspberrypi="editraspberrypi"
         @filter:raspberrypi="filterraspberrypi"
+        @filter:status="filterstatus"
       />
     </div>
   </div>
@@ -274,6 +276,12 @@ export default {
         raspberrypi.raspi_id === id ? updatedraspberrypi : raspberrypi
       );
       this.raspberrypis_copy = this.raspberrypis;
+    },
+    filterstatus(status) {
+      this.filtering = true;
+      this.filtered_raspberrypis = this.raspberrypis.filter(
+        (raspberrypi) => raspberrypi.status == status
+      );
     },
     openpopupwindow() {
       this.popupwindow = true;
