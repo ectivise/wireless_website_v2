@@ -1,7 +1,7 @@
 <template>
   <div class="raspberrypi-overview">
     <div id="app" class="small-container">
-      <h2>Raspberry Pi Overview <br><small>Normal:</small> {{this.status_summary[0]}} <small>Warning:</small> {{this.status_summary[1]}} <small>Critical:</small> {{this.status_summary[2]}}</h2>
+      <h2>Raspberry Pi Overview</h2>
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
