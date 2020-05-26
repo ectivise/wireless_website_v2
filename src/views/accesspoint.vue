@@ -1,11 +1,11 @@
 <template>
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
-      <h2>Access Points Overview</h2>
+      <h2>Speed Test Overview <br><small>Normal:</small> {{this.status_summary[0]}} <small>Warning:</small> {{this.status_summary[1]}} <small>Critical:</small> {{this.status_summary[2]}}</h2>
       <span>
-        <h5>User Type: {{ this.user_type }} | <button @click.prevent="$emit('logout')" id="logout">Log out</button></h5>
+        <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
-      <create_ap_button @open:popupwindow="openpopupwindow" />
+      <create_ap_button @open:popupwindow="openpopupwindow"  v-if="user_type == 'admin'"/>
       <popup_window
         v-if="popupwindow"
         @add:accesspoint="addaccesspoint"
@@ -62,7 +62,26 @@ export default {
     getuser_type(){
       var user_type = this.$store.user_type;
       return user_type;
-    }
+    },
+    status_summary(){
+      var status = [];
+      var normal = 0,warning = 0, critical = 0;
+
+      for(let i =0; i < this.access_points.length;i++){
+        if(this.access_points[i].status == 0){
+          normal++;
+        }else if(this.access_points[i].status == 1){
+          warning++;
+        }
+        else{
+          critical++;
+        }
+      }
+
+      status = [normal,warning,critical];
+
+      return status;
+    },
   },
   created() {
     this.get_aplist();
@@ -197,10 +216,13 @@ export default {
   margin: 0px;
   max-width: unset;
 }
+.small-container h2{
+  text-align: center;
+}
 
 span{
   position: absolute;
-  top: 120px;
+  top: 10px;
   right: 10px;
 }
 </style>

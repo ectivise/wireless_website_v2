@@ -25,12 +25,12 @@
     <table>
       <thead>
         <tr>
-          <th style="width:100px">Raspi ID:</th>
-          <th style="width:100px">Password:</th>
-          <th style="width:110px">IP:</th>
+          <th style="width:100px">Raspi ID</th>
+          <th style="width:100px">Password</th>
+          <th style="width:110px">IP</th>
           <th style="width:80px">Building</th>
-          <th style="width:70px">Storey:</th>
-          <th style="width:70px"> Status:</th>
+          <th style="width:70px">Storey</th>
+          <th style="width:70px"> Status</th>
           <!-- <th>aplist:</th> -->
         </tr>
       </thead>
@@ -225,9 +225,16 @@ button, .filter_form button{
   border:unset;
 }
 
-.filter_form label, select {
+.filter_form label, select, h3 {
   float: left;
+  align-items: center;
 }
+
+.filter_form h3 {
+  margin: auto;
+  padding: 10px;
+}
+
 .filter_form label {
   font-size: 20px;
 }

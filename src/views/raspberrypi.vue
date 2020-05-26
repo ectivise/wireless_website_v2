@@ -1,12 +1,12 @@
 <template>
   <div class="raspberrypi-overview">
     <div id="app" class="small-container">
-      <h2>Raspberry Pi Overview</h2>
+      <h2>Raspberry Pi Overview <br><small>Normal:</small> {{this.status_summary[0]}} <small>Warning:</small> {{this.status_summary[1]}} <small>Critical:</small> {{this.status_summary[2]}}</h2>
       <span>
-        <h5>User Type: {{ this.user_type }} | <button id="logout" @click.prevent="$emit('logout')">Log out</button></h5>
+        <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
       
-      <create_raspi_button @open:popupwindow="openpopupwindow" />
+      <create_raspi_button @open:popupwindow="openpopupwindow"/>
       <popup_window
         v-if="popupwindow"
         @add:raspberrypi="addraspberrypi"
@@ -45,6 +45,27 @@ export default {
     create_raspi_button,
     popup_window,
   },
+  computed: {
+    status_summary(){
+      var status = [];
+      var normal = 0,warning = 0, critical = 0;
+
+      for(let i =0; i < this.raspberrypis.length;i++){
+        if(this.raspberrypis[i].status == 0){
+          normal++;
+        }else if(this.raspberrypis[i].status == 1){
+          warning++;
+        }
+        else{
+          critical++;
+        }
+      }
+
+      status = [normal,warning,critical];
+
+      return status;
+    },
+  },
   data() {
     return {
       popupwindow: false,
@@ -56,7 +77,7 @@ export default {
           raspi_id: "iot-lg-m01",
           ip: "10.12.80.221",
           password2: "abcd-1324",
-          status: 1,
+          status: 0,
           location: {
             site: "le grove",
             building: "tower a",
@@ -71,7 +92,7 @@ export default {
           raspi_id: "iot-lg-m02",
           ip: "10.12.80.222",
           password2: "abcd-1324",
-          status: 1,
+          status: 0,
           location: {
             site: "le grove",
             building: "tower a",
@@ -86,7 +107,7 @@ export default {
           raspi_id: "iot-lg-m03",
           ip: "10.12.80.223",
           password2: "abcd-1324",
-          status: 1,
+          status: 0,
           location: {
             site: "le grove",
             building: "tower a",
@@ -101,7 +122,7 @@ export default {
           raspi_id: "iot-lg-m04",
           ip: "10.12.80.223",
           password2: "abcd-1324",
-          status: 1,
+          status: 0,
           location: {
             site: "le grove",
             building: "tower a",
@@ -241,9 +262,13 @@ export default {
   max-width: unset;
 }
 
+.small-container h2{
+  text-align: center;
+}
+
 span{
   position: absolute;
-  top: 120px;
+  top: 10px;
   right: 10px;
 }
 

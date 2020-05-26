@@ -3,7 +3,7 @@
     <header>
       <h1>Ectivise Wireless Monitor</h1>
       <div id="nav" v-if="logged_in">
-        <router-link to="/accesspoint" >Access Point</router-link><strong v-if="this.user_type == 'admin'" style=""> | </strong>
+        <router-link to="/accesspoint" v-if="this.user_type == 'admin'" >Access Point</router-link><strong v-if="this.user_type == 'admin'"> | </strong>
         <router-link to="/raspberrypi" v-if="this.user_type == 'admin'">Raspberry Pi</router-link>
       </div>
     </header>

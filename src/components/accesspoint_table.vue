@@ -3,8 +3,8 @@
     <div class="filter_form">
       <form>
         <h3>Filter:</h3>
-        <label>Raspberry Pi ID:</label>
-        <select v-model="filterraspi_id">
+        <label v-if="usertype == 'admin'">Raspberry Pi ID:</label>
+        <select v-if="usertype == 'admin'" v-model="filterraspi_id">
           <option value="nofilter" selected>No Filter</option>
           <option v-for="(option, index) in filter_raspi_id" :key="index">{{
             option
@@ -45,19 +45,19 @@
     <table>
       <thead>
         <tr>
-          <th style="width:90px" v-if="usertype == 'admin'">Device ID:</th>
-          <th style="width:160px">AP:</th>
-          <th style="width:110px" v-if="usertype == 'admin'">Password:</th>
-          <th style="width:110px" v-if="usertype == 'admin'">IP:</th>
+          <th style="width:90px" v-if="usertype == 'admin'">Device ID</th>
+          <th style="width:160px">AP</th>
+          <th style="width:110px" v-if="usertype == 'admin'">Password</th>
+          <th style="width:110px" v-if="usertype == 'admin'">IP</th>
           <th style="width:130px">Building</th>
-          <th style="width:100px">Storey:</th>
-          <th style="width:70px">Status:</th>
-          <th style="width:100px">Runtime:</th>
-          <th style="width:100px">Raspi ID:</th>
-          <th style="width:90px">Ping(ms):</th>
-          <th style="width:120px">Upload(mb/s):</th>
-          <th style="width:140px">Download(mb/s):</th>
-          <th style="width:100px">Jitter(ms):</th>
+          <th style="width:100px">Storey</th>
+          <th style="width:70px">Status</th>
+          <th style="width:100px">Runtime</th>
+          <th style="width:100px" v-if="usertype == 'admin'">Raspi ID</th>
+          <th style="width:90px">Ping(ms)</th>
+          <th style="width:120px">Upload(mb/s)</th>
+          <th style="width:140px">Download(mb/s)</th>
+          <th style="width:100px">Jitter(ms)</th>
           
         </tr>
       </thead>
@@ -98,15 +98,16 @@
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.location.level" />
           </td>
-          <td v-else>{{ access_point.location.level }}</td>
+          <td v-else>{{ convertstorey[index] }}</td>
           <!-- status col -->
           <td v-if="editing == access_point.device_id">
             <input type="text" v-model="access_point.status" />
           </td>
           <td v-else>
             <div class="square">
-              <div v-if="access_point.status == 1" id="square-green"></div>
-              <div v-if="access_point.status == 0" id="square-red"></div>
+              <div v-if="access_point.status == 0" id="square-green"></div>
+              <div v-if="access_point.status == 1" id="square-yellow"></div>
+              <div v-if="access_point.status == 2" id="square-red"></div>
             </div>
           </td>
           <!-- runtime col -->
@@ -115,10 +116,10 @@
           </td>
           <td v-else>{{ convertruntime[index] }}</td>
           <!-- iotdevice col -->
-          <td v-if="editing == access_point.device_id">
+          <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.raspi" />
           </td>
-          <td v-else>{{ access_point.raspi }}</td>
+          <td v-else-if="usertype == 'admin'">{{ access_point.raspi }}</td>
           <!-- Ping col -->
           <td>{{ access_point.last_speedtest.ping }}</td>
           <!-- upload col -->
@@ -128,13 +129,13 @@
           <!-- jitter col -->
           <td>{{ access_point.last_speedtest.jitter }}</td>
           <!-- editing and delete buttons -->
-          <td v-if="editing == access_point.device_id" class="last-td">
+          <td v-if="editing == access_point.device_id && usertype == 'admin'" class="last-td">
             <button @click="editaccesspoint(access_point)">Save</button>
             <button class="muted-button" @click="canceledit(access_point)">
               Cancel
             </button>
           </td>
-          <td v-else class="last-td">
+          <td v-else-if="usertype == 'admin'" class="last-td">
             <button id="edit" @click="editmode(access_point)">Edit</button>
             <button
             id="delete"
@@ -165,7 +166,8 @@ export default {
       filter_error: false,
       editing: null,
       raspi_id: this.$route.params.raspi_id,
-      usertype: this.$store.state.user_type
+      usertype: this.$store.state.user_type,
+      options_array: [],
     };
   },
   mounted() {
@@ -216,6 +218,53 @@ export default {
         converted_runtime[i] = time;
       }
       return converted_runtime;
+    },
+    convertstorey() {
+      var array_storey = [];
+      var converted_storey=[];
+      for(let i =0; i< this.access_points_copy.length; i++){
+        array_storey.push(this.access_points_copy[i].location.level);
+      }
+      console.log(array_storey);
+      for(let i = 0; i < array_storey.length; i++){
+        switch(array_storey[i]){
+          case '1':
+            converted_storey[i] = 'Level 1';
+            break;
+          case '2':
+            converted_storey[i] = 'Level 2';
+            break;
+          case '3':
+            converted_storey[i] = 'Level 3';
+            break;
+          case '4':
+            converted_storey[i] = 'Level 4';
+            break;
+          case '5':
+            converted_storey[i] = 'Level 5';
+            break;
+          case '6':
+            converted_storey[i] = 'Level 6';
+            break;
+          case '7':
+            converted_storey[i] = 'Level 7';
+            break;
+          case '8':
+            converted_storey[i] = 'Level 8';
+            break;
+          case '9':
+            converted_storey[i] = 'Level 9';
+            break;
+          case '10':
+            converted_storey[i] = 'Level 10';
+            break;
+          case '-1':
+            converted_storey[i] = 'Basement 1';
+            break;
+        }
+      }
+      console.log(converted_storey);
+      return converted_storey;
     },
   },
   methods: {
@@ -279,8 +328,13 @@ button, .filter_form button{
   border: 1px solid #009435;
 }
 
-.filter_form label, select {
+.filter_form label, select, h3 {
   float: left;
+  align-items: center;
+}
+.filter_form h3 {
+  margin: auto;
+  padding: 10px;
 }
 .filter_form label {
   font-size: 20px;
@@ -331,8 +385,16 @@ table .square {
   width: 30px;
   display: inline-block;
 }
-#square-red{
+#square-yellow {
   background-color:#e26d5c;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+#square-red{
+  background-color:#A40606;
   border-radius: 10px;
   height: 30px;
   width: 30px;
