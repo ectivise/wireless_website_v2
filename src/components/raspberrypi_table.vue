@@ -6,23 +6,44 @@
         <label>Building:</label>
         <select v-model="filterbuildings">
           <option value="nofilter">No Filter</option>
-          <option v-for="(option, index) in filter_buildings" :key="index">{{option}}</option>
+          <option v-for="(option, index) in filter_buildings" :key="index">{{
+            option
+          }}</option>
         </select>
         <label>Storey:</label>
         <select v-model="filterlevel">
           <option value="nofilter">No Filter</option>
-          <option v-for="(option, index) in filter_level" :key="index">{{option}}</option>
+          <option v-for="(option, index) in filter_level" :key="index">{{
+            option
+          }}</option>
         </select>
         <button
           v-if="editing == null"
           @click.prevent="
             $emit('filter:raspberrypi', filterbuildings, filterlevel)
           "
-        >Submit</button>
+        >
+          Submit
+        </button>
         <button v-else @click.prevent="filtererror()">Submit</button>
-        <span class="status_button" id="normal" @click.prevent="$emit('filter:status',0)">Normal: {{ status_summary[0] }} </span> 
-      <span class="status_button" id="warning" @click.prevent="$emit('filter:status',1)">Warning: {{ status_summary[1] }} </span> 
-      <span class="status_button" id="critical" @click.prevent="$emit('filter:status',2)">Critical: {{ status_summary[2] }} </span> 
+        <span
+          class="status_button"
+          id="normal"
+          @click.prevent="$emit('filter:status', 0)"
+          >Normal: {{ status_summary[0] }}
+        </span>
+        <span
+          class="status_button"
+          id="warning"
+          @click.prevent="$emit('filter:status', 1)"
+          >Warning: {{ status_summary[1] }}
+        </span>
+        <span
+          class="status_button"
+          id="critical"
+          @click.prevent="$emit('filter:status', 2)"
+          >Critical: {{ status_summary[2] }}
+        </span>
       </form>
     </div>
     <table>
@@ -33,7 +54,7 @@
           <th style="width:110px">IP</th>
           <th style="width:80px">Building</th>
           <th style="width:70px">Storey</th>
-          <th style="width:70px"> Status</th>
+          <th style="width:70px">Status</th>
           <th style="width:200px">Actions</th>
           <!-- <th>aplist:</th> -->
         </tr>
@@ -85,20 +106,30 @@
           <!-- ssid(ap_list) col -->
 
           <!-- editing and delete buttons -->
-          
+
           <td v-if="editing == raspberrypi.raspi_id" class="last-td">
             <button @click="editraspberrypi(raspberrypi)">Save</button>
-            <button  class="muted-button" @click="canceledit(raspberrypi)">Cancel</button>
+            <button class="muted-button" @click="canceledit(raspberrypi)">
+              Cancel
+            </button>
           </td>
           <td v-else class="last-td">
             <button id="edit" @click="editmode(raspberrypi)">Edit</button>
-            <button id="delete" @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)">Delete</button>
-            <button id="manage" @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)">Manage AP list</button>
+            <button
+              id="delete"
+              @click="$emit('delete:raspberrypi', raspberrypi.raspi_id)"
+            >
+              Delete
+            </button>
+            <button
+              id="manage"
+              @click.prevent="gotoaccesspoint(raspberrypi.raspi_id)"
+            >
+              Manage AP list
+            </button>
           </td>
-
-
         </tr>
-      </tbody> 
+      </tbody>
     </table>
   </div>
 </template>
@@ -116,7 +147,7 @@ export default {
       filterlevel: "",
       filter_error: false,
       editing: null,
-      empty_aplist:false,
+      empty_aplist: false,
     };
   },
   mounted() {
@@ -206,7 +237,9 @@ export default {
     },
     status_summary() {
       var status = [];
-      var normal = 0, warning = 0, critical = 0;
+      var normal = 0,
+        warning = 0,
+        critical = 0;
 
       for (let i = 0; i < this.raspberrypis_copy.length; i++) {
         if (this.raspberrypis_copy[i].status == 0) {
@@ -253,23 +286,25 @@ export default {
     },
     filtererror() {
       this.filter_error = true;
-      alert("❗Please save before filter")
+      alert("❗Please save before filter");
     },
     gotoaccesspoint(id) {
       // first chk if the raspi got any ap list
-      let target = this.raspberrypis.filter((raspberrypi) => raspberrypi.raspi_id == id);
-      if(target[0].aplist.length < 1){
+      let target = this.raspberrypis.filter(
+        (raspberrypi) => raspberrypi.raspi_id == id
+      );
+      if (target[0].aplist.length < 1) {
         this.empty_aplist = true;
-        alert("❗ The selected Raspberry Pi have empty AP list")
-      } else{
+        alert("❗ The selected Raspberry Pi have empty AP list");
+      } else {
         let url = "/accesspoint/manage/" + id;
         this.$router.push(url);
       }
     },
     reset_option() {
-      this.filterbuildings = 'nofilter';
-      this.filterlevel = 'nofilter';
-    }
+      this.filterbuildings = "nofilter";
+      this.filterlevel = "nofilter";
+    },
   },
 };
 </script>
@@ -281,16 +316,17 @@ export default {
 
 select {
   float: left;
-  max-width: 100px;
+  max-width: 150px;
 }
-button, .filter_form button{
-  margin: 0 0.5rem 0 0;  
+button,
+.filter_form button {
+  margin: 0 0.5rem 0 0;
   background: #009435;
   border: 1px solid #009435;
 }
 
-.last-td{
-  border:unset;
+.last-td {
+  border: unset;
 }
 
 .filter_form .status_button {
@@ -302,34 +338,32 @@ button, .filter_form button{
   cursor: pointer;
 }
 
-#normal{
-  background-color: #3DBD61;
+#normal {
+  background-color: #3dbd61;
 }
-#warning{
-  background-color: #D4B445;
+#warning {
+  background-color: #d4b445;
 }
-#critical{
+#critical {
   background-color: #ec0b43;
 }
 
-#normal:hover{
-  background-color: #319D4E;
+#normal:hover {
+  background-color: #319d4e;
 }
-#warning:hover{
-  background-color: #B19037;
+#warning:hover {
+  background-color: #b19037;
 }
-#critical:hover{
-  background-color: #CD0936;
+#critical:hover {
+  background-color: #cd0936;
 }
 
-.filter_form label, select, h3 {
+.filter_form label,
+select {
   float: left;
   align-items: center;
-}
-
-.filter_form h3 {
-  margin: auto;
-  padding: 10px;
+  margin: 0px 8px 0px 0px;
+  padding: 12px 20px;
 }
 
 .filter_form label {
@@ -343,28 +377,28 @@ table {
   border-collapse: collapse;
 }
 
-table thead th{
+table thead th {
   background: #f5f5f5;
 }
 
-td,th {
+td,
+th {
   border: 2px solid #eee;
   margin: 0px;
   padding: 3px;
 }
 
-#edit{
+#edit {
   float: left;
 }
 
-#delete{
+#delete {
   float: left;
-  
 }
 
-#manage{
- float: left;
- position: absolute;
+#manage {
+  float: left;
+  position: absolute;
 }
 
 tr:nth-child(even) {
@@ -375,8 +409,8 @@ table .square {
   text-align: center;
 }
 
-#square-green{
-  background-color:#44cf6c;
+#square-green {
+  background-color: #44cf6c;
   border-radius: 10px;
   height: 30px;
   width: 30px;
@@ -384,19 +418,18 @@ table .square {
 }
 
 #square-yellow {
-  background-color:#FFE156;
+  background-color: #ffe156;
   border-radius: 10px;
   height: 30px;
   width: 30px;
   display: inline-block;
 }
 
-#square-red{
-  background-color:#EC0B43;
+#square-red {
+  background-color: #ec0b43;
   border-radius: 10px;
   height: 30px;
   width: 30px;
   display: inline-block;
 }
-
 </style>

@@ -40,12 +40,25 @@
           Submit
         </button>
         <button v-else @click.prevent="filtererror()">Submit</button>
-      <span class="status_button" id="normal" @click.prevent="$emit('filter:status',0)">Normal: {{ status_summary[0] }} </span> 
-      <span class="status_button" id="warning" @click.prevent="$emit('filter:status',1)">Warning: {{ status_summary[1] }} </span> 
-      <span class="status_button" id="critical" @click.prevent="$emit('filter:status',2)">Critical: {{ status_summary[2] }} </span> 
+        <span
+          class="status_button"
+          id="normal"
+          @click.prevent="$emit('filter:status', 0)"
+          >Normal: {{ status_summary[0] }}
+        </span>
+        <span
+          class="status_button"
+          id="warning"
+          @click.prevent="$emit('filter:status', 1)"
+          >Warning: {{ status_summary[1] }}
+        </span>
+        <span
+          class="status_button"
+          id="critical"
+          @click.prevent="$emit('filter:status', 2)"
+          >Critical: {{ status_summary[2] }}
+        </span>
       </form>
-
-      
     </div>
 
     <table>
@@ -76,40 +89,22 @@
         <!-- database UUID -->
         <tr v-else v-for="(access_point, index) in access_points" :key="index">
           <!-- ap col-->
-          <td v-if="editing == access_point.device_id && usertype == 'admin'">
-            <input type="text" v-model="access_point.device_id" />
-          </td>
-          <td v-else-if="usertype == 'admin'">{{ access_point.device_id }}</td>
+          <td v-if="usertype == 'admin'">{{ access_point.device_id }}</td>
           <!-- ssid col-->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.ssid" />
-          </td>
-          <td v-else>{{ access_point.ssid }}</td>
+          <td>{{ access_point.ssid }}</td>
           <!-- password col -->
           <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.password" />
           </td>
           <td v-else-if="usertype == 'admin'">{{ access_point.password }}</td>
           <!-- ip col -->
-          <td v-if="editing == access_point.device_id && usertype == 'admin'">
-            <input type="text" v-model="access_point.ip" />
-          </td>
-          <td v-else-if="usertype == 'admin'">{{ access_point.ip }}</td>
+          <td v-if="usertype == 'admin'">{{ access_point.ip }}</td>
           <!-- building col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.location.building" />
-          </td>
-          <td v-else>{{ access_point.location.building }}</td>
+          <td>{{ access_point.location.building }}</td>
           <!-- level col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.location.level" />
-          </td>
-          <td v-else>{{ convertstorey[index] }}</td>
+          <td>{{ convertstorey[index] }}</td>
           <!-- status col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.status" />
-          </td>
-          <td v-else>
+          <td>
             <div class="square">
               <div v-if="access_point.status == 0" id="square-green"></div>
               <div v-if="access_point.status == 1" id="square-yellow"></div>
@@ -117,10 +112,7 @@
             </div>
           </td>
           <!-- runtime col -->
-          <td v-if="editing == access_point.device_id">
-            <input type="text" v-model="access_point.runtime" />
-          </td>
-          <td v-else>{{ convertruntime[index] }}</td>
+          <td>{{ convertruntime[index] }}</td>
           <!-- iotdevice col -->
           <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.raspi" />
@@ -275,7 +267,9 @@ export default {
     },
     status_summary() {
       var status = [];
-      var normal = 0, warning = 0, critical = 0;
+      var normal = 0,
+        warning = 0,
+        critical = 0;
 
       for (let i = 0; i < this.access_points_copy.length; i++) {
         if (this.access_points_copy[i].status == 0) {
@@ -345,8 +339,9 @@ export default {
 <style scoped>
 select {
   float: left;
-  max-width: 100px;
+  max-width: 150px;
 }
+
 button,
 .filter_form button {
   margin: 0 0.5rem 0 0;
@@ -355,18 +350,17 @@ button,
 }
 
 .filter_form label,
-select,
-h3 {
+select {
   float: left;
   align-items: center;
+  margin: 0px 8px 0px 0px;
+  padding: 12px 20px;
 }
-.filter_form h3 {
-  margin: auto;
-  padding: 10px;
-}
+
 .filter_form label {
   font-size: 20px;
 }
+
 .filter_form {
   position: relative;
   margin: 10px;
@@ -375,6 +369,7 @@ h3 {
 .last-td {
   border: unset;
 }
+
 .filter_form .status_button {
   padding: 12px 20px;
   margin: 5px;
@@ -384,24 +379,24 @@ h3 {
   cursor: pointer;
 }
 
-#normal{
-  background-color: #3DBD61;
+#normal {
+  background-color: #3dbd61;
 }
-#warning{
-  background-color: #D4B445;
+#warning {
+  background-color: #d4b445;
 }
-#critical{
+#critical {
   background-color: #ec0b43;
 }
 
-#normal:hover{
-  background-color: #319D4E;
+#normal:hover {
+  background-color: #319d4e;
 }
-#warning:hover{
-  background-color: #B19037;
+#warning:hover {
+  background-color: #b19037;
 }
-#critical:hover{
-  background-color: #CD0936;
+#critical:hover {
+  background-color: #cd0936;
 }
 
 #edit {
@@ -435,7 +430,6 @@ tr:nth-child(even) {
 table .square {
   text-align: center;
 }
-
 
 #square-green {
   background-color: #44cf6c;
