@@ -2,7 +2,7 @@
   <div id="raspberrypi_table">
     <div class="filter_form">
       <form>
-        <h3>Filter:</h3>
+        <!-- <h3>Filter</h3> -->
         <label>Building:</label>
         <select v-model="filterbuildings">
           <option value="nofilter">No Filter</option>
@@ -31,6 +31,7 @@
           <th style="width:80px">Building</th>
           <th style="width:70px">Storey</th>
           <th style="width:70px"> Status</th>
+          <th style="width:200px">Actions</th>
           <!-- <th>aplist:</th> -->
         </tr>
       </thead>
@@ -72,8 +73,9 @@
           </td>
           <td v-else>
             <div class="square">
-              <div v-if="raspberrypi.status == 1" id="square-green"></div>
-              <div v-if="raspberrypi.status == 0" id="square-red"></div>
+              <div v-if="raspberrypi.status == 0" id="square-green"></div>
+              <div v-if="raspberrypi.status == 1" id="square-yellow"></div>
+              <div v-if="raspberrypi.status == 2" id="square-red"></div>
             </div>
           </td>
 
@@ -245,11 +247,15 @@ button, .filter_form button{
 table {
   border-collapse: collapse;
 }
+
+table thead th{
+  background: #f5f5f5;
+}
+
 td,th {
-  border: 1px solid black;
+  border: 2px solid #eee;
   margin: 0px;
   padding: 3px;
-  line-height: 100%;
 }
 
 #edit{
@@ -281,8 +287,17 @@ table .square {
   width: 30px;
   display: inline-block;
 }
+
+#square-yellow {
+  background-color:#FFE156;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
 #square-red{
-  background-color:#e26d5c;
+  background-color:#EC0B43;
   border-radius: 10px;
   height: 30px;
   width: 30px;

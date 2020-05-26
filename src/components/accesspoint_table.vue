@@ -2,7 +2,7 @@
   <div id="accesspoint_table">
     <div class="filter_form">
       <form>
-        <h3>Filter:</h3>
+        <!-- <h3>Filter</h3> -->
         <label v-if="usertype == 'admin'">Raspberry Pi ID:</label>
         <select v-if="usertype == 'admin'" v-model="filterraspi_id">
           <option value="nofilter" selected>No Filter</option>
@@ -58,6 +58,7 @@
           <th style="width:120px">Upload(mb/s)</th>
           <th style="width:140px">Download(mb/s)</th>
           <th style="width:100px">Jitter(ms)</th>
+          <th style="width:200px">Actions</th>
           
         </tr>
       </thead>
@@ -350,11 +351,14 @@ button, .filter_form button{
 
 #edit{
   display: inline-block;
-  float: left;
 }
 
 #delete{
   display: inline-block;
+}
+
+table thead th{
+  background: #f5f5f5;
 }
 
 table {
@@ -363,16 +367,14 @@ table {
   word-wrap: break-word;
 }
 td,th {
-  border: 1px solid black;
+  border: 2px solid #eee;
   margin: 0px;
   padding: 3px;
-  line-height: 100%;
 }
 
 tr:nth-child(even) {
   background-color: #d7fdf0;
 }
-
 
 table .square {
   text-align: center;
@@ -386,7 +388,7 @@ table .square {
   display: inline-block;
 }
 #square-yellow {
-  background-color:#e26d5c;
+  background-color:#FFE156;
   border-radius: 10px;
   height: 30px;
   width: 30px;
@@ -394,7 +396,7 @@ table .square {
 }
 
 #square-red{
-  background-color:#A40606;
+  background-color:#EC0B43;
   border-radius: 10px;
   height: 30px;
   width: 30px;

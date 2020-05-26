@@ -120,9 +120,13 @@ export default {
   max-width: 200px;
   position: relative;
   left: calc(50% - 100px);
+  border-radius: 20px;
 }
 
 .container button {
   margin: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 20px;
 }
 </style>

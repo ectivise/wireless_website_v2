@@ -92,7 +92,7 @@ export default {
           raspi_id: "iot-lg-m02",
           ip: "10.12.80.222",
           password2: "abcd-1324",
-          status: 0,
+          status: 1,
           location: {
             site: "le grove",
             building: "tower a",
@@ -107,7 +107,7 @@ export default {
           raspi_id: "iot-lg-m03",
           ip: "10.12.80.223",
           password2: "abcd-1324",
-          status: 0,
+          status: 2,
           location: {
             site: "le grove",
             building: "tower a",
@@ -139,7 +139,7 @@ export default {
           raspi_id: "iot-lg-m01",
           ip: "10.12.80.221",
           password2: "abcd-1324",
-          status: 1,
+          status: 0,
           location: {
             site: "le grove",
             building: "tower a",
@@ -169,7 +169,7 @@ export default {
           raspi_id: "iot-lg-m03",
           ip: "10.12.80.223",
           password2: "abcd-1324",
-          status: 1,
+          status: 2,
           location: {
             site: "le grove",
             building: "tower a",
@@ -184,7 +184,7 @@ export default {
           raspi_id: "iot-lg-m04",
           ip: "10.12.80.223",
           password2: "abcd-1324",
-          status: 1,
+          status: 0,
           location: {
             site: "le grove",
             building: "tower a",
@@ -199,6 +199,35 @@ export default {
     };
   },
   methods: {
+    // async get_aplist() {
+    //   try {
+    //     var urlencoded = new URLSearchParams();
+    //     urlencoded.append(
+    //       "token",
+    //       "ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade"
+    //     );
+
+    //     const response = await fetch(
+    //       "http://dev1.ectivisecloud.com:8081/api/speedtest/getaplist",
+    //       {
+    //         method: "POST",
+    //         body: urlencoded,
+    //         headers: { "Content-type": "application/x-www-form-urlencoded" },
+    //       }
+    //     );
+
+    //     const data = await response.json();
+    //     this.access_points = data.data;
+
+    //     this.access_points.sort(function(a, b) {
+    //       return a["device_id"] - b["device_id"];
+    //     });
+    //     this.access_points_copy = data.data;
+    //     // console.log(data.data)
+    //   } catch (error) {
+    //     console.error(error.message);
+    //   }
+    // },
     addraspberrypi(raspberrypi) {
       const lastId =
         this.raspberrypis.length > 0
