@@ -229,37 +229,37 @@ export default {
       for (let i = 0; i < array_storey.length; i++) {
         switch (array_storey[i]) {
           case "1":
-            converted_storey[i] = "Level 1";
+            converted_storey[i] = "L1";
             break;
           case "2":
-            converted_storey[i] = "Level 2";
+            converted_storey[i] = "L2";
             break;
           case "3":
-            converted_storey[i] = "Level 3";
+            converted_storey[i] = "L3";
             break;
           case "4":
-            converted_storey[i] = "Level 4";
+            converted_storey[i] = "L4";
             break;
           case "5":
-            converted_storey[i] = "Level 5";
+            converted_storey[i] = "L5";
             break;
           case "6":
-            converted_storey[i] = "Level 6";
+            converted_storey[i] = "L6";
             break;
           case "7":
-            converted_storey[i] = "Level 7";
+            converted_storey[i] = "L7";
             break;
           case "8":
-            converted_storey[i] = "Level 8";
+            converted_storey[i] = "L8";
             break;
           case "9":
-            converted_storey[i] = "Level 9";
+            converted_storey[i] = "L9";
             break;
           case "10":
-            converted_storey[i] = "Level 10";
+            converted_storey[i] = "L10";
             break;
           case "-1":
-            converted_storey[i] = "Basement 1";
+            converted_storey[i] = "B1";
             break;
         }
       }
@@ -467,7 +467,7 @@ table td button{
   font-size: 1vw;
 }
 #deviceid-col{
-  width: 3em;
+  width: 2.5em;
 }
 #ap-col{
   width: 5em;
