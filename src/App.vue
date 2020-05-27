@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <h1>Speedtest Monitoring</h1>
-      <h6>Made by Ectivise Solutions Pte Ltd</h6>
+      <h6>by Ectivise Solutions Pte Ltd</h6>
       <div id="nav" v-if="logged_in">
         <router-link to="/accesspoint" v-if="this.user_type == 'admin'" >Access Point</router-link><strong v-if="this.user_type == 'admin'"> | </strong>
         <router-link to="/raspberrypi" v-if="this.user_type == 'admin'">Raspberry Pi</router-link>
