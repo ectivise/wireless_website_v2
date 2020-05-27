@@ -41,26 +41,25 @@
         </button>
         <button v-else @click.prevent="filtererror()">Submit</button>
       </form>
-      <span
-            class="status_button"
-            id="normal"
-            @click.prevent="$emit('filter:status', 0)"
-            >Normal: {{ status_summary[0] }}
-          </span>
-          <span
-            class="status_button"
-            id="warning"
-            @click.prevent="$emit('filter:status', 1)"
-            >Warning: {{ status_summary[1] }}
-          </span>
-          <span
-            class="status_button"
-            id="critical"
-            @click.prevent="$emit('filter:status', 2)"
-            >Critical: {{ status_summary[2] }}
-          </span>
     </div>
-    
+    <span
+      class="status_button"
+      id="normal"
+      @click.prevent="$emit('filter:status', 0)"
+      >Normal: {{ status_summary[0] }}
+    </span>
+    <span
+      class="status_button"
+      id="warning"
+      @click.prevent="$emit('filter:status', 1)"
+      >Warning: {{ status_summary[1] }}
+    </span>
+    <span
+      class="status_button"
+      id="critical"
+      @click.prevent="$emit('filter:status', 2)"
+      >Critical: {{ status_summary[2] }}
+    </span>
     <table>
       <thead>
         <tr>
@@ -87,7 +86,12 @@
           No Access Points
         </p>
         <!-- database UUID -->
-        <tr v-else v-for="(access_point, index) in access_points" :key="index" :class="usertype=='admin' ? 'admin' : 'operator'">
+        <tr
+          v-else
+          v-for="(access_point, index) in access_points"
+          :key="index"
+          :class="usertype == 'admin' ? 'admin' : 'operator'"
+        >
           <!-- ap col-->
           <td v-if="usertype == 'admin'">{{ access_point.device_id }}</td>
           <!-- ssid col-->
@@ -214,7 +218,7 @@ export default {
         // var minutes = Math.floor(array_timestmp[i] / 60);
         // var seconds = array_timestmp[i] - (minutes * 60);
 
-        var time = days + "days " + hours + "hrs";
+        var time = days + " days " + hours + "hrs";
         // console.log(time);
         converted_runtime[i] = time;
       }
@@ -337,39 +341,40 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media screen and (min-width: 761px){
-  .filter_form label, select {
+@media screen and (min-width: 761px) {
+  .filter_form label,
+  select {
     display: inline-block;
   }
 }
-.filter_form label, select {
+.filter_form label,
+select {
   /* float: left; */
   align-items: center;
-  
 }
 
 .filter_form select {
   width: 8vw;
   height: 2.5em;
-  font-size:1vw;
+  font-size: 1vw;
   padding: 0.2em 0.3em;
   margin: 0.5em 0.7em;
 }
 
-button, .filter_form button {
+button,
+.filter_form button {
   margin: 0.5vw;
   background: #009435;
   border: 1px solid #009435;
 }
 
-.filter_form button{
-  font-size:1vw
+.filter_form button {
+  font-size: 1vw;
 }
 
-tbody td button{
+tbody td button {
   margin: 0 0.5vw 0 0;
 }
-
 
 .filter_form label {
   font-size: 1.5vw;
@@ -390,7 +395,7 @@ tbody td button{
   padding: 0.5em 0.8em;
   margin: 5px;
   border-radius: 20px;
-  font-size:1.1vw;
+  font-size: 1.1vw;
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
@@ -475,154 +480,207 @@ table .square {
 
 /* screen width */
 
-table th, td{
+table th,
+td {
   font-size: 1vw;
 }
 
-table td button{
+table td button {
   font-size: 1vw;
 }
-#deviceid-col{
+#deviceid-col {
   width: 3.2em;
 }
-#ap-col{
+#ap-col {
   width: 5em;
 }
-#password-col{
+#password-col {
   width: 4.5em;
 }
-#ip-col{
+#ip-col {
   width: 4em;
 }
-#building-col{
+#building-col {
   width: 4em;
 }
-#storey-col{
+#storey-col {
   width: 35px;
 }
-#status-col{
+#status-col {
   width: 50px;
 }
-#runtime-col{
+#runtime-col {
   width: 70px;
 }
-#raspi-col{
+#raspi-col {
   width: 3em;
 }
-#ping-col{
+#ping-col {
   width: 3em;
 }
-#upload-col{
+#upload-col {
   width: 4em;
 }
-#download-col{
+#download-col {
   width: 5em;
 }
-#jitter-col{
+#jitter-col {
   width: 3em;
-} 
-#action-col{
+}
+#action-col {
   width: 110px;
 }
 
-@media  screen and (max-width: 760px){
+@media screen and (max-width: 760px) {
   /* filter form */
-  .filter_form{
+  .filter_form {
     display: block;
   }
 
-  .filter_form label{
+  .filter_form label {
     font-size: unset;
     font-size: 4vw;
   }
 
-  .filter_form select{
+  .filter_form select {
     font-size: unset;
     width: 40vw;
   }
 
-  .filter_form button{
+  .filter_form button {
     font-size: unset;
   }
   /* status button */
   .status_button {
-  display: inline-block;
-  padding: 0.5em 0.8em;
-  margin: 1vw;
-  border-radius: 20px;
-  font-size:unset;
-  font-weight: bold;
-  color: #ffffff;
-  cursor: pointer;
-  white-space: pre;
-  word-spacing: normal;
-}
+    display: inline-block;
+    padding: 0.5em 0.7em;
+    margin: 0.5vw;
+    border-radius: 20px;
+    font-size: unset;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    white-space: pre;
+    word-spacing: normal;
+  }
 
   /* table */
-  table, thead, tbody, th, td, tr { 
-		display: block; 
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
   }
 
-  thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-
-  tr { border: 1px solid #ccc; }
-
-  td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-  td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-
-  .admin td:nth-of-type(1):before { content: "Device ID"; }
-	.admin td:nth-of-type(2):before { content: "AP"; }
-	.admin td:nth-of-type(3):before { content: "Password"; }
-	.admin td:nth-of-type(4):before { content: "IP"; }
-	.admin td:nth-of-type(5):before { content: "Building"; }
-	.admin td:nth-of-type(6):before { content: "Storey"; }
-	.admin td:nth-of-type(7):before { content: "Status"; }
-	.admin td:nth-of-type(8):before { content: "Runtime"; }
-	.admin td:nth-of-type(9):before { content: "Raspi ID"; }
-	.admin td:nth-of-type(10):before { content: "Ping(ms)"; }
-  .admin td:nth-of-type(11):before { content: "Upload(mb/s)"; }
-  .admin td:nth-of-type(12):before { content: "Download(mb/s)"; }
-  .admin td:nth-of-type(13):before { content: "Jitter(ms)"; }
-  .admin td:nth-of-type(14):before { content: "Actions"; }
-
-  .operator td:nth-of-type(1):before { content: "AP"; }
-  .operator td:nth-of-type(2):before { content: "Building"; }
-  .operator td:nth-of-type(3):before { content: "Storey"; }
-  .operator td:nth-of-type(4):before { content: "Status"; }
-  .operator td:nth-of-type(5):before { content: "Runtime"; }
-  .operator td:nth-of-type(6):before { content: "Ping(ms)"; }
-  .operator td:nth-of-type(7):before { content: "Upload(ms)"; }
-  .operator td:nth-of-type(8):before { content: "Download(ms)"; }
-  .operator td:nth-of-type(9):before { content: "Jitter(ms)"; }
-
-  table th, td{
-  font-size: unset;
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 
-  table td button{
-  font-size: unset;
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .admin td:nth-of-type(1):before {
+    content: "Device ID";
+  }
+  .admin td:nth-of-type(2):before {
+    content: "AP";
+  }
+  .admin td:nth-of-type(3):before {
+    content: "Password";
+  }
+  .admin td:nth-of-type(4):before {
+    content: "IP";
+  }
+  .admin td:nth-of-type(5):before {
+    content: "Building";
+  }
+  .admin td:nth-of-type(6):before {
+    content: "Storey";
+  }
+  .admin td:nth-of-type(7):before {
+    content: "Status";
+  }
+  .admin td:nth-of-type(8):before {
+    content: "Runtime";
+  }
+  .admin td:nth-of-type(9):before {
+    content: "Raspi ID";
+  }
+  .admin td:nth-of-type(10):before {
+    content: "Ping(ms)";
+  }
+  .admin td:nth-of-type(11):before {
+    content: "Upload(mb/s)";
+  }
+  .admin td:nth-of-type(12):before {
+    content: "Download(mb/s)";
+  }
+  .admin td:nth-of-type(13):before {
+    content: "Jitter(ms)";
+  }
+  .admin td:nth-of-type(14):before {
+    content: "Actions";
+  }
+
+  .operator td:nth-of-type(1):before {
+    content: "AP";
+  }
+  .operator td:nth-of-type(2):before {
+    content: "Building";
+  }
+  .operator td:nth-of-type(3):before {
+    content: "Storey";
+  }
+  .operator td:nth-of-type(4):before {
+    content: "Status";
+  }
+  .operator td:nth-of-type(5):before {
+    content: "Runtime";
+  }
+  .operator td:nth-of-type(6):before {
+    content: "Ping(ms)";
+  }
+  .operator td:nth-of-type(7):before {
+    content: "Upload(ms)";
+  }
+  .operator td:nth-of-type(8):before {
+    content: "Download(ms)";
+  }
+  .operator td:nth-of-type(9):before {
+    content: "Jitter(ms)";
+  }
+
+  table th,
+  td {
+    font-size: unset;
+  }
+
+  table td button {
+    font-size: unset;
   }
 }
-
-
 </style>
