@@ -87,7 +87,7 @@
           No Access Points
         </p>
         <!-- database UUID -->
-        <tr v-else v-for="(access_point, index) in access_points" :key="index">
+        <tr v-else v-for="(access_point, index) in access_points" :key="index" :class="usertype=='admin' ? 'admin' : 'operator'">
           <!-- ap col-->
           <td v-if="usertype == 'admin'">{{ access_point.device_id }}</td>
           <!-- ssid col-->
@@ -590,20 +590,30 @@ table td button{
 		white-space: nowrap;
 	}
 
-  td:nth-of-type(1):before { content: "Device ID"; }
-	td:nth-of-type(2):before { content: "AP"; }
-	td:nth-of-type(3):before { content: "Password"; }
-	td:nth-of-type(4):before { content: "IP"; }
-	td:nth-of-type(5):before { content: "Building"; }
-	td:nth-of-type(6):before { content: "Storey"; }
-	td:nth-of-type(7):before { content: "Status"; }
-	td:nth-of-type(8):before { content: "Runtime"; }
-	td:nth-of-type(9):before { content: "Raspi ID"; }
-	td:nth-of-type(10):before { content: "Ping(ms)"; }
-  td:nth-of-type(11):before { content: "Upload(mb/s)"; }
-  td:nth-of-type(12):before { content: "Download(mb/s)"; }
-  td:nth-of-type(13):before { content: "Jitter(ms)"; }
-  td:nth-of-type(14):before { content: "Actions"; }
+  .admin td:nth-of-type(1):before { content: "Device ID"; }
+	.admin td:nth-of-type(2):before { content: "AP"; }
+	.admin td:nth-of-type(3):before { content: "Password"; }
+	.admin td:nth-of-type(4):before { content: "IP"; }
+	.admin td:nth-of-type(5):before { content: "Building"; }
+	.admin td:nth-of-type(6):before { content: "Storey"; }
+	.admin td:nth-of-type(7):before { content: "Status"; }
+	.admin td:nth-of-type(8):before { content: "Runtime"; }
+	.admin td:nth-of-type(9):before { content: "Raspi ID"; }
+	.admin td:nth-of-type(10):before { content: "Ping(ms)"; }
+  .admin td:nth-of-type(11):before { content: "Upload(mb/s)"; }
+  .admin td:nth-of-type(12):before { content: "Download(mb/s)"; }
+  .admin td:nth-of-type(13):before { content: "Jitter(ms)"; }
+  .admin td:nth-of-type(14):before { content: "Actions"; }
+
+  .operator td:nth-of-type(1):before { content: "AP"; }
+  .operator td:nth-of-type(2):before { content: "Building"; }
+  .operator td:nth-of-type(3):before { content: "Storey"; }
+  .operator td:nth-of-type(4):before { content: "Status"; }
+  .operator td:nth-of-type(5):before { content: "Runtime"; }
+  .operator td:nth-of-type(6):before { content: "Ping(ms)"; }
+  .operator td:nth-of-type(7):before { content: "Upload(ms)"; }
+  .operator td:nth-of-type(8):before { content: "Download(ms)"; }
+  .operator td:nth-of-type(9):before { content: "Jitter(ms)"; }
 
   table th, td{
   font-size: unset;
