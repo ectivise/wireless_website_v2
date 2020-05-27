@@ -49,13 +49,13 @@
     <table>
       <thead>
         <tr>
-          <th style="width:100px">Raspi ID</th>
-          <th style="width:100px">Password</th>
-          <th style="width:110px">IP</th>
-          <th style="width:80px">Building</th>
-          <th style="width:70px">Storey</th>
-          <th style="width:70px">Status</th>
-          <th style="width:200px">Actions</th>
+          <th id="raspi-col">Raspi ID</th>
+          <th id="password-col">Password</th>
+          <th id="ip-col">IP</th>
+          <th id="building-col">Building</th>
+          <th id="storey-col">Storey</th>
+          <th id="status-col">Status</th>
+          <th id="action-col">Actions</th>
           <!-- <th>aplist:</th> -->
         </tr>
       </thead>
@@ -388,19 +388,6 @@ th {
   padding: 3px;
 }
 
-#edit {
-  float: left;
-}
-
-#delete {
-  float: left;
-}
-
-#manage {
-  float: left;
-  position: absolute;
-}
-
 tr:nth-child(even) {
   background-color: #d7fdf0;
 }
@@ -431,5 +418,67 @@ table .square {
   height: 30px;
   width: 30px;
   display: inline-block;
+}
+
+table th, td{
+  font-size: 1vw;
+}
+
+table td button{
+  font-size: 1vw;
+}
+
+
+@media screen and (max-width: 760px){
+
+
+  /* table */
+
+  table, thead, tbody, th, td, tr { 
+		display: block; 
+  }
+
+  thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+  tr { border: 1px solid #ccc; }
+
+  td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+  td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+  td:nth-of-type(1):before { content: "Raspi ID"; }
+	td:nth-of-type(2):before { content: "Password"; }
+	td:nth-of-type(3):before { content: "IP"; }
+	td:nth-of-type(4):before { content: "Building"; }
+	td:nth-of-type(5):before { content: "Storey"; }
+	td:nth-of-type(6):before { content: "Status"; }
+	td:nth-of-type(7):before { content: "Actions"; }
+
+  table th, td{
+  font-size: unset;
+  }
+
+table td button{
+  font-size: unset;
+  }
 }
 </style>
