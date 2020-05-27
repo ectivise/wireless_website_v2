@@ -40,24 +40,24 @@
           Submit
         </button>
         <button v-else @click.prevent="filtererror()">Submit</button>
-        <span
-          class="status_button"
-          id="normal"
-          @click.prevent="$emit('filter:status', 0)"
-          >Normal: {{ status_summary[0] }}
-        </span>
-        <span
-          class="status_button"
-          id="warning"
-          @click.prevent="$emit('filter:status', 1)"
-          >Warning: {{ status_summary[1] }}
-        </span>
-        <span
-          class="status_button"
-          id="critical"
-          @click.prevent="$emit('filter:status', 2)"
-          >Critical: {{ status_summary[2] }}
-        </span>
+          <span
+            class="status_button"
+            id="normal"
+            @click.prevent="$emit('filter:status', 0)"
+            >Normal: {{ status_summary[0] }}
+          </span>
+          <span
+            class="status_button"
+            id="warning"
+            @click.prevent="$emit('filter:status', 1)"
+            >Warning: {{ status_summary[1] }}
+          </span>
+          <span
+            class="status_button"
+            id="critical"
+            @click.prevent="$emit('filter:status', 2)"
+            >Critical: {{ status_summary[2] }}
+          </span>
       </form>
     </div>
 
@@ -328,7 +328,7 @@ export default {
         this.filterbuildings = "nofilter";
         this.filterlevel = "nofilter";
         this.filterraspi_id = this.$route.params.raspi_id;
-        this.$emit("manage:accesspoint", this.filterraspi_id);
+        this.$emit("manage:accesspoint", this.$route.params.raspi_id);
       }
     },
   },
@@ -344,11 +344,14 @@ select {
 
 button,
 .filter_form button {
-  margin: 0 0.5rem 0 0;
+  margin: 0.5vw;
   background: #009435;
   border: 1px solid #009435;
 }
 
+tbody td button{
+  margin: 0 0.5vw 0 0;
+}
 .filter_form label,
 select {
   float: left;

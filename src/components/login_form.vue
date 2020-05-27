@@ -30,6 +30,37 @@
         </button>
       </form>
     </div>
+    <p>Forget Password</p>
+    <div class="sign-up">
+      <h2>Register</h2>
+      <form action="">
+        <!-- look for id -->
+        <label for="phone_number">Mobile Number:</label>
+        <input
+          v-model="user.phone_number"
+          type="text"
+          id="phone_number"
+          placeholder="Enter Phone Number"
+          :class="{ 'has-error': signing_up && invalidphone_number }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        />
+        <label for="password">Password:</label>
+        <input
+          v-model="user.password"
+          type="text"
+          id="password"
+          placeholder="Enter password"
+          :class="{ 'has-error': signing_up && invalidpassword }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        />
+
+        <button @click.prevent="handlesignup">
+          Sign up
+        </button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -43,9 +74,8 @@ export default {
       success: false,
       error: false,
       user: {
-        username: "",
+        phone_number: "",
         password: "",
-        type: "",
       },
       username: "",
       password: "",
@@ -70,6 +100,7 @@ export default {
         return;
       } else {
         this.$emit("signup", this.user);
+        
       }
     },
     clearstatus() {
@@ -85,7 +116,7 @@ export default {
     invalidpassword_login() {
       return this.password === "";
     },
-    invalidusername() {
+    invalidphone_number() {
       return this.user.username === "";
     },
 
@@ -108,6 +139,7 @@ export default {
 
 #admin,
 #operator {
+  left: unset;
   margin: 10px;
 }
 

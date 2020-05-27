@@ -1,7 +1,7 @@
 <template>
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
-      <h2>Speed Test Overview</h2>
+      <h2>Le Grove Serviced Residences</h2>
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
@@ -181,7 +181,7 @@ export default {
       this.filtered_access_points = this.access_points.filter(
         (access_point) => access_point.raspi == id
       );
-      console.log(this.access_points);
+      console.log(id);
     },
     filterstatus(status) {
       this.filtering = true;

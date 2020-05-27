@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <header>
-      <h1>Ectivise Wireless Monitor</h1>
+      <h1>Speedtest Monitoring</h1>
+      <h6>Made by Ectivise Solutions Pte Ltd</h6>
       <div id="nav" v-if="logged_in">
         <router-link to="/accesspoint" v-if="this.user_type == 'admin'" >Access Point</router-link><strong v-if="this.user_type == 'admin'"> | </strong>
         <router-link to="/raspberrypi" v-if="this.user_type == 'admin'">Raspberry Pi</router-link>
@@ -43,8 +44,32 @@ export default {
         this.$router.push(url);
       }
     },
-    signup(user){
-      this.$store.commit('register',user)
+    async signup(user){
+      // this.$store.commit('register',user)
+      try {
+        var urlencoded = new URLSearchParams();
+        urlencoded.append(
+          "token",
+          "ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade"
+        );
+        urlencoded.append("mobile", user.phone_number);
+        urlencoded.append("password", user.password);
+
+        const response = await fetch(
+          "http://dev1.ectivisecloud.com:8081/api/users/signup",
+          {
+            method: "POST",
+            body: urlencoded,
+            headers: { "Content-type": "application/x-www-form-urlencoded" },
+          }
+        );
+
+        const data = await response.json();
+        console.log(data.message);
+        alert(data.message);
+      } catch (error) {
+        console.error(error.message);
+      }
     },
     logout(){
       this.logged_in = false;
@@ -61,6 +86,7 @@ export default {
 }
 
 header {
+  width: 100%;
   position: relative;
   padding: 20px;
   text-align: center;
