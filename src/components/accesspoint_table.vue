@@ -40,7 +40,8 @@
           Submit
         </button>
         <button v-else @click.prevent="filtererror()">Submit</button>
-          <span
+      </form>
+      <span
             class="status_button"
             id="normal"
             @click.prevent="$emit('filter:status', 0)"
@@ -58,9 +59,8 @@
             @click.prevent="$emit('filter:status', 2)"
             >Critical: {{ status_summary[2] }}
           </span>
-      </form>
     </div>
-
+    
     <table>
       <thead>
         <tr>
@@ -337,31 +337,44 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-select {
-  float: left;
-  max-width: 150px;
+@media screen and (min-width: 761px){
+  .filter_form label, select {
+    display: inline-block;
+  }
+}
+.filter_form label, select {
+  /* float: left; */
+  align-items: center;
+  
 }
 
-button,
-.filter_form button {
+.filter_form select {
+  width: 8vw;
+  height: 2.5em;
+  font-size:1vw;
+  padding: 0.2em 0.3em;
+  margin: 0.5em 0.7em;
+}
+
+button, .filter_form button {
   margin: 0.5vw;
   background: #009435;
   border: 1px solid #009435;
 }
 
+.filter_form button{
+  font-size:1vw
+}
+
 tbody td button{
   margin: 0 0.5vw 0 0;
 }
-.filter_form label,
-select {
-  float: left;
-  align-items: center;
-  margin: 0px 8px 0px 0px;
-  padding: 1.2rem 0rem;
-}
+
 
 .filter_form label {
-  font-size: 1.5rem;
+  font-size: 1.5vw;
+  padding: 0.5em;
+  margin: 0.1em 0em;
 }
 
 .filter_form {
@@ -373,13 +386,16 @@ select {
   border: unset;
 }
 
-.filter_form .status_button {
-  padding: 12px 20px;
+.status_button {
+  padding: 0.5em 0.8em;
   margin: 5px;
   border-radius: 20px;
+  font-size:1.1vw;
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+  white-space: pre;
+  word-spacing: normal;
 }
 
 #normal {
@@ -467,13 +483,13 @@ table td button{
   font-size: 1vw;
 }
 #deviceid-col{
-  width: 2.5em;
+  width: 3.2em;
 }
 #ap-col{
   width: 5em;
 }
 #password-col{
-  width: 4em;
+  width: 4.5em;
 }
 #ip-col{
   width: 4em;
@@ -482,7 +498,7 @@ table td button{
   width: 4em;
 }
 #storey-col{
-  width: 55px;
+  width: 35px;
 }
 #status-col{
   width: 50px;
@@ -509,7 +525,38 @@ table td button{
   width: 110px;
 }
 
-@media screen and (max-width: 760px){
+@media  screen and (max-width: 760px){
+  /* filter form */
+  .filter_form{
+    display: block;
+  }
+
+  .filter_form label{
+    font-size: unset;
+    font-size: 4vw;
+  }
+
+  .filter_form select{
+    font-size: unset;
+    width: 40vw;
+  }
+
+  .filter_form button{
+    font-size: unset;
+  }
+  /* status button */
+  .status_button {
+  display: inline-block;
+  padding: 0.5em 0.8em;
+  margin: 1vw;
+  border-radius: 20px;
+  font-size:unset;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: pre;
+  word-spacing: normal;
+}
 
   /* table */
   table, thead, tbody, th, td, tr { 
