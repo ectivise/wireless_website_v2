@@ -682,6 +682,7 @@ table td button {
 
   table td button {
     font-size: unset;
+    margin: 2px;
   }
 }
 </style>
