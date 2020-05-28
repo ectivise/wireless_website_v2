@@ -505,7 +505,7 @@ table td button {
   width: 4.5em;
 }
 #storey-col {
-  width: 37px;
+  width: 3.5em;
 }
 #status-col {
   width: 50px;
