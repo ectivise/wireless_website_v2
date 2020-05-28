@@ -108,12 +108,12 @@ header h6{
 }
 
 #nav a {
+  position: relative;
   font-weight: bold;
-  font-size: 3vh;
+  font-size: 20px;
   color: #f2f2f2;
-  margin: 0px 0px;
   text-decoration: none;
-  padding:7px ;
+  padding:10px 10px 5px 10px;
 }
 
 #nav a:hover{
