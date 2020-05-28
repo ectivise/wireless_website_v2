@@ -137,7 +137,7 @@ export default {
   height: 90vh;
   text-align: center;
   max-width: unset;
-  background-image: linear-gradient(120deg,#A9FFF7,#C5D5EA);
+  background-image: linear-gradient(120deg,#23395B,#C5D5EA);
   align-items: center;
   justify-content: center;
   display: flex;

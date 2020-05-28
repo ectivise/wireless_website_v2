@@ -4,8 +4,8 @@
       <h1>Speedtest Monitoring</h1>
       <h6>by Ectivise Solutions Pte Ltd</h6>
       <div id="nav" v-if="logged_in">
-        <router-link to="/accesspoint" v-if="this.user_type == 'admin'" >Access Point</router-link><strong v-if="this.user_type == 'admin'"> | </strong>
-        <router-link to="/raspberrypi" v-if="this.user_type == 'admin'">Raspberry Pi</router-link>
+        <router-link to="/accesspoint" v-if="this.user_type == 'admin'" >Access Point</router-link>
+        <router-link to="/raspberrypi" v-if="this.user_type == 'admin'" >Raspberry Pi</router-link>
       </div>
     </header>
     <body>
@@ -88,9 +88,17 @@ export default {
 header {
   width: 100%;
   position: relative;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   text-align: center;
-  background-color: #8EE4AF;
+  background-color: #333;
+}
+
+header h1{
+  color: #f2f2f2;
+}
+header h6{
+  padding:3px;
+  color: #f2f2f2;
 }
 #app {
   /* remove website default margins and padding */
@@ -101,11 +109,34 @@ header {
 
 #nav a {
   font-weight: bold;
-  font-size: 30px;
-  color: #05386b;
+  font-size: 3vh;
+  color: #f2f2f2;
+  margin: 0px 0px;
+  text-decoration: none;
+  padding:7px ;
+}
+
+#nav a:hover{
+    background-color: #ddd;
+    color: black;
+    transition: .5s;
 }
 
 #nav a.router-link-exact-active {
-  color: #379683;
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 760px){
+  header{
+    padding: 20px 0px 0px 0px;
+  }
+  #nav a{
+    display:block;
+    width: 100vw;
+  }
+
+  #nav a:hover{
+    background-color: #f2f2f2;
+  }
 }
 </style>

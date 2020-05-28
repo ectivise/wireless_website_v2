@@ -490,22 +490,22 @@ table td button {
   font-size: 1vw;
 }
 #deviceid-col {
-  width: 3.2em;
+  width: 3.5em;
 }
 #ap-col {
   width: 5em;
 }
 #password-col {
-  width: 4.5em;
+  width: 4.6em;
 }
 #ip-col {
   width: 4em;
 }
 #building-col {
-  width: 4em;
+  width: 4.5em;
 }
 #storey-col {
-  width: 35px;
+  width: 37px;
 }
 #status-col {
   width: 50px;
@@ -514,7 +514,7 @@ table td button {
   width: 70px;
 }
 #raspi-col {
-  width: 3em;
+  width: 3.3em;
 }
 #ping-col {
   width: 3em;
