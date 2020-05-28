@@ -138,5 +138,9 @@ header h6{
   #nav a:hover{
     background-color: #f2f2f2;
   }
+
+  #nav a.router-link-exact-active {
+  background-color: #4CAF50;
+  }
 }
 </style>

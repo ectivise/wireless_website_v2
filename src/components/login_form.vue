@@ -180,10 +180,10 @@ p{
   background-color: whitesmoke;
   border-radius: 20px;
   font-size: 15px;
-}
+  }
 
-.card h2{
-  font-size: 30px;
-}
+  .card h2{
+    font-size: 30px;
+  }
 }
 </style>

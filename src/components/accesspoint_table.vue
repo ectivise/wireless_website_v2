@@ -511,7 +511,7 @@ table td button {
   width: 50px;
 }
 #runtime-col {
-  width: 70px;
+  width: 80px;
 }
 #raspi-col {
   width: 3.3em;
