@@ -373,7 +373,7 @@ button,
 }
 
 tbody td button {
-  margin: 0 0.5vw 0 0;
+  margin: 0px 2px;
 }
 
 .filter_form label {
@@ -436,6 +436,7 @@ table thead th {
 }
 
 table {
+  margin: 20px 0px;
   table-layout: fixed;
   border-collapse: collapse;
   word-wrap: break-word;
@@ -539,16 +540,16 @@ table td button {
 
   .filter_form label {
     font-size: unset;
-    font-size: 4vw;
   }
 
   .filter_form select {
     font-size: unset;
-    width: 40vw;
+    width: 50vw;
   }
 
   .filter_form button {
     font-size: unset;
+    margin: 13px;
   }
   /* status button */
   .status_button {

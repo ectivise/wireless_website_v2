@@ -1,65 +1,67 @@
 <template>
   <div class="container">
-    <div class="sign-in">
-      <h2>Sign In</h2>
-      <form action="">
-        <!-- look for id -->
-        <label for="username">Username:</label>
-        <input
-          v-model="username"
-          type="text"
-          id="username"
-          placeholder="Enter username"
-          :class="{ 'has-error': loging_in && invalidusername_login }"
-          @focus="clearstatus"
-          @keypress="clearstatus"
-          ref="first"
-        />
-        <label for="password">Password:</label>
-        <input
-          v-model="password"
-          type="text"
-          id="password"
-          placeholder="Enter password"
-          :class="{ 'has-error': loging_in && invalidpassword_login }"
-          @focus="clearstatus"
-          @keypress="clearstatus"
-        />
-        <button @click.prevent="handlelogin">
-          Log In
-        </button>
-      </form>
-    </div>
-    <p>Forget Password</p>
-    <div class="sign-up">
-      <h2>Register</h2>
-      <form action="">
-        <!-- look for id -->
-        <label for="phone_number">Mobile Number:</label>
-        <input
-          v-model="user.phone_number"
-          type="text"
-          id="phone_number"
-          placeholder="Enter Phone Number"
-          :class="{ 'has-error': signing_up && invalidphone_number }"
-          @focus="clearstatus"
-          @keypress="clearstatus"
-        />
-        <label for="password">Password:</label>
-        <input
-          v-model="user.password"
-          type="text"
-          id="password"
-          placeholder="Enter password"
-          :class="{ 'has-error': signing_up && invalidpassword }"
-          @focus="clearstatus"
-          @keypress="clearstatus"
-        />
-
-        <button @click.prevent="handlesignup">
-          Sign up
-        </button>
-      </form>
+    <div class="card">
+      <div class="sign-in">
+        <h2>Sign In</h2>
+        <form action="">
+          <!-- look for id -->
+          <input
+            v-model="username"
+            type="text"
+            id="username"
+            placeholder="Phone Number"
+            :class="{ 'has-error': loging_in && invalidphone_number_login }"
+            @focus="clearstatus"
+            @keypress="clearstatus"
+            ref="first"
+          />
+          <br>
+          <input
+            v-model="password"
+            type="text"
+            id="password"
+            placeholder="password"
+            :class="{ 'has-error': loging_in && invalidpassword_login }"
+            @focus="clearstatus"
+            @keypress="clearstatus"
+          />
+          
+          <p>One time Password</p>
+          <button @click.prevent="handlelogin">
+            Log In
+          </button>
+        </form>
+      </div>
+      <p>Forget Password</p>
+      <div class="sign-up">
+        <h2>Register</h2>
+        <form action="">
+          <!-- look for id -->
+          <input
+            v-model="user.phone_number"
+            type="text"
+            id="phone_number"
+            placeholder="Phone Number"
+            :class="{ 'has-error': signing_up && invalidphone_number }"
+            @focus="clearstatus"
+            @keypress="clearstatus"
+          />
+          <br>
+          <input
+            v-model="user.password"
+            type="text"
+            id="password"
+            placeholder="Password"
+            :class="{ 'has-error': signing_up && invalidpassword }"
+            @focus="clearstatus"
+            @keypress="clearstatus"
+          />
+          <br>
+          <button @click.prevent="handlesignup">
+            Sign up
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -100,7 +102,6 @@ export default {
         return;
       } else {
         this.$emit("signup", this.user);
-        
       }
     },
     clearstatus() {
@@ -133,26 +134,36 @@ export default {
 
 <style scoped>
 .container {
+  height: 90vh;
   text-align: center;
   max-width: unset;
+  background-image: linear-gradient(120deg,#A9FFF7,#C5D5EA);
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
-#admin,
-#operator {
-  left: unset;
-  margin: 10px;
+.card {
+  width: 40vw;
+  padding-bottom: 20px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  font-size: 1vw;
 }
 
-.container form label {
-  font-size: 20px;
-  display: inline;
+p{
+  margin: 0.5vh;
+}
+.card h2{
+  font-size: 2vw;
+  margin: 0.5vh;
 }
 
 .container form input {
-  max-width: 200px;
-  position: relative;
-  left: calc(50% - 100px);
+  max-width: 13em;
+  left: calc(50% - 10em);
   border-radius: 20px;
+  display: inline-block;
 }
 
 .container button {
@@ -160,5 +171,19 @@ export default {
   width: 200px;
   border: none;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 760px) {
+  .card {
+  width: 90vw;
+  padding-bottom: 20px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.card h2{
+  font-size: 30px;
+}
 }
 </style>

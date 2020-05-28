@@ -1,11 +1,14 @@
 <template>
   <div class="accesspoint-overview">
     <div id="app" class="small-container">
-      <h2>Le Grove Serviced Residences</h2>
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
-      <create_ap_button @open:popupwindow="openpopupwindow"  v-if="user_type == 'admin'"/>
+      <h2>Le Grove Serviced Residences</h2>
+      <create_ap_button
+        @open:popupwindow="openpopupwindow"
+        v-if="user_type == 'admin'"
+      />
       <popup_window
         v-if="popupwindow"
         @add:accesspoint="addaccesspoint"
@@ -52,7 +55,7 @@ export default {
     return {
       popupwindow: false,
       filtering: false,
-      user_type:this.$store.state.user_type,
+      user_type: this.$store.state.user_type,
       filtered_access_points: [],
       access_points: [],
       // take a copy of the access_points_array so that the options will not change
@@ -60,7 +63,7 @@ export default {
     };
   },
   computed: {
-    getuser_type(){
+    getuser_type() {
       var user_type = this.$store.user_type;
       return user_type;
     },
@@ -144,28 +147,29 @@ export default {
         if (building == "nofilter" && level == "nofilter") {
           this.filtering = true;
           this.filtered_access_points = this.access_points.filter(
-            (access_point) =>
-              access_point.raspi == raspi_id
+            (access_point) => access_point.raspi == raspi_id
           );
         } else if (building !== "nofilter" && level !== "nofilter") {
           this.filtering = true;
           this.filtered_access_points = this.access_points.filter(
             (access_point) =>
               access_point.location.building == building &&
-              access_point.location.level == level && 
+              access_point.location.level == level &&
               access_point.raspi == raspi_id
           );
         } else if (building !== "nofilter" && level == "nofilter") {
           this.filtering = true;
           this.filtered_access_points = this.access_points.filter(
-            (access_point) => access_point.location.building == building &&
-            access_point.raspi == raspi_id
+            (access_point) =>
+              access_point.location.building == building &&
+              access_point.raspi == raspi_id
           );
         } else if (building == "nofilter" && level !== "nofilter") {
           this.filtering = true;
           this.filtered_access_points = this.access_points.filter(
-            (access_point) => access_point.location.level == level &&
-            access_point.raspi == raspi_id
+            (access_point) =>
+              access_point.location.level == level &&
+              access_point.raspi == raspi_id
           );
         }
       }
@@ -204,13 +208,29 @@ export default {
   margin: 0px;
   max-width: unset;
 }
-.small-container h2{
+.small-container h2 {
   text-align: center;
 }
 
-span{
-  position: absolute;
-  top: 10px;
-  right: 10px;
+@media screen and (min-width: 761px) {
+  span button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  #logout {
+    font-size: 1vw;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  #logout {
+    top: 10px;
+    position: relative;
+    display: block;
+    font-size: unset;
+    width: 90vw;
+  }
 }
 </style>

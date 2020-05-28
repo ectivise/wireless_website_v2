@@ -26,26 +26,26 @@
           Submit
         </button>
         <button v-else @click.prevent="filtererror()">Submit</button>
-        <span
-          class="status_button"
-          id="normal"
-          @click.prevent="$emit('filter:status', 0)"
-          >Normal: {{ status_summary[0] }}
-        </span>
-        <span
-          class="status_button"
-          id="warning"
-          @click.prevent="$emit('filter:status', 1)"
-          >Warning: {{ status_summary[1] }}
-        </span>
-        <span
-          class="status_button"
-          id="critical"
-          @click.prevent="$emit('filter:status', 2)"
-          >Critical: {{ status_summary[2] }}
-        </span>
       </form>
     </div>
+    <span
+      class="status_button"
+      id="normal"
+      @click.prevent="$emit('filter:status', 0)"
+      >Normal: {{ status_summary[0] }}
+    </span>
+    <span
+      class="status_button"
+      id="warning"
+      @click.prevent="$emit('filter:status', 1)"
+      >Warning: {{ status_summary[1] }}
+    </span>
+    <span
+      class="status_button"
+      id="critical"
+      @click.prevent="$emit('filter:status', 2)"
+      >Critical: {{ status_summary[2] }}
+    </span>
     <table>
       <thead>
         <tr>
@@ -310,14 +310,33 @@ export default {
 </script>
 
 <style scoped>
-.raspberrypi_table {
-  width: 900px;
+
+@media screen and (min-width: 761px) {
+  .filter_form label,
+  select {
+    display: inline-block;
+  }
+}
+
+.filter_form label,
+select {
+  /* float: left; */
+  align-items: center;
+}
+
+.filter_form select {
+  width: 8vw;
+  height: 2.5em;
+  font-size: 1vw;
+  padding: 0.2em 0.3em;
+  margin: 0.5em 0.7em;
 }
 
 select {
-  float: left;
+  /* float: left; */
   max-width: 150px;
 }
+
 button,
 .filter_form button {
   margin: 0 0.5rem 0 0;
@@ -325,17 +344,39 @@ button,
   border: 1px solid #009435;
 }
 
+.filter_form button {
+  font-size: 1vw;
+}
+
+tbody td button {
+  margin: 0px 2px;
+}
+
+.filter_form label {
+  font-size: 1.5vw;
+  padding: 0.5em;
+  margin: 0.1em 0em;
+}
+
+.filter_form {
+  position: relative;
+  margin: 10px;
+}
+
 .last-td {
   border: unset;
 }
 
-.filter_form .status_button {
-  padding: 12px 20px;
+.status_button {
+  padding: 0.5em 0.8em;
   margin: 5px;
   border-radius: 20px;
+  font-size: 1.1vw;
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+  white-space: pre;
+  word-spacing: normal;
 }
 
 #normal {
@@ -358,23 +399,10 @@ button,
   background-color: #cd0936;
 }
 
-.filter_form label,
-select {
-  float: left;
-  align-items: center;
-  margin: 0px 8px 0px 0px;
-  padding: 12px 20px;
-}
-
-.filter_form label {
-  font-size: 20px;
-}
-.filter_form {
-  position: relative;
-  margin: 10px;
-}
 table {
+  margin: 20px 0px;
   border-collapse: collapse;
+  word-wrap: break-word;
 }
 
 table thead th {
@@ -420,65 +448,120 @@ table .square {
   display: inline-block;
 }
 
-table th, td{
+table th,
+td {
   font-size: 1vw;
 }
 
-table td button{
+table td button {
   font-size: 1vw;
 }
 
+@media screen and (max-width: 760px) {
+  /* filter form */
+  .filter_form {
+    position: static;
+    display: block;
+  }
 
-@media screen and (max-width: 760px){
+  .filter_form label {
+    font-size: unset;
+  }
 
+  .filter_form select {
+    font-size: unset;
+    display: block;
+    width: 50vw;
+  }
+
+  .filter_form button {
+    font-size: unset;
+    margin: 13px;
+  }
+  /* status button */
+  .status_button {
+    display: inline-block;
+    padding: 0.5em 0.7em;
+    margin: 0.5vw;
+    border-radius: 20px;
+    font-size: unset;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    white-space: pre;
+    word-spacing: normal;
+  }
 
   /* table */
 
-  table, thead, tbody, th, td, tr { 
-		display: block; 
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
   }
 
-  thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-
-  tr { border: 1px solid #ccc; }
-
-  td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-  td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-
-  td:nth-of-type(1):before { content: "Raspi ID"; }
-	td:nth-of-type(2):before { content: "Password"; }
-	td:nth-of-type(3):before { content: "IP"; }
-	td:nth-of-type(4):before { content: "Building"; }
-	td:nth-of-type(5):before { content: "Storey"; }
-	td:nth-of-type(6):before { content: "Status"; }
-	td:nth-of-type(7):before { content: "Actions"; }
-
-  table th, td{
-  font-size: unset;
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 
-table td button{
-  font-size: unset;
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Raspi ID";
+  }
+  td:nth-of-type(2):before {
+    content: "Password";
+  }
+  td:nth-of-type(3):before {
+    content: "IP";
+  }
+  td:nth-of-type(4):before {
+    content: "Building";
+  }
+  td:nth-of-type(5):before {
+    content: "Storey";
+  }
+  td:nth-of-type(6):before {
+    content: "Status";
+  }
+  td:nth-of-type(7):before {
+    content: "Actions";
+  }
+
+  table th,
+  td {
+    font-size: unset;
+  }
+
+  table td button {
+    font-size: unset;
+    margin: 2px 2px;
   }
 }
 </style>

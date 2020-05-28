@@ -1,11 +1,11 @@
 <template>
   <div class="raspberrypi-overview">
     <div id="app" class="small-container">
-      <h2>Raspberry Pi Overview</h2>
+      
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
-      
+      <h2>Le Grove Serviced Residences</h2>
       <create_raspi_button @open:popupwindow="openpopupwindow"/>
       <popup_window
         v-if="popupwindow"
@@ -303,10 +303,26 @@ export default {
   text-align: center;
 }
 
-span{
-  position: absolute;
-  top: 10px;
-  right: 10px;
+@media screen and (min-width: 761px) {
+  span button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  #logout {
+    font-size: 1vw;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  #logout {
+    top: 10px;
+    position: relative;
+    display: block;
+    font-size: unset;
+    width: 90vw;
+  }
 }
 
 </style>

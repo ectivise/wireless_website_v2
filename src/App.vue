@@ -90,7 +90,7 @@ header {
   position: relative;
   padding: 20px;
   text-align: center;
-  background-color: #8ee4af;
+  background-color: #8EE4AF;
 }
 #app {
   /* remove website default margins and padding */

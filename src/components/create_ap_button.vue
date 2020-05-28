@@ -16,4 +16,10 @@ export default {
   background: #009435;
   border: 1px solid #009435;
 }
+
+@media screen and (max-width: 760px){
+  button {
+  display: block;
+}
+}
 </style>
