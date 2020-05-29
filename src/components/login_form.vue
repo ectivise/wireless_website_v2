@@ -1,9 +1,10 @@
 <template>
   <div class="container">
-    <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
+    
     <!-- login page -->
     <div class="card" v-if="login_otp == false && register == false">
       <div class="sign-in">
+        <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
         <h2>User Login</h2>
         <form action="">
           <input
@@ -212,17 +213,21 @@ export default {
 </script>
 
 <style scoped>
-img {
-  position: absolute;
+
+@media screen and (min-width: 761px){
+  img {
+  position: fixed;
   width: 180px;
   top: 5px;
   left: 5px;
   background-color: whitesmoke;
   padding: 10px;
 }
+}
 
+body {}
 .container {
-  height: 90vh;
+  height:90vh;
   text-align: center;
   max-width: unset;
   background-image: linear-gradient(120deg, #23395b, #c5d5ea);
@@ -301,8 +306,20 @@ p {
     font-size: 15px;
   }
 
+  img {
+  position: relative;
+  width: 250px;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin-left: 30px;
+}
+
   .card h2 {
     font-size: 30px;
   }
+
+  .card span {
+  font-size: unset;
+}
 }
 </style>
