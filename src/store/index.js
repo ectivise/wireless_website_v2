@@ -30,6 +30,10 @@ export default new Vuex.Store({
       state.user_type = type;
       state.login = true;
     },
+    loginotp(state){
+      state.login = true;
+      state.user_type = 'operator'
+    },
   },
   actions: {
   },

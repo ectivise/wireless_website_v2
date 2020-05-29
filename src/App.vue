@@ -9,7 +9,7 @@
       </div>
     </header>
     <body>
-    <login_form v-if="!logged_in" @login="login" @signup="signup"/>
+    <login_form v-if="!logged_in" @login="login" @signup="signup" @login_otp="loginotp"/>
     <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
   </div>
@@ -39,6 +39,14 @@ export default {
       } else {
         this.$store.commit('login',target[0].type);
         this.user_type = target[0].type;
+        this.logged_in = this.$store.state.login;
+        let url = "/accesspoint";
+        this.$router.push(url);
+      }
+    },
+    loginotp(otp){
+      if(otp == '123456'){
+        this.$store.commit('loginotp');
         this.logged_in = this.$store.state.login;
         let url = "/accesspoint";
         this.$router.push(url);
