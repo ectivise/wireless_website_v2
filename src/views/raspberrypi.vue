@@ -6,6 +6,7 @@
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
       <h2>Le Grove Serviced Residences</h2>
+      <img src="@/assets/legrovelogo.png" alt="Le Grove Logo">
       <create_raspi_button @open:popupwindow="openpopupwindow"/>
       <popup_window
         v-if="popupwindow"
@@ -294,6 +295,14 @@ export default {
 </script>
 
 <style scoped>
+img{
+  position: absolute;
+  width: 180px;
+  top: 10px;
+  left: 10px;
+  background-color: whitesmoke;
+}
+
 .small-container {
   margin: 0px;
   max-width: unset;
@@ -316,6 +325,10 @@ export default {
 }
 
 @media screen and (max-width: 760px) {
+  img{
+      display: none;
+  }
+
   #logout {
     top: 10px;
     position: relative;

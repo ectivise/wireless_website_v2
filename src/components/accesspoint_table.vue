@@ -179,7 +179,7 @@ export default {
     filterraspi_id(){
         this.filterbuildings = 'nofilter';
         this.filterlevel = 'nofilter';
-        
+
     },
     filterbuildings(){
         this.filterlevel = 'nofilter';
@@ -201,8 +201,8 @@ export default {
     },
     filter_buildings() {
       var unfiltered_array = [];
-      for (let i = 0; i < this.access_points.length; i++) {
-        unfiltered_array.push(this.access_points[i].location.building);
+      for (let i = 0; i < this.access_points_copy.length; i++) {
+        unfiltered_array.push(this.access_points_copy[i].location.building);
       }
       const building_options = [...new Set(unfiltered_array)];
       return Array.from(building_options);
@@ -287,10 +287,10 @@ export default {
         warning = 0,
         critical = 0;
 
-      for (let i = 0; i < this.access_points_copy.length; i++) {
-        if (this.access_points_copy[i].status == 0) {
+      for (let i = 0; i < this.access_points.length; i++) {
+        if (this.access_points[i].status == 0) {
           normal++;
-        } else if (this.access_points_copy[i].status == 1) {
+        } else if (this.access_points[i].status == 1) {
           warning++;
         } else {
           critical++;

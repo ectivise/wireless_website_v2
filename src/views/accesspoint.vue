@@ -4,6 +4,7 @@
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
+      <img src="@/assets/legrovelogo.png" alt="Le Grove Logo">
       <h2>Le Grove Serviced Residences</h2>
       <create_ap_button
         @open:popupwindow="openpopupwindow"
@@ -204,6 +205,14 @@ export default {
 </script>
 
 <style scoped>
+img{
+  position: absolute;
+  width: 180px;
+  top: 10px;
+  left: 10px;
+  background-color: whitesmoke;
+}
+
 .small-container {
   margin: 0px;
   max-width: unset;
@@ -225,6 +234,10 @@ export default {
 }
 
 @media screen and (max-width: 760px) {
+  img{
+    display: none;
+  }
+
   #logout {
     top: 10px;
     position: relative;
