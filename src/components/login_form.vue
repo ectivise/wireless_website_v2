@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <img src="@/assets/legrovelogo.png" alt="Le Grove Logo">
-    <div class="card" v-if="login_otp == false">
+    <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
+    <!-- login page -->
+    <div class="card" v-if="login_otp == false && register == false">
       <div class="sign-in">
         <h2>User Login</h2>
         <form action="">
-          <!-- look for id -->
           <input
             v-model="phone_number"
             type="text"
@@ -26,56 +26,89 @@
             @focus="clearstatus"
             @keypress="clearstatus"
           />
-          <br>
+          <br />
           <button @click.prevent="handlelogin">
             Login
           </button>
-          <br>
+          <br />
           <h6>or</h6>
-          <button @click.prevent="loginotp">
+          <button @click.prevent="userotp">
             Login with OTP
           </button>
         </form>
       </div>
       <span>
         <strong id="forgetpw">Forget Password?</strong>
-      <p>Not Registered? <strong id="register">Register</strong></p>
+        <p>
+          Not Registered?
+          <strong id="register" @click.prevent="userregister">Register</strong>
+        </p>
       </span>
-      
     </div>
-    <div class="card" v-else>
+    <!-- one time password page -->
+    <div class="card" v-else-if="login_otp == true">
       <strong id="back" @click.prevent="back"> &#8249; </strong>
       <h2>Login via OTP</h2>
-      <p>We will send you a One Time Password <br>to your Phone Number via SMS</p>
+      <p>
+        We will send you a One Time Password <br />to your Phone Number via SMS
+      </p>
       <form action="">
         <input
-            v-model="phone_number"
-            type="text"
-            id="phone_number"
-            placeholder="Phone Number"
-            :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
-            @focus="clearstatus"
-            @keypress="clearstatus"
-          />
-          <button @click.prevent="sendotp">
-            Send OTP
-          </button><br>
-          <input
-            v-model="otp"
-            type="text"
-            id="otp"
-            placeholder="One Time Password"
-            :class="{ 'has-error': loging_in_otp && invalidotp}"
-            @focus="clearstatus"
-            @keypress="clearstatus"
-            ref="first"
-          />
-          <button @click.prevent="handleotp">
-            Enter
-          </button>
-          <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
+          v-model="phone_number"
+          type="text"
+          id="phone_number"
+          placeholder="Phone Number"
+          :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        />
+        <button @click.prevent="sendotp">
+          Send OTP</button
+        ><br />
+        <input
+          v-model="otp"
+          type="text"
+          id="otp"
+          placeholder="One Time Password"
+          :class="{ 'has-error': loging_in_otp && invalidotp }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+          ref="first"
+        />
+        <button @click.prevent="handleotp">
+          Enter
+        </button>
+        <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
       </form>
-      
+    </div>
+    <!-- register page -->
+    <div class="card" v-else-if="register == true">
+      <strong id="back" @click.prevent="back"> &#8249; </strong>
+      <h2>Register</h2>
+      <form action="">
+        <input
+          v-model="phone_number"
+          type="text"
+          id="phone_number"
+          placeholder="Phone Number"
+          :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        /><br>
+        <input
+          v-model="password"
+          type="text"
+          id="password"
+          placeholder="Password"
+          :class="{ 'has-error': loging_in_otp && invalidpassword }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        />
+        <p> Verify Phone Number with OTP</p>
+        <button @click.prevent="handleregister">
+          Verify
+        </button>
+      </form>
     </div>
   </div>
 </template>
@@ -89,12 +122,9 @@ export default {
       loging_in: false,
       success: false,
       error: false,
-      login_otp:false,
-      loging_in_otp:false,
-      user: {
-        phone_number: "",
-        password: "",
-      },
+      login_otp: false,
+      loging_in_otp: false,
+      register: false,
       phone_number: "",
       password: "",
       otp: "",
@@ -121,26 +151,32 @@ export default {
         this.$emit("signup", this.user);
       }
     },
-    loginotp() {
+    userotp() {
       this.login_otp = true;
-      this.clearstatus()
+      this.clearstatus();
     },
     sendotp() {
-      this.loging_in_otp
-      if(this.phone_number === ""){
+      this.loging_in_otp;
+      if (this.phone_number === "") {
         alert("fill in phone number");
       } else {
-        alert('otp = 123456');
+        alert("otp = 123456");
       }
     },
     handleotp() {
-      this.loging_in_otp
-      if(this.otp == ""){
+      this.loging_in_otp;
+      if (this.otp == "") {
         alert("fill in otp");
       } else {
-        this.$emit("login_otp",this.otp);
+        this.$emit("login_otp", this.otp);
       }
-      
+    },
+    userregister() {
+      this.register = true;
+    },
+    handleregister() {
+      this.register = false;
+      this.login_otp = true;
     },
     clearstatus() {
       this.success = false;
@@ -149,7 +185,8 @@ export default {
     },
     back() {
       this.login_otp = false;
-    }
+      this.register = false;
+    },
   },
   computed: {
     invalidphone_number_login() {
@@ -175,13 +212,13 @@ export default {
 </script>
 
 <style scoped>
-img{
+img {
   position: absolute;
   width: 180px;
   top: 5px;
   left: 5px;
   background-color: whitesmoke;
-  padding:10px;
+  padding: 10px;
 }
 
 .container {
@@ -202,21 +239,22 @@ img{
   border-radius: 20px;
   font-size: 1vw;
 }
-.card h6{
+.card h6 {
   padding: 0px;
   margin: 0px;
 }
-.card span{
+.card span {
   font-size: 1vw;
 }
-#forgetpw{
+#forgetpw {
   cursor: pointer;
 }
-#register{
+#register {
   cursor: pointer;
 }
 
-#forgetpw:hover, #register:hover{
+#forgetpw:hover,
+#register:hover {
   text-decoration: underline;
 }
 
@@ -242,7 +280,7 @@ p {
   border-radius: 20px;
 }
 
-.container button:focus{
+.container button:focus {
   outline: none;
 }
 
