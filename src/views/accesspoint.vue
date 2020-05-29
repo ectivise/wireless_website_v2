@@ -123,6 +123,43 @@ export default {
       );
     },
     filteraccesspoint(raspi_id, building, level) {
+      switch(level){
+        case "B1":
+          level = -1;
+          break;
+        case "L1":
+          level = 1;
+          break;
+        case "L2":
+          level = 2;
+          break;
+        case "L3":
+          level = 3;
+          break;
+        case "L4":
+          level = 4;
+          break;
+        case "L5":
+          level = 5;
+          break;
+        case "L6":
+          level = 6;
+          break;
+        case "L7":
+          level = 7;
+          break;
+        case "L8":
+          level = 8;
+          break;
+        case "L9":
+          level = 9;
+          break;
+        case "L10":
+          level = 10;
+          break;
+      }
+      
+
       if (raspi_id == "nofilter") {
         if (building == "nofilter" && level == "nofilter") {
           this.filtering = false;
