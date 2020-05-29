@@ -5,21 +5,21 @@
         <!-- <h3>Filter</h3> -->
         <label v-if="usertype == 'admin'">Raspberry Pi ID:</label>
         <select v-if="usertype == 'admin'" v-model="filterraspi_id">
-          <option value="nofilter" selected>No Filter</option>
+          <option value="nofilter" selected>All</option>
           <option v-for="(option, index) in filter_raspi_id" :key="index">{{
             option
           }}</option>
         </select>
         <label>Building:</label>
         <select v-model="filterbuildings">
-          <option value="nofilter" selected>No Filter</option>
+          <option value="nofilter" selected>All</option>
           <option v-for="(option, index) in filter_buildings" :key="index">{{
             option
           }}</option>
         </select>
         <label>Storey:</label>
         <select v-model="filterlevel">
-          <option value="nofilter" selected>No Filter</option>
+          <option value="nofilter" selected>All</option>
           <option v-for="(option, index) in filter_level" :key="index">{{
             option
           }}</option>
@@ -182,24 +182,25 @@ export default {
   computed: {
     filter_raspi_id() {
       var unfiltered_array = [];
-      for (let i = 0; i < this.access_points_copy.length; i++) {
-        unfiltered_array.push(this.access_points_copy[i].raspi);
+      for (let i = 0; i < this.access_points.length; i++) {
+        unfiltered_array.push(this.access_points[i].raspi);
       }
       const raspi_options = [...new Set(unfiltered_array)];
       return Array.from(raspi_options);
     },
     filter_buildings() {
       var unfiltered_array = [];
-      for (let i = 0; i < this.access_points_copy.length; i++) {
-        unfiltered_array.push(this.access_points_copy[i].location.building);
+      for (let i = 0; i < this.access_points.length; i++) {
+        unfiltered_array.push(this.access_points[i].location.building);
       }
       const building_options = [...new Set(unfiltered_array)];
       return Array.from(building_options);
     },
     filter_level() {
       var unfiltered_array = [];
-      for (let i = 0; i < this.access_points_copy.length; i++) {
-        unfiltered_array.push(this.access_points_copy[i].location.level);
+
+      for (let i = 0; i < this.access_points.length; i++) {
+        unfiltered_array.push(this.convertstorey[i]);
       }
       const level_options = [...new Set(unfiltered_array)];
       return Array.from(level_options);
@@ -218,7 +219,7 @@ export default {
         // var minutes = Math.floor(array_timestmp[i] / 60);
         // var seconds = array_timestmp[i] - (minutes * 60);
 
-        var time = days + " days " + hours + "hrs";
+        var time = days + " days " + hours + " hrs";
         // console.log(time);
         converted_runtime[i] = time;
       }
@@ -443,13 +444,13 @@ table {
 }
 td,
 th {
-  border: 2px solid #eee;
+  border: 2px solid #E8EEEA;
   margin: 0px;
   padding: 3px;
 }
 
 tr:nth-child(even) {
-  background-color: #d7fdf0;
+  background-color: #E8EEEA;
 }
 
 table .square {
@@ -529,7 +530,7 @@ table td button {
   width: 3em;
 }
 #action-col {
-  width: 110px;
+  width: 6vw;
 }
 
 @media screen and (max-width: 760px) {

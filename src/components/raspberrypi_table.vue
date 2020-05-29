@@ -173,8 +173,8 @@ export default {
     convertruntime() {
       const converted_runtime = [];
       var array_timestmp = [];
-      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
-        array_timestmp.push(this.raspberrypis_copy[i].runtime);
+      for (let i = 0; i < this.raspberrypis.length; i++) {
+        array_timestmp.push(this.raspberrypis[i].runtime);
       }
       for (let i = 0; i < array_timestmp.length; i++) {
         var days = Math.floor(array_timestmp[i] / (3600 * 24));
@@ -184,7 +184,7 @@ export default {
         // var minutes = Math.floor(array_timestmp[i] / 60);
         // var seconds = array_timestmp[i] - (minutes * 60);
 
-        var time = days + "days " + hours + "hrs";
+        var time = days + " days " + hours + " hrs";
         // console.log(time);
         converted_runtime[i] = time;
       }
@@ -193,8 +193,8 @@ export default {
     convertstorey() {
       var array_storey = [];
       var converted_storey = [];
-      for (let i = 0; i < this.raspberrypis_copy.length; i++) {
-        array_storey.push(this.raspberrypis_copy[i].location.level);
+      for (let i = 0; i < this.raspberrypis.length; i++) {
+        array_storey.push(this.raspberrypis[i].location.level);
       }
       for (let i = 0; i < array_storey.length; i++) {
         switch (array_storey[i]) {
@@ -411,13 +411,13 @@ table thead th {
 
 td,
 th {
-  border: 2px solid #eee;
+  border: 2px solid #E8EEEA;
   margin: 0px;
   padding: 3px;
 }
 
 tr:nth-child(even) {
-  background-color: #d7fdf0;
+  background-color: #E8EEEA;
 }
 
 table .square {
