@@ -175,6 +175,17 @@ export default {
       options_array: [],
     };
   },
+  watch: {
+    filterraspi_id(){
+        this.filterbuildings = 'nofilter';
+        this.filterlevel = 'nofilter';
+        
+    },
+    filterbuildings(){
+        this.filterlevel = 'nofilter';
+      
+    }
+  },
   mounted() {
     this.reset_option();
     this.manageaccesspoint();
@@ -182,8 +193,8 @@ export default {
   computed: {
     filter_raspi_id() {
       var unfiltered_array = [];
-      for (let i = 0; i < this.access_points.length; i++) {
-        unfiltered_array.push(this.access_points[i].raspi);
+      for (let i = 0; i < this.access_points_copy.length; i++) {
+        unfiltered_array.push(this.access_points_copy[i].raspi);
       }
       const raspi_options = [...new Set(unfiltered_array)];
       return Array.from(raspi_options);
