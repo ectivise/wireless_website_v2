@@ -359,6 +359,11 @@ export default {
     display: inline-block;
   }
 }
+
+.filter_form button:focus, table td button:focus {
+  outline: none;
+}
+
 .filter_form label,
 select {
   /* float: left; */
@@ -453,6 +458,11 @@ table {
   border-collapse: collapse;
   word-wrap: break-word;
 }
+
+table td{
+  line-height: 95%;
+}
+
 td,
 th {
   border: 2px solid #E8EEEA;

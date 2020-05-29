@@ -11,6 +11,11 @@ export default {
 </script>
 
 <style scoped>
+
+button:focus{
+  outline: none;
+}
+
 #create-button{
   margin: 0 0.5rem 0 0;  
   background: #009435;

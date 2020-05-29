@@ -4,7 +4,7 @@
       <span>
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
-      <img src="@/assets/legrovelogo.png" alt="Le Grove Logo">
+      <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
       <h2>Le Grove Serviced Residences</h2>
       <create_ap_button
         @open:popupwindow="openpopupwindow"
@@ -123,7 +123,7 @@ export default {
       );
     },
     filteraccesspoint(raspi_id, building, level) {
-      switch(level){
+      switch (level) {
         case "B1":
           level = -1;
           break;
@@ -158,7 +158,6 @@ export default {
           level = 10;
           break;
       }
-      
 
       if (raspi_id == "nofilter") {
         if (building == "nofilter" && level == "nofilter") {
@@ -226,10 +225,16 @@ export default {
       console.log(id);
     },
     filterstatus(status) {
-      this.filtering = true;
-      this.filtered_access_points = this.access_points.filter(
-        (access_point) => access_point.status == status
-      );
+      if (this.filtering == true) {
+        this.filtered_access_points = this.filtered_access_points.filter(
+          (access_point) => access_point.status == status
+        );
+      } else if (this.filtering == false) {
+        this.filtering = true;
+        this.filtered_access_points = this.access_points.filter(
+          (access_point) => access_point.status == status
+        );
+      }
     },
     openpopupwindow() {
       this.popupwindow = true;
@@ -242,13 +247,13 @@ export default {
 </script>
 
 <style scoped>
-img{
+img {
   position: absolute;
   width: 180px;
   top: 5px;
   left: 5px;
   background-color: whitesmoke;
-  padding:10px;
+  padding: 10px;
 }
 
 .small-container {
@@ -272,7 +277,7 @@ img{
 }
 
 @media screen and (max-width: 760px) {
-  img{
+  img {
     display: none;
   }
 

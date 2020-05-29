@@ -318,6 +318,10 @@ export default {
   }
 }
 
+.filter_form button:focus, table td button:focus {
+  outline: none;
+}
+
 .filter_form label,
 select {
   /* float: left; */
