@@ -22,13 +22,13 @@
 
       <!-- table body -->
       <tbody>
-        <p v-if="newaccesspoint.length < 1" class="empty-table">
+        <p v-if="filteraccesspoint1.length < 1" class="empty-table">
           No Access Points
         </p>
         <!-- database UUID -->
         <tr
           v-else
-          v-for="(access_point, index) in newaccesspoint"
+          v-for="(access_point, index) in filteraccesspoint1"
           :key="index"
           :class="usertype == 'admin' ? 'admin' : 'operator'"
         >
@@ -116,16 +116,7 @@ export default {
     this.manageaccesspoint();
   },
   computed: {
-    syncfilterraspi() {
-       return this.$store.state.filterraspi_id;
-    },
-    syncfilterbuilding() {
-      return this.$store.state.filterbuilding;
-    },
-    syncfilterlevel() {
-      return this.$store.state.filterlevel;
-    },
-    newaccesspoint(){
+    filteraccesspoint1(){
       let raspi_id = this.$store.state.filterraspi_id;
       let building = this.$store.state.filterbuilding;
       let level = this.$store.state.filterlevel;

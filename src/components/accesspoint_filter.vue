@@ -33,19 +33,19 @@
       <span
         class="status_button"
         id="normal"
-        @click.prevent="$emit('filter:status', 0)"
+        @click.prevent="$store.commit('filterstatus',0)"
         >Normal: {{ status_summary[0] }}
       </span>
       <span
         class="status_button"
         id="warning"
-        @click.prevent="$emit('filter:status', 1)"
+        @click.prevent="$store.commit('filterstatus',1)"
         >Warning: {{ status_summary[1] }}
       </span>
       <span
         class="status_button"
         id="critical"
-        @click.prevent="$emit('filter:status', 2)"
+        @click.prevent="$store.commit('filterstatus',2)"
         >Critical: {{ status_summary[2] }}
       </span>
     </form>

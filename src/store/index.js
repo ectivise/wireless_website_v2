@@ -24,6 +24,7 @@ export default new Vuex.Store({
     filterbuilding: "",
     filterlevel: "",
     filterraspi_id: "",
+    filterstatus: "",
   },
   mutations: {
     register(state, user) {
@@ -46,6 +47,10 @@ export default new Vuex.Store({
     filterlevel(state, level){
       state.filterlevel = level;
     },
+    filterstatus(state, status){
+      // 0 normal, 1 warning, 2 critical
+      state.filterstatus = status
+    }
   },
   actions: {
   },
