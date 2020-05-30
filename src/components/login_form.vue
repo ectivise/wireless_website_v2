@@ -214,18 +214,11 @@ export default {
 
 <style scoped>
 
-@media screen and (min-width: 761px){
+@media screen and (min-width: 761px) {
   img {
-  position: fixed;
-  width: 180px;
-  top: 5px;
-  left: 5px;
-  background-color: whitesmoke;
-  padding: 10px;
+  display: none;
 }
 }
-
-body {}
 .container {
   height:90vh;
   text-align: center;

@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <h1>Speedtest Monitoring</h1>
-      <h6>by Ectivise Solutions Pte Ltd</h6>
+      <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
       <div id="nav" v-if="logged_in">
         <router-link to="/accesspoint" v-if="this.user_type == 'admin'" >Access Point</router-link>
         <router-link to="/raspberrypi" v-if="this.user_type == 'admin'" >Raspberry Pi</router-link>
@@ -12,6 +12,13 @@
     <login_form v-if="!logged_in" @login="login" @signup="signup" @login_otp="loginotp"/>
     <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
+    <footer>
+      <h6>copyright © 2020 Le Grove. All rights reserved</h6>
+      <h6>by Ectivise Solutions Pte Ltd</h6>
+      <h6 style="display:inline">Terms & Conditions | </h6>
+      <h6 style="display:inline">Privacy Policy | </h6> 
+      <h6 style="display:inline">Terms of Use</h6>
+    </footer>
   </div>
 </template>
 
@@ -89,16 +96,39 @@ export default {
 </script>
 
 <style scoped>
+
+@media screen and (min-width: 761px){
+  img {
+  position: absolute;
+  width: 180px;
+  top: 5px;
+  left: 5px;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+}
+
 * {
   margin: 0;
 }
 
 header {
+  height: 95px;
   width: 100%;
   position: relative;
   padding: 20px 20px 0px 20px;
   text-align: center;
   background-color: #333;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  text-align: center;
+  color: #f2f2f2;
 }
 
 header h1{
@@ -137,6 +167,9 @@ header h6{
 @media screen and (max-width: 760px){
   header{
     padding: 20px 0px 0px 0px;
+  }
+  img {
+  display: none;
   }
   #nav a{
     display:block;
