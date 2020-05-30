@@ -22,13 +22,13 @@
 
       <!-- table body -->
       <tbody>
-        <p v-if="filteraccesspoint1.length < 1" class="empty-table">
+        <p v-if="newaccesspoint.length < 1" class="empty-table">
           No Access Points
         </p>
         <!-- database UUID -->
         <tr
           v-else
-          v-for="(access_point, index) in filteraccesspoint1"
+          v-for="(access_point, index) in newaccesspoint"
           :key="index"
           :class="usertype == 'admin' ? 'admin' : 'operator'"
         >
@@ -112,15 +112,15 @@ export default {
     };
   },
   mounted() {
-    this.reset_option();
     this.manageaccesspoint();
   },
   computed: {
-    filteraccesspoint1(){
+    newaccesspoint(){
       let raspi_id = this.$store.state.filterraspi_id;
       let building = this.$store.state.filterbuilding;
       let level = this.$store.state.filterlevel;
-      let filtered_access_points = [];
+      let status = this.$store.state.filterstatus;
+      let filtered_access_points = [...this.access_points];
 
       switch (level) {
         case "B1":
@@ -158,57 +158,32 @@ export default {
           break;
       }
 
-      if (raspi_id == "nofilter") {
-        if (building == "nofilter" && level == "nofilter") {
-          return this.access_points;
-        } else if (building !== "nofilter" && level !== "nofilter") {
-          
-          filtered_access_points = this.access_points.filter(
+      if(raspi_id !== 'nofilter'){
+        filtered_access_points = filtered_access_points.filter(
             (access_point) =>
-              access_point.location.building == building &&
+              access_point.raspi == raspi_id
+          );
+      }
+
+      if(building !== 'nofilter'){
+        filtered_access_points = filtered_access_points.filter(
+            (access_point) =>
+              access_point.location.building == building
+          );
+      }
+      if(level !== 'nofilter'){
+        filtered_access_points = filtered_access_points.filter(
+            (access_point) =>
               access_point.location.level == level
           );
-        } else if (building !== "nofilter" && level == "nofilter") {
-          
-          filtered_access_points = this.access_points.filter(
-            (access_point) => access_point.location.building == building
-          );
-        } else if (building == "nofilter" && level !== "nofilter") {
-         
-          filtered_access_points = this.access_points.filter(
-            (access_point) => access_point.location.level == level
-          );
-        }
-      } else {
-        if (building == "nofilter" && level == "nofilter") {
-         
-          filtered_access_points = this.access_points.filter(
-            (access_point) => access_point.raspi == raspi_id
-          );
-        } else if (building !== "nofilter" && level !== "nofilter") {
-         
-          filtered_access_points = this.access_points.filter(
-            (access_point) =>
-              access_point.location.building == building &&
-              access_point.location.level == level &&
-              access_point.raspi == raspi_id
-          );
-        } else if (building !== "nofilter" && level == "nofilter") {
-         
-          filtered_access_points = this.access_points.filter(
-            (access_point) =>
-              access_point.location.building == building &&
-              access_point.raspi == raspi_id
-          );
-        } else if (building == "nofilter" && level !== "nofilter") {
-     
-          filtered_access_points = this.access_points.filter(
-            (access_point) =>
-              access_point.location.level == level &&
-              access_point.raspi == raspi_id
-          );
-        }
       }
+      if(status !== ''){
+        filtered_access_points = filtered_access_points.filter(
+            (access_point) =>
+              access_point.status == status
+          );
+      }
+      
       return filtered_access_points;
     },
     convertruntime() {

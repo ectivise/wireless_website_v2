@@ -18,7 +18,6 @@
       <accesspoint_filter
         v-bind:access_points_copy="access_points_copy"
         v-bind:access_points="access_points"
-        @filter:accesspoint="filteraccesspoint"
         @filter:status="filterstatus"
       />
       <accesspoint_table
