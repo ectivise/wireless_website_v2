@@ -21,6 +21,9 @@ export default new Vuex.Store({
         type: "operator",
       },
     ],
+    filterbuilding: "",
+    filterlevel: "",
+    filterraspi_id: "",
   },
   mutations: {
     register(state, user) {
@@ -33,6 +36,15 @@ export default new Vuex.Store({
     loginotp(state){
       state.login = true;
       state.user_type = 'operator'
+    },
+    filterraspi_id(state, raspi_id){
+      state.filterraspi_id = raspi_id;
+    },
+    filterbuilding(state, building){
+      state.filterbuilding = building;
+    },
+    filterlevel(state, level){
+      state.filterlevel = level;
     },
   },
   actions: {

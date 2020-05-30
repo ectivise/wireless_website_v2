@@ -1,65 +1,5 @@
 <template>
   <div id="accesspoint_table">
-    <div class="filter_form">
-      <form>
-        <!-- <h3>Filter</h3> -->
-        <label v-if="usertype == 'admin'">Raspberry Pi ID:</label>
-        <select v-if="usertype == 'admin'" v-model="filterraspi_id">
-          <option value="nofilter" selected>All</option>
-          <option v-for="(option, index) in filter_raspi_id" :key="index">{{
-            option
-          }}</option>
-        </select>
-        <label>Building:</label>
-        <select v-model="filterbuildings">
-          <option value="nofilter" selected>All</option>
-          <option v-for="(option, index) in filter_buildings" :key="index">{{
-            option
-          }}</option>
-        </select>
-        <label>Storey:</label>
-        <select v-model="filterlevel">
-          <option value="nofilter" selected>All</option>
-          <option v-for="(option, index) in filter_level" :key="index">{{
-            option
-          }}</option>
-        </select>
-        <button
-          ref="submit"
-          type="submit"
-          v-if="editing == null"
-          @click.prevent="
-            $emit(
-              'filter:accesspoint',
-              filterraspi_id,
-              filterbuildings,
-              filterlevel
-            )
-          "
-        >
-          Submit
-        </button>
-        <button v-else @click.prevent="filtererror()">Submit</button>
-      </form>
-    </div>
-    <span
-      class="status_button"
-      id="normal"
-      @click.prevent="$emit('filter:status', 0)"
-      >Normal: {{ status_summary[0] }}
-    </span>
-    <span
-      class="status_button"
-      id="warning"
-      @click.prevent="$emit('filter:status', 1)"
-      >Warning: {{ status_summary[1] }}
-    </span>
-    <span
-      class="status_button"
-      id="critical"
-      @click.prevent="$emit('filter:status', 2)"
-      >Critical: {{ status_summary[2] }}
-    </span>
     <table>
       <thead>
         <tr>
@@ -82,13 +22,13 @@
 
       <!-- table body -->
       <tbody>
-        <p v-if="access_points.length < 1" class="empty-table">
+        <p v-if="newaccesspoint.length < 1" class="empty-table">
           No Access Points
         </p>
         <!-- database UUID -->
         <tr
           v-else
-          v-for="(access_point, index) in access_points"
+          v-for="(access_point, index) in newaccesspoint"
           :key="index"
           :class="usertype == 'admin' ? 'admin' : 'operator'"
         >
@@ -165,56 +105,120 @@ export default {
   },
   data() {
     return {
-      filterbuildings: "",
-      filterlevel: "",
-      filterraspi_id: "",
       filter_error: false,
       editing: null,
       raspi_id: this.$route.params.raspi_id,
       usertype: this.$store.state.user_type,
-      options_array: [],
     };
-  },
-  watch: {
-    filterraspi_id(){
-        this.filterbuildings = 'nofilter';
-        this.filterlevel = 'nofilter';
-
-    },
-    filterbuildings(){
-        this.filterlevel = 'nofilter';
-      
-    }
   },
   mounted() {
     this.reset_option();
     this.manageaccesspoint();
   },
   computed: {
-    filter_raspi_id() {
-      var unfiltered_array = [];
-      for (let i = 0; i < this.access_points_copy.length; i++) {
-        unfiltered_array.push(this.access_points_copy[i].raspi);
-      }
-      const raspi_options = [...new Set(unfiltered_array)];
-      return Array.from(raspi_options);
+    syncfilterraspi() {
+       return this.$store.state.filterraspi_id;
     },
-    filter_buildings() {
-      var unfiltered_array = [];
-      for (let i = 0; i < this.access_points_copy.length; i++) {
-        unfiltered_array.push(this.access_points_copy[i].location.building);
-      }
-      const building_options = [...new Set(unfiltered_array)];
-      return Array.from(building_options);
+    syncfilterbuilding() {
+      return this.$store.state.filterbuilding;
     },
-    filter_level() {
-      var unfiltered_array = [];
+    syncfilterlevel() {
+      return this.$store.state.filterlevel;
+    },
+    newaccesspoint(){
+      let raspi_id = this.$store.state.filterraspi_id;
+      let building = this.$store.state.filterbuilding;
+      let level = this.$store.state.filterlevel;
+      let filtered_access_points = [];
 
-      for (let i = 0; i < this.access_points.length; i++) {
-        unfiltered_array.push(this.convertstorey[i]);
+      switch (level) {
+        case "B1":
+          level = -1;
+          break;
+        case "L1":
+          level = 1;
+          break;
+        case "L2":
+          level = 2;
+          break;
+        case "L3":
+          level = 3;
+          break;
+        case "L4":
+          level = 4;
+          break;
+        case "L5":
+          level = 5;
+          break;
+        case "L6":
+          level = 6;
+          break;
+        case "L7":
+          level = 7;
+          break;
+        case "L8":
+          level = 8;
+          break;
+        case "L9":
+          level = 9;
+          break;
+        case "L10":
+          level = 10;
+          break;
       }
-      const level_options = [...new Set(unfiltered_array)];
-      return Array.from(level_options);
+
+      if (raspi_id == "nofilter") {
+        if (building == "nofilter" && level == "nofilter") {
+          return this.access_points;
+        } else if (building !== "nofilter" && level !== "nofilter") {
+          
+          filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.location.building == building &&
+              access_point.location.level == level
+          );
+        } else if (building !== "nofilter" && level == "nofilter") {
+          
+          filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.location.building == building
+          );
+        } else if (building == "nofilter" && level !== "nofilter") {
+         
+          filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.location.level == level
+          );
+        }
+      } else {
+        if (building == "nofilter" && level == "nofilter") {
+         
+          filtered_access_points = this.access_points.filter(
+            (access_point) => access_point.raspi == raspi_id
+          );
+        } else if (building !== "nofilter" && level !== "nofilter") {
+         
+          filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.location.building == building &&
+              access_point.location.level == level &&
+              access_point.raspi == raspi_id
+          );
+        } else if (building !== "nofilter" && level == "nofilter") {
+         
+          filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.location.building == building &&
+              access_point.raspi == raspi_id
+          );
+        } else if (building == "nofilter" && level !== "nofilter") {
+     
+          filtered_access_points = this.access_points.filter(
+            (access_point) =>
+              access_point.location.level == level &&
+              access_point.raspi == raspi_id
+          );
+        }
+      }
+      return filtered_access_points;
     },
     convertruntime() {
       const converted_runtime = [];
@@ -281,26 +285,6 @@ export default {
       }
       return converted_storey;
     },
-    status_summary() {
-      var status = [];
-      var normal = 0,
-        warning = 0,
-        critical = 0;
-
-      for (let i = 0; i < this.access_points.length; i++) {
-        if (this.access_points[i].status == 0) {
-          normal++;
-        } else if (this.access_points[i].status == 1) {
-          warning++;
-        } else {
-          critical++;
-        }
-      }
-
-      status = [normal, warning, critical];
-
-      return status;
-    },
   },
   methods: {
     editmode(access_point) {
@@ -334,14 +318,9 @@ export default {
       this.filter_error = true;
       alert("❗Please save before filter");
     },
-    reset_option() {
-      this.filterbuildings = "nofilter";
-      this.filterlevel = "nofilter";
-      this.filterraspi_id = "nofilter";
-    },
     manageaccesspoint() {
       if (this.$route.path.includes("/accesspoint/manage/")) {
-        this.filterbuildings = "nofilter";
+        this.filterbuilding = "nofilter";
         this.filterlevel = "nofilter";
         this.filterraspi_id = this.$route.params.raspi_id;
         this.$emit("manage:accesspoint", this.$route.params.raspi_id);
@@ -353,91 +332,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media screen and (min-width: 761px) {
-  .filter_form label,
-  select {
-    display: inline-block;
-  }
-}
-
-.filter_form button:focus, table td button:focus {
-  outline: none;
-}
-
-.filter_form label,
-select {
-  /* float: left; */
-  align-items: center;
-}
-
-.filter_form select {
-  width: 8vw;
-  height: 2.5em;
-  font-size: 1vw;
-  padding: 0.2em 0.3em;
-  margin: 0.5em 0.7em;
-}
-
-button,
-.filter_form button {
+button {
   margin: 0.5vw;
   background: #009435;
   border: 1px solid #009435;
 }
 
-.filter_form button {
-  font-size: 1vw;
+table td button:focus {
+  outline: none;
 }
 
 tbody td button {
   margin: 0px 2px;
 }
 
-.filter_form label {
-  font-size: 1.5vw;
-  padding: 0.5em;
-  margin: 0.1em 0em;
-}
-
-.filter_form {
-  position: relative;
-  margin: 10px;
-}
 
 .last-td {
   border: unset;
-}
-
-.status_button {
-  padding: 0.5em 0.8em;
-  margin: 5px;
-  border-radius: 20px;
-  font-size: 1.1vw;
-  font-weight: bold;
-  color: #ffffff;
-  cursor: pointer;
-  white-space: pre;
-  word-spacing: normal;
-}
-
-#normal {
-  background-color: #3dbd61;
-}
-#warning {
-  background-color: #d4b445;
-}
-#critical {
-  background-color: #ec0b43;
-}
-
-#normal:hover {
-  background-color: #319d4e;
-}
-#warning:hover {
-  background-color: #b19037;
-}
-#critical:hover {
-  background-color: #cd0936;
 }
 
 #edit {
@@ -555,37 +466,6 @@ table td button {
 }
 
 @media screen and (max-width: 760px) {
-  /* filter form */
-  .filter_form {
-    display: block;
-  }
-
-  .filter_form label {
-    font-size: unset;
-  }
-
-  .filter_form select {
-    font-size: unset;
-    width: 50vw;
-  }
-
-  .filter_form button {
-    font-size: unset;
-    margin: 13px;
-  }
-  /* status button */
-  .status_button {
-    display: inline-block;
-    padding: 0.5em 0.7em;
-    margin: 0.5vw;
-    border-radius: 20px;
-    font-size: unset;
-    font-weight: bold;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: pre;
-    word-spacing: normal;
-  }
 
   /* table */
   table,
@@ -707,4 +587,5 @@ table td button {
     margin: 2px;
   }
 }
+
 </style>
