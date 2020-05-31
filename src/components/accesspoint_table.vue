@@ -22,13 +22,13 @@
 
       <!-- table body -->
       <tbody>
-        <p v-if="newaccesspoint.length < 1" class="empty-table">
+        <p v-if="displayedap.length < 1" class="empty-table">
           No Access Points
         </p>
         <!-- database UUID -->
         <tr
           v-else
-          v-for="(access_point, index) in newaccesspoint"
+          v-for="(access_point, index) in displayedap"
           :key="index"
           :class="usertype == 'admin' ? 'admin' : 'operator'"
         >
@@ -92,6 +92,43 @@
         </tr>
       </tbody>
     </table>
+    <nav>
+      <div class="pagination">
+        <div class="pagebuttons">
+          <span class="page-item">
+            <button
+              type="button"
+              class="page-link"
+              v-if="page != 1"
+              @click="page--"
+            >
+              &#8249;
+            </button>
+          </span>
+          <span class="page-item">
+            <button
+              type="button"
+              class="page-link"
+              v-for="pageNumber in pages.slice(page - 1, page + 4)"
+              :key="pageNumber"
+              @click="page = pageNumber"
+            >
+              {{ pageNumber }}
+            </button>
+          </span>
+          <span class="page-item">
+            <button
+              type="button"
+              @click="page++"
+              v-if="page < pages.length"
+              class="page-link"
+            >
+              &#8250;
+            </button>
+          </span>
+        </div>
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -109,13 +146,25 @@ export default {
       editing: null,
       raspi_id: this.$route.params.raspi_id,
       usertype: this.$store.state.user_type,
+      page: 1,
+      perPage: 20,
+      pages: [],
     };
   },
   mounted() {
     this.manageaccesspoint();
   },
+  watch: {
+    newaccesspoint() {
+      this.page = 1;
+      this.setPages();
+    },
+  },
   computed: {
-    newaccesspoint(){
+    displayedap() {
+      return this.paginate(this.newaccesspoint);
+    },
+    newaccesspoint() {
       let raspi_id = this.$store.state.filterraspi_id;
       let building = this.$store.state.filterbuilding;
       let level = this.$store.state.filterlevel;
@@ -158,32 +207,28 @@ export default {
           break;
       }
 
-      if(raspi_id !== 'nofilter'){
+      if (raspi_id !== "nofilter") {
         filtered_access_points = filtered_access_points.filter(
-            (access_point) =>
-              access_point.raspi == raspi_id
-          );
+          (access_point) => access_point.raspi == raspi_id
+        );
       }
 
-      if(building !== 'nofilter'){
+      if (building !== "nofilter") {
         filtered_access_points = filtered_access_points.filter(
-            (access_point) =>
-              access_point.location.building == building
-          );
+          (access_point) => access_point.location.building == building
+        );
       }
-      if(level !== 'nofilter'){
+      if (level !== "nofilter") {
         filtered_access_points = filtered_access_points.filter(
-            (access_point) =>
-              access_point.location.level == level
-          );
+          (access_point) => access_point.location.level == level
+        );
       }
-      if(status !== ''){
+      if (status !== "") {
         filtered_access_points = filtered_access_points.filter(
-            (access_point) =>
-              access_point.status == status
-          );
+          (access_point) => access_point.status == status
+        );
       }
-      
+
       return filtered_access_points;
     },
     convertruntime() {
@@ -253,6 +298,20 @@ export default {
     },
   },
   methods: {
+    paginate(access_points) {
+      let page = this.page;
+      let perPage = this.perPage;
+      let from = page * perPage - perPage;
+      let to = page * perPage;
+      return access_points.slice(from, to);
+    },
+    setPages() {
+      this.pages = [];
+      let numberOfPages = Math.ceil(this.newaccesspoint.length / this.perPage);
+      for (let index = 1; index <= numberOfPages; index++) {
+        this.pages.push(index);
+      }
+    },
     editmode(access_point) {
       this.cachedaccesspoint = Object.assign({}, access_point);
       this.editing = access_point.device_id;
@@ -298,6 +357,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@media screen and (min-width: 761px) {
+  .pagination {
+    background-color: #e8eeea;
+    padding-left: 30vw;
+  }
+  .pagination span {
+    display: inline-block;
+  }
+  button.page-link {
+    font-size: 1vw;
+  }
+}
+
 button {
   margin: 0.5vw;
   background: #009435;
@@ -311,7 +383,6 @@ table td button:focus {
 tbody td button {
   margin: 0px 2px;
 }
-
 
 .last-td {
   border: unset;
@@ -330,25 +401,25 @@ table thead th {
 }
 
 table {
-  margin: 20px 0px;
+  margin: 20px 0px 0px 0px;
   table-layout: fixed;
   border-collapse: collapse;
   word-wrap: break-word;
 }
 
-table td{
+table td {
   line-height: 95%;
 }
 
 td,
 th {
-  border: 2px solid #E8EEEA;
+  border: 2px solid #e8eeea;
   margin: 0px;
   padding: 3px;
 }
 
 tr:nth-child(even) {
-  background-color: #E8EEEA;
+  background-color: #e8eeea;
 }
 
 table .square {
@@ -432,7 +503,6 @@ table td button {
 }
 
 @media screen and (max-width: 760px) {
-
   /* table */
   table,
   thead,
@@ -552,6 +622,20 @@ table td button {
     font-size: unset;
     margin: 2px;
   }
+  .pagination {
+    background-color: #e8eeea;
+    padding-left: 0px;
+  }
+  .pagination span {
+    display: inline-block;
+  }
+
+  button.page-link {
+    font-size: unset;
+    padding: 12px 15px;
+    
+  }
 }
 
+/* paging */
 </style>

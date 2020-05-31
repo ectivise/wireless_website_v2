@@ -287,6 +287,7 @@ select {
   /* filter form */
   .filter_form {
     display: block;
+    width: 100%;
   }
 
   .filter_form label {
