@@ -77,13 +77,16 @@ export default {
       this.filterbuilding = "nofilter";
       this.filterlevel = "nofilter";
       this.$store.commit('filterraspi_id', newvalue);
+      this.$store.commit('filterstatus','')
     },
     filterbuilding(newvalue) {
       this.filterlevel = "nofilter";
       this.$store.commit('filterbuilding', newvalue);
+      this.$store.commit('filterstatus','')
     },
     filterlevel(newvalue){
-        this.$store.commit('filterlevel', newvalue);
+      this.$store.commit('filterlevel', newvalue);
+      this.$store.commit('filterstatus','')
     },
   },
   mounted() {
@@ -162,15 +165,16 @@ export default {
       return converted_storey;
     },
     status_summary() {
+      var access_points = this.$store.state.filter_accesspoint_1
       var status = [];
       var normal = 0,
         warning = 0,
         critical = 0;
 
-      for (let i = 0; i < this.access_points.length; i++) {
-        if (this.access_points[i].status == 0) {
+      for (let i = 0; i < access_points.length; i++) {
+        if (access_points[i].status == 0) {
           normal++;
-        } else if (this.access_points[i].status == 1) {
+        } else if (access_points[i].status == 1) {
           warning++;
         } else {
           critical++;

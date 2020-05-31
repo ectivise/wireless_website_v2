@@ -223,6 +223,10 @@ export default {
           (access_point) => access_point.location.level == level
         );
       }
+
+      // transfer to vuex as filter_accesspoint_1
+      this.$store.commit('filter_accesspoint_1',filtered_access_points);
+
       if (status !== "") {
         filtered_access_points = filtered_access_points.filter(
           (access_point) => access_point.status == status
@@ -234,8 +238,9 @@ export default {
     convertruntime() {
       const converted_runtime = [];
       var array_timestmp = [];
-      for (let i = 0; i < this.access_points.length; i++) {
-        array_timestmp.push(this.access_points[i].runtime);
+
+      for (let i = 0; i < this.newaccesspoint.length; i++) {
+        array_timestmp.push(this.newaccesspoint[i].runtime);
       }
       for (let i = 0; i < array_timestmp.length; i++) {
         var days = Math.floor(array_timestmp[i] / (3600 * 24));
@@ -254,8 +259,8 @@ export default {
     convertstorey() {
       var array_storey = [];
       var converted_storey = [];
-      for (let i = 0; i < this.access_points.length; i++) {
-        array_storey.push(this.access_points[i].location.level);
+      for (let i = 0; i < this.newaccesspoint.length; i++) {
+        array_storey.push(this.newaccesspoint[i].location.level);
       }
       for (let i = 0; i < array_storey.length; i++) {
         switch (array_storey[i]) {
