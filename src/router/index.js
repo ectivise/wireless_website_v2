@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import accesspoint_overview from '../views/accesspoint.vue'
 import raspberrypi_overview from '../views/raspberrypi.vue'
-import login from '../views/login.vue'
+import user_overview from '../views/user.vue'
+import home from '../views/home.vue'
 
 Vue.use(VueRouter)
 
@@ -10,8 +11,8 @@ Vue.use(VueRouter)
   {
     // '?' at the end of the params make it optional/ or query
     path: '/',
-    name: 'login',
-    component: login
+    name: 'home',
+    component: home
   },
   {
     // '?' at the end of the params make it optional/ or query
@@ -32,6 +33,12 @@ Vue.use(VueRouter)
     name: 'raspberrypi_main',
     component: raspberrypi_overview,
     props: true,
+  },
+  {
+    // '?' at the end of the params make it optional/ or query
+    path: '/user',
+    name: 'user_main',
+    component: user_overview
   },
 ]
 
