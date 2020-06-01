@@ -25,6 +25,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 known bugs:
 
-todo:
+TODO:
 access point, add, update, delete
 raspberry pi,get list, add, update,delete to api
+backend management
