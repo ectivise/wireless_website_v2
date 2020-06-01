@@ -42,6 +42,12 @@ export default new Vuex.Store({
       state.login = true;
       state.user_type = 'operator'
     },
+    synclogin(state, login){
+      state.login = login;
+    },
+    syncuser_type(state,usertype){
+      state.user_type = usertype;
+    },
     filterraspi_id(state, raspi_id){
       state.filterraspi_id = raspi_id;
     },

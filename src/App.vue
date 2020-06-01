@@ -38,7 +38,10 @@ export default {
     };
   },
   created () {
-    this.logged_in = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    this.logged_in = JSON.parse(localStorage.getItem(STORAGE_KEY)).logged_in;
+    this.user_type = JSON.parse(localStorage.getItem(STORAGE_KEY)).user_type;
+    this.$store.commit('synclogin',this.logged_in);
+    this.$store.commit('syncuser_type',this.user_type);
   },
   methods: {
     login(username, password) {
@@ -52,8 +55,11 @@ export default {
         this.$store.commit('login',target[0].type);
         this.user_type = target[0].type;
         this.logged_in = true;
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.logged_in));
+        let obj = {
+          user_type : target[0].type,
+          logged_in : this.logged_in,
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 
         let url = "/accesspoint";
         this.$router.push(url);
@@ -96,7 +102,13 @@ export default {
     },
     logout(){
       this.logged_in = false;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.logged_in));
+
+      let obj = {
+          user_type : "",
+          logged_in : this.logged_in,
+        }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+
       let url = "/";
       this.$router.push(url);
     }
