@@ -115,8 +115,9 @@ export default {
     },
     filter_level() {
       var unfiltered_array = [];
-
-      for (let i = 0; i < this.access_points.length; i++) {
+      var filter_accesspoint_building = this.$store.state.filter_accesspoint_building;
+      
+      for (let i = 0; i < filter_accesspoint_building.length; i++) {
         unfiltered_array.push(this.convertstorey[i]);
       }
       const level_options = [...new Set(unfiltered_array)];
@@ -125,9 +126,16 @@ export default {
     convertstorey() {
       var array_storey = [];
       var converted_storey = [];
-      for (let i = 0; i < this.access_points.length; i++) {
-        array_storey.push(this.access_points[i].location.level);
+      var filter_accesspoint_building = this.$store.state.filter_accesspoint_building;
+
+      for (let i = 0; i < filter_accesspoint_building.length; i++) {
+        array_storey.push(filter_accesspoint_building[i].location.level);
       }
+
+      array_storey.sort(function(a, b) {
+          return Number(a) - Number(b);
+        });
+
       for (let i = 0; i < array_storey.length; i++) {
         switch (array_storey[i]) {
           case "1":

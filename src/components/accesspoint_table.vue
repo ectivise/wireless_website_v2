@@ -218,6 +218,10 @@ export default {
           (access_point) => access_point.location.building == building
         );
       }
+
+      // transfer to vux as filter_accesspoint_building
+      this.$store.commit('filter_accesspoint_building',filtered_access_points);
+
       if (level !== "nofilter") {
         filtered_access_points = filtered_access_points.filter(
           (access_point) => access_point.location.level == level
