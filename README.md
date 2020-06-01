@@ -24,7 +24,6 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 known bugs:
-manage function
 
 todo:
 access point, add, update, delete
