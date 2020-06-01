@@ -27,6 +27,5 @@ known bugs:
 manage function
 
 todo:
-options dynamic
 access point, add, update, delete
 raspberry pi,get list, add, update,delete to api

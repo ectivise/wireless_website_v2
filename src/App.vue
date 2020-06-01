@@ -25,15 +25,20 @@
 <script>
 import login_form from "./components/login_form.vue";
 
+const STORAGE_KEY = 'data_storage'
+
 export default {
   components: {
     login_form,
   },
   data() {
     return {
-      logged_in: this.$store.state.login,
+      logged_in: false,
       user_type:"",
     };
+  },
+  created () {
+    this.logged_in = JSON.parse(localStorage.getItem(STORAGE_KEY));
   },
   methods: {
     login(username, password) {
@@ -46,7 +51,10 @@ export default {
       } else {
         this.$store.commit('login',target[0].type);
         this.user_type = target[0].type;
-        this.logged_in = this.$store.state.login;
+        this.logged_in = true;
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.logged_in));
+
         let url = "/accesspoint";
         this.$router.push(url);
       }
@@ -88,6 +96,7 @@ export default {
     },
     logout(){
       this.logged_in = false;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.logged_in));
       let url = "/";
       this.$router.push(url);
     }
