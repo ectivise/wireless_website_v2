@@ -102,6 +102,7 @@ export default {
     },
     logout(){
       this.logged_in = false;
+      this.$store.commit("logout");
 
       let obj = {
           user_type : "",
