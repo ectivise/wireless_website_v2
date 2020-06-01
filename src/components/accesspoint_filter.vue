@@ -32,18 +32,21 @@
       </select>
       <span
         class="status_button"
+        :class="status_summary[0] == 0 ? 'disabled' : ''"
         id="normal"
         @click.prevent="$store.commit('filterstatus',0)"
         >Normal: {{ status_summary[0] }}
       </span>
       <span
         class="status_button"
+        :class="status_summary[1] == 0 ? 'disabled' : ''"
         id="warning"
         @click.prevent="$store.commit('filterstatus',1)"
         >Warning: {{ status_summary[1] }}
       </span>
       <span
         class="status_button"
+        :class="status_summary[1] == 0 ? 'disabled' : ''"
         id="critical"
         @click.prevent="$store.commit('filterstatus',2)"
         >Critical: {{ status_summary[2] }}
@@ -165,7 +168,7 @@ export default {
       return converted_storey;
     },
     status_summary() {
-      var access_points = this.$store.state.filter_accesspoint_1
+      var access_points = this.$store.state.filter_accesspoint_storey
       var status = [];
       var normal = 0,
         warning = 0,
@@ -265,6 +268,10 @@ select {
   cursor: pointer;
   white-space: pre;
   word-spacing: normal;
+}
+
+.disabled{
+  pointer-events: none;
 }
 
 #normal {

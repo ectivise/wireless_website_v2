@@ -21,7 +21,7 @@ export default new Vuex.Store({
         type: "operator",
       },
     ],
-    filter_accesspoint_1: [],
+    filter_accesspoint_storey: [],
     filterbuilding: "",
     filterlevel: "",
     filterraspi_id: "",
@@ -52,8 +52,8 @@ export default new Vuex.Store({
       // 0 normal, 1 warning, 2 critical
       state.filterstatus = status
     },
-    filter_accesspoint_1(state, access_point_list){
-      state.filter_accesspoint_1 = access_point_list
+    filter_accesspoint_storey(state, access_point_list){
+      state.filter_accesspoint_storey = access_point_list
     },
 
   },
