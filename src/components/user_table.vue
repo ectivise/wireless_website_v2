@@ -23,24 +23,21 @@
           <td>{{ user.password }}</td>
           <!-- roletype col -->
           <td v-if="editing == user.mobile">
-            <input type="number" v-model="user.roletype" />
+            <input type="text" v-model="user.roleType" />
           </td>
           <td v-else>{{ user.roleType }}</td>
           <!-- editing and delete buttons -->
           <td v-if="editing == user.mobile" class="last-td">
-            <button @click="editaccesspoint()">Save</button>
-            <button class="muted-button" @click="canceledit()">
+            <el-button @click="edituser(user)">Save</el-button>
+            <el-button class="muted-button" @click="canceledit(user)">
               Cancel
-            </button>
+            </el-button>
           </td>
           <td v-else class="last-td">
-            <button id="edit" @click="editmode()">Edit</button>
-            <button
-              id="delete"
-              @click="$emit('delete:accesspoint', user.mobile)"
-            >
+            <el-button id="edit" @click="editmode(user)">Edit</el-button>
+            <el-button id="delete" @click="$emit('delete:user', user.mobile)">
               Delete
-            </button>
+            </el-button>
           </td>
         </tr>
       </tbody>
@@ -87,114 +84,65 @@
 
 <script>
 export default {
-    name:"user_table",
-    data() {
+  name: "user_table",
+  props: {
+    users: Array,
+  },
+  data() {
     return {
-      users: [
-        {
-          userCode: "",
-          blocked: false,
-          mobile: "mobile1",
-          countryCode: 65,
-          region: "",
-          language: "",
-          birthday: 0,
-          name: "",
-          nickName: "",
-          gender: 0, //0 = male, 1 = female
-          token: "",
-          password: "password1",
-          status: 0, //0 login, 1 logout, 2 disabled, 3, locked, 4 new user 5 signup
-          registerDate: 0,
-          lastlogin: 0,
-          device: {},
-          accountType: 0,
-          customer: 0,
-          roleType: 0,
-          enabled: false,
-          email: "",
-          logintime: 0,
-          application: 0, //appid
-        },
-        {
-          userCode: "",
-          blocked: false,
-          mobile: "mobile2",
-          countryCode: 65,
-          region: "",
-          language: "",
-          birthday: 0,
-          name: "",
-          nickName: "",
-          gender: 0, //0 = male, 1 = female
-          token: "",
-          password: "password2",
-          status: 0, //0 login, 1 logout, 2 disabled, 3, locked, 4 new user 5 signup
-          registerDate: 0,
-          lastlogin: 0,
-          device: {},
-          accountType: 0,
-          customer: 0,
-          roleType: 0,
-          enabled: false,
-          email: "",
-          logintime: 0,
-          application: 0, //appid
-        },
-        {
-          userCode: "",
-          blocked: false,
-          mobile: "mobile3",
-          countryCode: 65,
-          region: "",
-          language: "",
-          birthday: 0,
-          name: "",
-          nickName: "",
-          gender: 0, //0 = male, 1 = female
-          token: "",
-          password: "password3",
-          status: 0, //0 login, 1 logout, 2 disabled, 3, locked, 4 new user 5 signup
-          registerDate: 0,
-          lastlogin: 0,
-          device: {},
-          accountType: 0,
-          customer: 0,
-          roleType: 0,
-          enabled: false,
-          email: "",
-          logintime: 0,
-          application: 0, //appid
-        },
-        {
-          userCode: "",
-          blocked: false,
-          mobile: "mobile4",
-          countryCode: 65,
-          region: "",
-          language: "",
-          birthday: 0,
-          name: "",
-          nickName: "",
-          gender: 0, //0 = male, 1 = female
-          token: "",
-          password: "password4",
-          status: 0, //0 login, 1 logout, 2 disabled, 3, locked, 4 new user 5 signup
-          registerDate: 0,
-          lastlogin: 0,
-          device: {},
-          accountType: 0,
-          customer: 0,
-          roleType: 0,
-          enabled: false,
-          email: "",
-          logintime: 0,
-          application: 0, //appid
-        },
-      ],
+      editing: null,
+      user: {
+        userCode: "",
+        blocked: false,
+        mobile: "",
+        countryCode: 65,
+        region: "",
+        language: "",
+        birthday: 0,
+        name: "",
+        nickName: "",
+        gender: 0, //0 = male, 1 = female
+        token: "",
+        password: "",
+        status: 0, //0 login, 1 logout, 2 disabled, 3, locked, 4 new user 5 signup
+        registerDate: 0,
+        lastlogin: 0,
+        device: {},
+        accountType: 0,
+        customer: 0,
+        roleType: 0,
+        enabled: false,
+        email: "",
+        logintime: 0,
+        application: 0,
+      },
     };
+  },
+  methods: {
+    editmode(user) {
+      this.cacheduser = Object.assign({}, user);
+      this.editing = user.mobile;
+    },
+    canceledit(user) {
+      Object.assign(user, this.cacheduser);
+      this.editing = null;
+    },
+    edituser(user) {
+      if (user.roleType === "") {
+        return;
+      } else {
+        this.$emit("edit:user", user.mobile, user);
+        this.editing = null;
+        this.filter_error = false;
+      }
+    },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+#user_table {
+  max-width: 80vw;
+  margin: auto;
+}
+</style>
