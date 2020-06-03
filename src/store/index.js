@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    signup_result:{},
     plugins: [createPersistedState()],
     login: false,
     user_type:"",
@@ -71,7 +72,9 @@ export default new Vuex.Store({
     filter_accesspoint_storey(state, access_point_list){
       state.filter_accesspoint_storey = access_point_list;
     },
-
+    signup_result(state, signup_result){
+      state.signup_result = signup_result;
+    },
   },
   actions: {
   },

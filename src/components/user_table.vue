@@ -141,7 +141,7 @@ export default {
           label: "Super User",
         },
       ],
-      user: {
+      emptyuser: {
         userCode: "",
         blocked: false,
         mobile: "",

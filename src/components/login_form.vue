@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    
     <!-- login page -->
     <div class="card" v-if="login_otp == false && register == false">
       <div class="sign-in">
@@ -50,9 +49,7 @@
     <div class="card" v-else-if="login_otp == true">
       <strong id="back" @click.prevent="back"> &#8249; </strong>
       <h2>Login via OTP</h2>
-      <p>
-        We will send you a One Time Password <br />to your Phone Number via SMS
-      </p>
+      <p>We send you a One Time Password <br />to your Phone Number via SMS</p>
       <form action="">
         <input
           v-model="phone_number"
@@ -64,7 +61,7 @@
           @keypress="clearstatus"
         />
         <button @click.prevent="sendotp">
-          Send OTP</button
+          Resend OTP</button
         ><br />
         <input
           v-model="otp"
@@ -76,8 +73,18 @@
           @keypress="clearstatus"
           ref="first"
         />
+        <br />
+        <input
+          v-model="password"
+          type="text"
+          id="password"
+          placeholder="Password"
+          :class="{ 'has-error': loging_in_otp && invalidpassword }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        /><br />
         <button @click.prevent="handleotp">
-          Enter
+          Verify & Register
         </button>
         <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
       </form>
@@ -95,19 +102,10 @@
           :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
           @focus="clearstatus"
           @keypress="clearstatus"
-        /><br>
-        <input
-          v-model="password"
-          type="text"
-          id="password"
-          placeholder="Password"
-          :class="{ 'has-error': loging_in_otp && invalidpassword }"
-          @focus="clearstatus"
-          @keypress="clearstatus"
-        />
-        <p> Verify Phone Number with OTP</p>
+        /><br />
+        <p>Verify Phone Number via OTP</p>
         <button @click.prevent="handleregister">
-          Verify
+          Enter
         </button>
       </form>
     </div>
@@ -176,6 +174,36 @@ export default {
       this.register = true;
     },
     handleregister() {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append(
+        "Cookie",
+        "connect.sid=s%3Anc_caKSBWZ5ggwzlDp3ZN5nw8uigMoRc.p89j1G4CYzkCqXi4GGZjRsYNk6xmuBoQ0DTzA1jg24g"
+      );
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append(
+        "token",
+        "ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade"
+      );
+      urlencoded.append("mobile", this.phone_number);
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: "follow",
+      };
+
+      fetch(
+        "http://dev1.ectivisecloud.com:8081/api/users/signup",
+        requestOptions
+      )
+        .then((response) => response.text())
+        // .then((result) => console.log(result))
+        .then((result) => this.$store.commit('signup_result', JSON.parse(result).data))
+        .catch((error) => console.log("error", error));
+
       this.register = false;
       this.login_otp = true;
     },
@@ -213,14 +241,13 @@ export default {
 </script>
 
 <style scoped>
-
 @media screen and (min-width: 761px) {
   img {
-  display: none;
-}
+    display: none;
+  }
 }
 .container {
-  height:90vh;
+  height: 90vh;
   text-align: center;
   max-width: unset;
   background-image: linear-gradient(120deg, #23395b, #c5d5ea);
@@ -300,19 +327,19 @@ p {
   }
 
   img {
-  position: relative;
-  width: 250px;
-  background-color: whitesmoke;
-  padding: 10px;
-  margin-left: 30px;
-}
+    position: relative;
+    width: 250px;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin-left: 30px;
+  }
 
   .card h2 {
     font-size: 30px;
   }
 
   .card span {
-  font-size: unset;
-}
+    font-size: unset;
+  }
 }
 </style>
