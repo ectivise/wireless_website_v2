@@ -9,6 +9,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     signup_result:{},
+    saveuser_result:{},
+    login_result:{},
+    frontend_token:"ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade",
     plugins: [createPersistedState()],
     login: false,
     user_type:"",
@@ -45,7 +48,6 @@ export default new Vuex.Store({
     },
     loginotp(state){
       state.login = true;
-      state.user_type = 'operator'
     },
     synclogin(state, login){
       state.login = login;
@@ -74,6 +76,12 @@ export default new Vuex.Store({
     },
     signup_result(state, signup_result){
       state.signup_result = signup_result;
+    },
+    saveuser_result(state, saveuser_result){
+      state.saveuser_result = saveuser_result;
+    },
+    login_result(state, login_result){
+      state.login_result = login_result;
     },
   },
   actions: {

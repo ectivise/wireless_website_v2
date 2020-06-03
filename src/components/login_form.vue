@@ -84,7 +84,7 @@
           @keypress="clearstatus"
         /><br />
         <button @click.prevent="handleotp">
-          Verify & Register
+          Verify & Login
         </button>
         <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
       </form>
@@ -155,25 +155,47 @@ export default {
       this.clearstatus();
     },
     sendotp() {
-      this.loging_in_otp;
+      this.loging_in_otp = true;
       if (this.phone_number === "") {
         alert("fill in phone number");
       } else {
         alert("otp = 123456");
       }
     },
-    handleotp() {
-      this.loging_in_otp;
-      if (this.otp == "") {
-        alert("fill in otp");
-      } else {
-        this.$emit("login_otp", this.otp);
-      }
+    async handleotp() {
+      this.loging_in_otp = true;
+
+      let token = this.$store.state.signup_result.token;
+      
+      var myHeaders = new Headers();
+      
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append("Cookie", "connect.sid=s%3A829xHOM7bnJoNfrQu2bsIxxZd4_ajmK6.M0yKY%2F7H6hTJsQUcMB3QKtLVXeCpUToqEOAI%2FwVh3%2Fk");
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("token", token);
+      urlencoded.append("mobile", this.phone_number);
+      urlencoded.append("otp", this.otp);
+      urlencoded.append("password", this.password);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      await fetch("http://dev1.ectivisecloud.com:8081/api/users/saveuser", requestOptions)
+        .then(response => response.text())
+        .then(result => this.$store.commit('saveuser_result', result.data))
+        .catch(error => console.log('error', error));
+
+      this.$emit("testlogin", this.phone_number, this.password);
     },
     userregister() {
       this.register = true;
     },
-    handleregister() {
+    async handleregister() {
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
       myHeaders.append(
@@ -184,7 +206,7 @@ export default {
       var urlencoded = new URLSearchParams();
       urlencoded.append(
         "token",
-        "ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade"
+        this.$store.state.frontend_token
       );
       urlencoded.append("mobile", this.phone_number);
 
@@ -195,14 +217,16 @@ export default {
         redirect: "follow",
       };
 
-      fetch(
+      await fetch(
         "http://dev1.ectivisecloud.com:8081/api/users/signup",
         requestOptions
       )
         .then((response) => response.text())
-        // .then((result) => console.log(result))
         .then((result) => this.$store.commit('signup_result', JSON.parse(result).data))
         .catch((error) => console.log("error", error));
+
+      var otp = this.$store.state.signup_result.verifyCode;
+      alert("you received otp: " + otp);
 
       this.register = false;
       this.login_otp = true;
@@ -230,7 +254,7 @@ export default {
     },
 
     invalidpassword() {
-      return this.user.password === "";
+      return this.password === "";
     },
 
     invalidotp() {

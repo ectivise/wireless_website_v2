@@ -10,7 +10,7 @@
       </div>
     </header>
     <body>
-    <login_form v-if="!logged_in" @login="login" @signup="signup" @login_otp="loginotp"/>
+    <login_form v-if="!logged_in" @login="login" @signup="signup" @login_otp="loginotp" @testlogin="testlogin"/>
     <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
     <footer>
@@ -45,6 +45,60 @@ export default {
     this.$store.commit('syncuser_type',this.user_type);
   },
   methods: {
+    async testlogin(phone_number,password){
+      var response_result = ""
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append("Cookie", "connect.sid=s%3AcH-Rp3eJ59QMQavxlhXCq4ek4_4keiNV.SKLmtBi9Hzd2YeSExMa1QtTDMdruJZkN5zBOJ1YlpJM");
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("type", "mobile");
+      urlencoded.append("mobile", phone_number);
+      urlencoded.append("token", this.$store.state.frontend_token);
+      urlencoded.append("password", password);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      await fetch("http://dev1.ectivisecloud.com:8081/api/users/login", requestOptions)
+        .then(response => response.text())
+        .then(result => this.$store.commit('login_result', JSON.parse(result)))
+        .then(result => response_result = JSON.parse(result))
+        .catch(error => console.log('error', error));
+
+      response_result = this.$store.state.login_result;
+      if(response_result.message == "mobile login success"){
+        var role_type
+        switch(response_result.data.roleType){
+          case 0:
+            role_type = 'normal';
+            break;
+          case 1:
+            role_type = 'admin';
+            break;
+          case 2:
+            role_type = 'superuser';
+            break;
+        }
+        this.logged_in = true;
+
+        let obj = {
+          user_type : role_type,
+          logged_in : this.logged_in,
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+
+        let url = "/accesspoint";
+        this.$router.push(url);
+      } else{
+        console.log("error loging in")
+      }
+    },
     login(username, password) {
       var target = this.$store.state.users.filter(
         (user) => user.username == username && user.password == password
@@ -68,8 +122,11 @@ export default {
     },
     loginotp(otp){
       if(otp == '123456'){
+
+
         this.$store.commit('loginotp');
         this.logged_in = this.$store.state.login;
+
         let url = "/accesspoint";
         this.$router.push(url);
       }
