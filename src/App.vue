@@ -10,7 +10,7 @@
       </div>
     </header>
     <body>
-    <login_form v-if="!logged_in" @login="login" @login_otp="loginotp" @testlogin="testlogin"/>
+    <login_form v-if="!logged_in" @login="login" @login_otp="loginotp" @testlogin="testlogin" @handle2fa="handle2fa"/>
     <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
     <footer>
@@ -128,10 +128,22 @@ export default {
       console.log(this.$store.state.login_result.message)
 
       if (this.$store.state.login_result.message == 'mobile login success' ) {
+        var role_type
+        switch(this.$store.state.login_result.data.roleType){
+          case 0:
+            role_type = 'normal';
+            break;
+          case 1:
+            role_type = 'admin';
+            break;
+          case 2:
+            role_type = 'superuser';
+            break;
+        }
         this.logged_in = true;
 
         let obj = {
-          user_type : this.$store.state.login_result.data.roleType,
+          user_type : role_type,
           logged_in : this.logged_in,
         }
         localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
@@ -142,6 +154,62 @@ export default {
       } else{
         alert("invalid username and password");
       }
+    },
+    async handle2fa(phone_number, otp){
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append("Cookie", "connect.sid=s%3AcA85QD1cUMlHMmmc9aLBzwqeEPVHopDk.MfjgC7ImMeqXIyZXIcbwRHxnUcChsy3KaIZ%2Feu0aLoE");
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("type", "2fa");
+      urlencoded.append("mobile", phone_number);
+      urlencoded.append("token", this.$store.state.frontend_token);
+      urlencoded.append("otp", otp);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      await fetch(this.$store.state.backend_api + "login", requestOptions)
+        .then(response => response.text())
+        .then(result => this.$store.commit('login_result',JSON.parse(result)))
+        .catch(error => console.log('error', error));
+
+      console.log(this.$store.state.login_result.message)
+
+      if (this.$store.state.login_result.message == 'otp login success!' ) {
+
+        var role_type
+        switch(this.$store.state.login_result.data.roleType){
+          case 0:
+            role_type = 'normal';
+            break;
+          case 1:
+            role_type = 'admin';
+            break;
+          case 2:
+            role_type = 'superuser';
+            break;
+        }
+
+        this.logged_in = true;
+
+        let obj = {
+          user_type : role_type,
+          logged_in : this.logged_in,
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+
+        let url = "/accesspoint";
+        this.$router.push(url);
+
+      } else{
+        alert("invalid username and password");
+      }
+
     },
     loginotp(otp){
       if(otp == '123456'){

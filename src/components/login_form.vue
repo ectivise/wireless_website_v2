@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- login page -->
-    <div class="card" v-if="login_otp == false && register == false">
+    <div class="card" v-if="register_otp == false && register == false && login_otp == false">
       <div class="sign-in">
         <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
         <h2>User Login</h2>
@@ -45,8 +45,63 @@
         </p>
       </span>
     </div>
-    <!-- one time password page -->
+    <!-- login to one time password page -->
     <div class="card" v-else-if="login_otp == true">
+      <strong id="back" @click.prevent="back"> &#8249; </strong>
+      <h2>Login via OTP</h2>
+      <p>We send you a One Time Password <br />to your Phone Number via SMS</p>
+      <form action="">
+        <input
+          v-model="phone_number"
+          type="text"
+          id="phone_number"
+          placeholder="Phone Number"
+          :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        />
+        <button @click.prevent="sendotp">
+          Resend OTP</button
+        ><br />
+        <input
+          v-model="otp"
+          type="text"
+          id="otp"
+          placeholder="One Time Password"
+          :class="{ 'has-error': loging_in_otp && invalidotp }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+          ref="first"
+        />
+        <br />
+        <button @click.prevent="$emit('handle2fa',phone_number,otp)">
+          Verify & Login
+        </button>
+        <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
+      </form>
+    </div>
+    <!-- register page -->
+    <div class="card" v-else-if="register == true">
+      <strong id="back" @click.prevent="back"> &#8249; </strong>
+      <h2>Register</h2>
+      <form action="">
+        <input
+          v-model="phone_number"
+          type="text"
+          id="phone_number"
+          placeholder="Phone Number"
+          :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
+          @focus="clearstatus"
+          @keypress="clearstatus"
+        /><br />
+        <p>Verify Phone Number via OTP</p>
+        <button @click.prevent="handleregister">
+          Enter
+        </button>
+      </form>
+    </div>
+    <!-- register to one time password page -->
+    <div class="card" v-else-if="register_otp == true">
       <strong id="back" @click.prevent="back"> &#8249; </strong>
       <h2>Login via OTP</h2>
       <p>We send you a One Time Password <br />to your Phone Number via SMS</p>
@@ -89,26 +144,6 @@
         <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
       </form>
     </div>
-    <!-- register page -->
-    <div class="card" v-else-if="register == true">
-      <strong id="back" @click.prevent="back"> &#8249; </strong>
-      <h2>Register</h2>
-      <form action="">
-        <input
-          v-model="phone_number"
-          type="text"
-          id="phone_number"
-          placeholder="Phone Number"
-          :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
-          @focus="clearstatus"
-          @keypress="clearstatus"
-        /><br />
-        <p>Verify Phone Number via OTP</p>
-        <button @click.prevent="handleregister">
-          Enter
-        </button>
-      </form>
-    </div>
   </div>
 </template>
 
@@ -121,9 +156,10 @@ export default {
       loging_in: false,
       success: false,
       error: false,
-      login_otp: false,
+      register_otp: false,
       loging_in_otp: false,
       register: false,
+      login_otp:false,
       phone_number: "",
       password: "",
       otp: "",
@@ -160,9 +196,13 @@ export default {
 
       await fetch(this.$store.state.backend_api +"login", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => this.$store.commit('getotp_result',JSON.parse(result)))
         .catch(error => console.log('error', error));
+      
 
+      var response = this.$store.state.getotp_result;
+      console.log(response.message);
+      alert('one time password: '+ response.data.verifyCode)
       this.login_otp = true;
       this.clearstatus();
     },
@@ -245,7 +285,7 @@ export default {
       alert("you received otp: " + otp);
 
       this.register = false;
-      this.login_otp = true;
+      this.register_otp = true;
     },
     clearstatus() {
       this.success = false;
@@ -253,8 +293,9 @@ export default {
       this.loging_in = false;
     },
     back() {
-      this.login_otp = false;
+      this.register_otp = false;
       this.register = false;
+      this.login_otp = false;
     },
   },
   computed: {
