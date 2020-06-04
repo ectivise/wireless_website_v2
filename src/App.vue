@@ -72,6 +72,8 @@ export default {
 
       response_result = this.$store.state.login_result;
 
+      console.log(response_result.message);
+
       if(response_result.message == "mobile login success"){
         var role_type
         switch(response_result.data.roleType){
@@ -96,7 +98,7 @@ export default {
         let url = "/accesspoint";
         this.$router.push(url);
       } else{
-        console.log("error loging in")
+        alert("error loging in")
       }
     },
     login(phone_number, password) {
@@ -122,7 +124,7 @@ export default {
         .then(response => response.text())
         .then(result => this.$store.commit('login_result', JSON.parse(result)))
         .catch(error => console.log('error', error));
-      
+
       console.log(this.$store.state.login_result.message)
 
       if (this.$store.state.login_result.message == 'mobile login success' ) {
@@ -152,7 +154,28 @@ export default {
         this.$router.push(url);
       }
     },
-    logout(){
+    async logout(){
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("token", this.$store.state.frontend_token);
+      urlencoded.append("mobile", this.$store.state.login_result.data.mobile);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      await fetch(this.$store.state.backend_api+"logout", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
       this.logged_in = false;
       this.$store.commit("logout");
 

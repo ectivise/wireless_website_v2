@@ -140,7 +140,29 @@ export default {
         this.$emit("login", this.phone_number, this.password);
       }
     },
-    userotp() {
+    async userotp() {
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("type", "getotp");
+      urlencoded.append("mobile", this.phone_number);
+      urlencoded.append("token", this.$store.state.frontend_token);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      await fetch(this.$store.state.backend_api +"login", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
       this.login_otp = true;
       this.clearstatus();
     },
@@ -168,6 +190,7 @@ export default {
       urlencoded.append("otp", this.otp);
       urlencoded.append("password", this.password);
 
+      console.log(this.phone_number,this.otp,this.password)
       var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -177,9 +200,11 @@ export default {
 
       await fetch(this.$store.state.backend_api+"saveuser", requestOptions)
         .then(response => response.text())
-        .then(result => this.$store.commit('saveuser_result', result))
+        .then(result => this.$store.commit('saveuser_result', JSON.parse(result)))
         .catch(error => console.log('error', error));
 
+      var response = this.$store.state.saveuser_result
+      console.log(response.message)
       this.$emit("testlogin", this.phone_number, this.password);
     },
     userregister() {
