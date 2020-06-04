@@ -60,7 +60,7 @@
           @focus="clearstatus"
           @keypress="clearstatus"
         />
-        <button @click.prevent="sendotp">
+        <button @click.prevent="resendotp_login">
           Resend OTP</button
         ><br />
         <input
@@ -116,7 +116,7 @@
           @focus="clearstatus"
           @keypress="clearstatus"
         />
-        <button @click.prevent="sendotp">
+        <button @click.prevent="resendotp_register">
           Resend OTP</button
         ><br />
         <input
@@ -208,13 +208,11 @@ export default {
       this.login_otp = true;
       this.clearstatus();
     },
-    sendotp() {
-      this.loging_in_otp = true;
-      if (this.phone_number === "") {
-        alert("fill in phone number");
-      } else {
-        alert("otp = 123456");
-      }
+    resendotp_login() {
+      this.userotp();
+    },
+    resendotp_register(){
+      this.handleregister();
     },
     async handleotp() {
       this.loging_in_otp = true;
