@@ -241,7 +241,7 @@ export default {
 
       await fetch(this.$store.state.backend_api+"logout", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => console.log(JSON.parse(result).message))
         .catch(error => console.log('error', error));
 
       this.logged_in = false;

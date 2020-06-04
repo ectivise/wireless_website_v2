@@ -38,7 +38,7 @@
         </form>
       </div>
       <span>
-        <strong id="forgetpw">Forget Password?</strong>
+        <strong id="forgetpw" @click.prevent="userforgetpw">Forget Password?</strong>
         <p>
           Not Registered?
           <strong id="register" @click.prevent="userregister">Register</strong>
@@ -83,7 +83,8 @@
     <!-- register page -->
     <div class="card" v-else-if="register == true">
       <strong id="back" @click.prevent="back"> &#8249; </strong>
-      <h2>Register</h2>
+      <h2 v-if="forgetpw == true">Forget Password</h2>
+      <h2 v-else>Register</h2>
       <form action="">
         <input
           v-model="phone_number"
@@ -160,6 +161,7 @@ export default {
       loging_in_otp: false,
       register: false,
       login_otp:false,
+      forgetpw:false,
       phone_number: "",
       password: "",
       otp: "",
@@ -247,6 +249,10 @@ export default {
       this.$emit("testlogin", this.phone_number, this.password);
     },
     userregister() {
+      this.register = true;
+    },
+    userforgetpw() {
+      this.forgetpw = true;
       this.register = true;
     },
     async handleregister() {
