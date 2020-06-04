@@ -140,16 +140,6 @@ export default {
         this.$emit("login", this.phone_number, this.password);
       }
     },
-    handlesignup() {
-      this.signing_up = true;
-      if (this.invalidusername || this.invalidpassword || this.invalidtype) {
-        this.error = true;
-        alert("fill in username, password and choose a type");
-        return;
-      } else {
-        this.$emit("signup", this.user);
-      }
-    },
     userotp() {
       this.login_otp = true;
       this.clearstatus();
@@ -185,9 +175,9 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch("http://dev1.ectivisecloud.com:8081/api/users/saveuser", requestOptions)
+      await fetch(this.$store.state.backend_api+"saveuser", requestOptions)
         .then(response => response.text())
-        .then(result => this.$store.commit('saveuser_result', result.data))
+        .then(result => this.$store.commit('saveuser_result', result))
         .catch(error => console.log('error', error));
 
       this.$emit("testlogin", this.phone_number, this.password);
@@ -218,14 +208,16 @@ export default {
       };
 
       await fetch(
-        "http://dev1.ectivisecloud.com:8081/api/users/signup",
+        this.$store.state.backend_api+"signup",
         requestOptions
       )
         .then((response) => response.text())
-        .then((result) => this.$store.commit('signup_result', JSON.parse(result).data))
+        .then((result) => this.$store.commit('signup_result', JSON.parse(result)))
         .catch((error) => console.log("error", error));
+      
+      console.log(this.$store.state.signup_result.message);
 
-      var otp = this.$store.state.signup_result.verifyCode;
+      var otp = this.$store.state.signup_result.data.verifyCode;
       alert("you received otp: " + otp);
 
       this.register = false;

@@ -10,7 +10,7 @@
       </div>
     </header>
     <body>
-    <login_form v-if="!logged_in" @login="login" @signup="signup" @login_otp="loginotp" @testlogin="testlogin"/>
+    <login_form v-if="!logged_in" @login="login" @login_otp="loginotp" @testlogin="testlogin"/>
     <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
     <footer>
@@ -65,13 +65,13 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch("http://dev1.ectivisecloud.com:8081/api/users/login", requestOptions)
+      await fetch(this.$store.state.backend_api+"login", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('login_result', JSON.parse(result)))
-        .then(result => response_result = JSON.parse(result))
         .catch(error => console.log('error', error));
 
       response_result = this.$store.state.login_result;
+
       if(response_result.message == "mobile login success"){
         var role_type
         switch(response_result.data.roleType){
@@ -99,25 +99,46 @@ export default {
         console.log("error loging in")
       }
     },
-    login(username, password) {
-      var target = this.$store.state.users.filter(
-        (user) => user.username == username && user.password == password
-      );
-      // console.log(target);
-      if (target == "" ) {
-        alert("invalid username and password");
-      } else {
-        this.$store.commit('login',target[0].type);
-        this.user_type = target[0].type;
+    login(phone_number, password) {
+      
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
+
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("type", "mobile");
+      urlencoded.append("mobile", phone_number);
+      urlencoded.append("token", this.$store.state.frontend_token);
+      urlencoded.append("password", password);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      fetch(this.$store.state.backend_api+"login", requestOptions)
+        .then(response => response.text())
+        .then(result => this.$store.commit('login_result', JSON.parse(result)))
+        .catch(error => console.log('error', error));
+      
+      console.log(this.$store.state.login_result.message)
+
+      if (this.$store.state.login_result.message == 'mobile login success' ) {
         this.logged_in = true;
+
         let obj = {
-          user_type : target[0].type,
+          user_type : this.$store.state.login_result.data.roleType,
           logged_in : this.logged_in,
         }
         localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 
         let url = "/accesspoint";
         this.$router.push(url);
+
+      } else{
+        alert("invalid username and password");
       }
     },
     loginotp(otp){
@@ -129,33 +150,6 @@ export default {
 
         let url = "/accesspoint";
         this.$router.push(url);
-      }
-    },
-    async signup(user){
-      // this.$store.commit('register',user)
-      try {
-        var urlencoded = new URLSearchParams();
-        urlencoded.append(
-          "token",
-          "ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade"
-        );
-        urlencoded.append("mobile", user.phone_number);
-        urlencoded.append("password", user.password);
-
-        const response = await fetch(
-          "http://dev1.ectivisecloud.com:8081/api/users/signup",
-          {
-            method: "POST",
-            body: urlencoded,
-            headers: { "Content-type": "application/x-www-form-urlencoded" },
-          }
-        );
-
-        const data = await response.json();
-        console.log(data.message);
-        alert(data.message);
-      } catch (error) {
-        console.error(error.message);
       }
     },
     logout(){

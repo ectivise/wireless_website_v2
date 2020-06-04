@@ -11,6 +11,7 @@ export default new Vuex.Store({
     signup_result:{},
     saveuser_result:{},
     login_result:{},
+    backend_api:"http://dev1.ectivisecloud.com:8081/api/users/",
     frontend_token:"ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade",
     plugins: [createPersistedState()],
     login: false,
