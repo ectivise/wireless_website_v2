@@ -101,7 +101,7 @@ export default {
         alert("error loging in")
       }
     },
-    login(phone_number, password) {
+    async login(phone_number, password) {
       
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -120,7 +120,7 @@ export default {
         redirect: 'follow'
       };
 
-      fetch(this.$store.state.backend_api+"login", requestOptions)
+      await fetch(this.$store.state.backend_api+"login", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('login_result', JSON.parse(result)))
         .catch(error => console.log('error', error));

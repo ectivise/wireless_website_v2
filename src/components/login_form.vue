@@ -177,7 +177,7 @@ export default {
     async handleotp() {
       this.loging_in_otp = true;
 
-      let token = this.$store.state.signup_result.token;
+      let token = this.$store.state.signup_result.data.token;
       
       var myHeaders = new Headers();
       
@@ -190,7 +190,6 @@ export default {
       urlencoded.append("otp", this.otp);
       urlencoded.append("password", this.password);
 
-      console.log(this.phone_number,this.otp,this.password)
       var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -204,7 +203,7 @@ export default {
         .catch(error => console.log('error', error));
 
       var response = this.$store.state.saveuser_result
-      console.log(response.message)
+      console.log(response.message);
       this.$emit("testlogin", this.phone_number, this.password);
     },
     userregister() {
