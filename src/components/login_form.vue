@@ -196,7 +196,7 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch(this.$store.state.backend_api +"login", requestOptions)
+      await fetch(this.$store.state.backend_api +"users/login", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('getotp_result',JSON.parse(result)))
         .catch(error => console.log('error', error));
@@ -237,7 +237,7 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch(this.$store.state.backend_api+"saveuser", requestOptions)
+      await fetch(this.$store.state.backend_api+"users/saveuser", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('saveuser_result', JSON.parse(result)))
         .catch(error => console.log('error', error));
@@ -276,7 +276,7 @@ export default {
       };
 
       await fetch(
-        this.$store.state.backend_api+"signup",
+        this.$store.state.backend_api+"users/signup",
         requestOptions
       )
         .then((response) => response.text())

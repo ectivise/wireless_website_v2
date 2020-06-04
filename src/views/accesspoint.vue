@@ -74,7 +74,7 @@ export default {
         );
 
         const response = await fetch(
-          "http://dev1.ectivisecloud.com:8081/api/speedtest/getaplist",
+          this.$store.state.backend_api+"speedtest/getaplist",
           {
             method: "POST",
             body: urlencoded,

@@ -65,7 +65,7 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch(this.$store.state.backend_api+"login", requestOptions)
+      await fetch(this.$store.state.backend_api+"users/login", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('login_result', JSON.parse(result)))
         .catch(error => console.log('error', error));
@@ -120,7 +120,7 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch(this.$store.state.backend_api+"login", requestOptions)
+      await fetch(this.$store.state.backend_api+"users/login", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('login_result', JSON.parse(result)))
         .catch(error => console.log('error', error));
@@ -173,7 +173,7 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch(this.$store.state.backend_api + "login", requestOptions)
+      await fetch(this.$store.state.backend_api + "users/login", requestOptions)
         .then(response => response.text())
         .then(result => this.$store.commit('login_result',JSON.parse(result)))
         .catch(error => console.log('error', error));
@@ -239,7 +239,7 @@ export default {
         redirect: 'follow'
       };
 
-      await fetch(this.$store.state.backend_api+"logout", requestOptions)
+      await fetch(this.$store.state.backend_api+"users/logout", requestOptions)
         .then(response => response.text())
         .then(result => console.log(JSON.parse(result).message))
         .catch(error => console.log('error', error));
