@@ -60,7 +60,8 @@
           @focus="clearstatus"
           @keypress="clearstatus"
         />
-        <button @click.prevent="resendotp_login">
+        
+        <button @click.prevent="resendotp_login" :class=" disabled ? 'disabled' : '' ">
           Resend OTP</button
         ><br />
         <input
@@ -77,7 +78,7 @@
         <button @click.prevent="$emit('handle2fa',phone_number,otp)">
           Verify & Login
         </button>
-        <p>Didn't received OTP? <strong>Send OTP</strong> again</p>
+        <p>Didn't received OTP? <strong>Send OTP</strong> again <strong id="timer"></strong></p>
       </form>
     </div>
     <!-- register page -->
@@ -165,6 +166,7 @@ export default {
       phone_number: "",
       password: "",
       otp: "",
+      disabled:false,
     };
   },
   methods: {
@@ -180,6 +182,7 @@ export default {
     },
     async userotp() {
 
+      this.disable_time()
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
       myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
@@ -301,6 +304,36 @@ export default {
       this.register = false;
       this.login_otp = false;
     },
+    async disable_time(){
+      this.disabled = true;
+      var countDownDate = new Date().getTime()+60000;
+
+      var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+      
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("timer").innerHTML = "in " + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        this.disabled = false;
+        document.getElementById("timer").innerHTML = "";
+      }
+    }, 1000);
+    
+    },
   },
   computed: {
     invalidphone_number_login() {
@@ -400,6 +433,12 @@ p {
   left: 20px;
   cursor: pointer;
   font-size: 1.7rem;
+}
+
+.disabled{
+  pointer-events: none;
+  background-color: #0366ee;
+  opacity: 50%;
 }
 
 @media screen and (max-width: 760px) {
