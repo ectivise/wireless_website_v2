@@ -97,8 +97,10 @@ export default {
 
         let url = "/accesspoint";
         this.$router.push(url);
+      } else if(password === ""){
+        alert("Enter Password")
       } else{
-        alert("error loging in")
+        alert("Invalid OTP")
       }
     },
     async login(phone_number, password) {
@@ -206,8 +208,10 @@ export default {
         let url = "/accesspoint";
         this.$router.push(url);
 
-      } else{
-        alert("invalid username and password");
+      } else if(otp === ""){
+        alert("Enter otp");
+      } else {
+        alert("Invalid otp")
       }
 
     },

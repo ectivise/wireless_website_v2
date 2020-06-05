@@ -11,7 +11,7 @@
             type="text"
             id="phone_number"
             placeholder="Phone Number"
-            :class="{ 'has-error': loging_in && invalidphone_number_login }"
+            :class="{ 'has-error': loging_in && invalidphone_number_login || loging_in_otp && invalidphone_number_login}"
             @focus="clearstatus"
             @keypress="clearstatus"
             ref="first"
@@ -61,9 +61,10 @@
           @keypress="clearstatus"
         />
         
-        <button @click.prevent="resendotp_login" :class=" disabled ? 'disabled' : '' ">
-          Resend OTP</button
-        ><br />
+        <button @click.prevent="resendotp_login" :class="disabled_button ? 'disabled' : '' ">
+          Resend OTP
+        </button>
+        <br>
         <input
           v-model="otp"
           type="text"
@@ -92,7 +93,7 @@
           type="text"
           id="phone_number"
           placeholder="Phone Number"
-          :class="{ 'has-error': loging_in_otp && invalidphone_number_otp }"
+          :class="{ 'has-error': registering && invalidphone_number_otp }"
           @focus="clearstatus"
           @keypress="clearstatus"
         /><br />
@@ -158,6 +159,7 @@ export default {
       loging_in: false,
       success: false,
       error: false,
+      registering: false,
       register_otp: false,
       loging_in_otp: false,
       register: false,
@@ -166,7 +168,7 @@ export default {
       phone_number: "",
       password: "",
       otp: "",
-      disabled:false,
+      disabled_button:false,
     };
   },
   methods: {
@@ -181,8 +183,12 @@ export default {
       }
     },
     async userotp() {
-
-      this.disable_time()
+      this.loging_in_otp = true;
+      if(this.phone_number === ""){
+        alert("Enter a Phone Number first")
+      }
+      else{
+        this.disable_time()
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
       myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
@@ -210,6 +216,7 @@ export default {
       alert('one time password: '+ response.data.verifyCode)
       this.login_otp = true;
       this.clearstatus();
+      }
     },
     resendotp_login() {
       this.userotp();
@@ -219,8 +226,10 @@ export default {
     },
     async handleotp() {
       this.loging_in_otp = true;
-
-      let token = this.$store.state.signup_result.data.token;
+      if(this.otp === "" || this.password === ""){
+        alert("Enter OTP and Password");
+      } else {
+        let token = this.$store.state.signup_result.data.token;
       
       var myHeaders = new Headers();
       
@@ -248,16 +257,24 @@ export default {
       var response = this.$store.state.saveuser_result
       console.log(response.message);
       this.$emit("testlogin", this.phone_number, this.password);
+      }
     },
     userregister() {
       this.register = true;
+      this.phone_number = ''
     },
     userforgetpw() {
       this.forgetpw = true;
       this.register = true;
+      this.phone_number = ''
     },
     async handleregister() {
-      var myHeaders = new Headers();
+      this.registering = true;
+
+      if(this.phone_number === "") {
+        alert('Enter a Phone Number first')
+      } else {
+        var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
       myHeaders.append(
         "Cookie",
@@ -293,20 +310,24 @@ export default {
 
       this.register = false;
       this.register_otp = true;
+      }
     },
     clearstatus() {
       this.success = false;
       this.error = false;
       this.loging_in = false;
+      this.loging_in_otp = false;
+      this.registering = false;
     },
     back() {
       this.register_otp = false;
       this.register = false;
       this.login_otp = false;
+      this.disabled_button = false;
     },
-    async disable_time(){
-      this.disabled = true;
-      var countDownDate = new Date().getTime()+60000;
+    disable_time(){
+      this.disabled_button = true;
+      var countDownDate = new Date().getTime()+10000;
 
       var x = setInterval(function() {
 
@@ -328,7 +349,7 @@ export default {
       // If the count down is over, write some text 
       if (distance < 0) {
         clearInterval(x);
-        this.disabled = false;
+        this.disabled_button = false;
         document.getElementById("timer").innerHTML = "";
       }
     }, 1000);
