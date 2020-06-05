@@ -41,8 +41,6 @@ export default {
   created () {
     this.logged_in = JSON.parse(localStorage.getItem(STORAGE_KEY)).logged_in;
     this.user_type = JSON.parse(localStorage.getItem(STORAGE_KEY)).user_type;
-    this.$store.commit('synclogin',this.logged_in);
-    this.$store.commit('syncuser_type',this.user_type);
   },
   methods: {
     async testlogin(phone_number,password){
@@ -87,8 +85,11 @@ export default {
             role_type = 'superuser';
             break;
         }
+        this.user_type = role_type;
         this.logged_in = true;
 
+        this.$store.commit('synclogin',this.logged_in);
+        this.$store.commit('syncuser_type',this.user_type);
         let obj = {
           user_type : role_type,
           logged_in : this.logged_in,
@@ -142,7 +143,11 @@ export default {
             role_type = 'superuser';
             break;
         }
+        this.user_type = role_type;
         this.logged_in = true;
+
+        this.$store.commit('synclogin',this.logged_in);
+        this.$store.commit('syncuser_type',this.user_type);
 
         let obj = {
           user_type : role_type,
@@ -196,8 +201,11 @@ export default {
             role_type = 'superuser';
             break;
         }
-
+        this.user_type = role_type;
         this.logged_in = true;
+
+        this.$store.commit('synclogin',this.logged_in);
+        this.$store.commit('syncuser_type',this.user_type);
 
         let obj = {
           user_type : role_type,
@@ -247,9 +255,13 @@ export default {
         .then(response => response.text())
         .then(result => console.log(JSON.parse(result).message))
         .catch(error => console.log('error', error));
-
+        
+      this.user_type = "";
       this.logged_in = false;
       this.$store.commit("logout");
+
+      this.$store.commit('synclogin',this.logged_in);
+      this.$store.commit('syncuser_type',this.user_type);
 
       let obj = {
           user_type : "",

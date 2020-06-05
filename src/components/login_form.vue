@@ -65,6 +65,7 @@
           Resend OTP
         </button>
         <br>
+        <label for="password">OTP </label>
         <input
           v-model="otp"
           type="text"
@@ -88,6 +89,7 @@
       <h2 v-if="forgetpw == true">Forget Password</h2>
       <h2 v-else>Register</h2>
       <form action="">
+        <label for="phone_number">Phone Number </label>
         <input
           v-model="phone_number"
           type="text"
@@ -96,7 +98,7 @@
           :class="{ 'has-error': registering && invalidphone_number_otp }"
           @focus="clearstatus"
           @keypress="clearstatus"
-        /><br />
+        />
         <p>Verify Phone Number via OTP</p>
         <button @click.prevent="handleregister">
           Enter
@@ -121,6 +123,7 @@
         <button @click.prevent="resendotp_register">
           Resend OTP</button
         ><br />
+        <label for="password">OTP </label>
         <input
           v-model="otp"
           type="text"
@@ -132,6 +135,7 @@
           ref="first"
         />
         <br />
+        <label for="password">Password </label>
         <input
           v-model="password"
           type="text"
@@ -238,7 +242,6 @@ export default {
 
       var urlencoded = new URLSearchParams();
       urlencoded.append("token", token);
-      urlencoded.append("mobile", this.phone_number);
       urlencoded.append("otp", this.otp);
       urlencoded.append("password", this.password);
 
@@ -320,10 +323,12 @@ export default {
       this.registering = false;
     },
     back() {
+      this.registering = false;
       this.register_otp = false;
       this.register = false;
       this.login_otp = false;
       this.disabled_button = false;
+      this.loging_in = false;
     },
     disable_time(){
       this.disabled_button = true;
@@ -336,7 +341,7 @@ export default {
       
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
-        
+      
       // Time calculations for days, hours, minutes and seconds
       // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
       // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -422,6 +427,12 @@ export default {
   text-decoration: underline;
 }
 
+.card label{
+  display: inline-block;
+  width: 8em ;
+  margin: 16px 5px 8px 5px;
+}
+
 p {
   margin: 0.5vh;
 }
@@ -431,7 +442,7 @@ p {
 }
 
 .container form input {
-  max-width: 13em;
+  width: 170px;
   left: calc(50% - 10em);
   border-radius: 20px;
   display: inline-block;
@@ -439,7 +450,7 @@ p {
 
 .container button {
   margin: 10px;
-  width: 200px;
+  width: 170px;
   border: none;
   border-radius: 20px;
 }
