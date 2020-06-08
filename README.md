@@ -24,6 +24,8 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 known bugs:
+login by otp, timing bug on the resend otp
+
 
 TODO:
 access point, add, update, delete

@@ -255,7 +255,7 @@ export default {
         .then(response => response.text())
         .then(result => console.log(JSON.parse(result).message))
         .catch(error => console.log('error', error));
-        
+
       this.user_type = "";
       this.logged_in = false;
       this.$store.commit("logout");
@@ -297,7 +297,7 @@ header {
   height: 95px;
   width: 100%;
   position: relative;
-  padding: 20px 20px 0px 20px;
+  padding: 10px 20px 0px 20px;
   text-align: center;
   background-color: #333;
 }
@@ -314,6 +314,8 @@ footer {
 
 header h1{
   color: #f2f2f2;
+  margin: 5px;
+  
 }
 header h6{
   padding:3px;
