@@ -298,7 +298,7 @@ header {
   position: relative;
   padding: 10px 20px 0px 20px;
   text-align: center;
-  background-color: #4CAF50;
+  background-color: #66BB6A;
 }
 
 footer {
