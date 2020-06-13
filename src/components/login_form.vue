@@ -27,7 +27,7 @@
             @keypress="clearstatus"
           />
           <br />
-          <button @click.prevent="handlelogin">
+          <button class="login" @click.prevent="handlelogin">
             Login
           </button>
           <br />
@@ -394,7 +394,7 @@ export default {
   height: 90vh;
   text-align: center;
   max-width: unset;
-  background-image: linear-gradient(120deg, #23395b, #c5d5ea);
+  background-image: linear-gradient(120deg, #66BB6A, #c5d5ea);
   align-items: center;
   justify-content: center;
   display: flex;
@@ -451,12 +451,19 @@ p {
 .container button {
   margin: 10px;
   width: 170px;
-  border: none;
-  border-radius: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  color: #4CAF50;
+}
+
+.container .login{
+  background-color:#4CAF50;
+  color: white;
 }
 
 .container button:focus {
-  outline: none;
+  outline: #4CAF50;
 }
 
 #back {

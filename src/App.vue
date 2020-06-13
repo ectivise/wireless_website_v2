@@ -299,7 +299,7 @@ header {
   position: relative;
   padding: 10px 20px 0px 20px;
   text-align: center;
-  background-color: #333;
+  background-color: #607D8B;
 }
 
 footer {
@@ -307,13 +307,13 @@ footer {
   position: relative;
   bottom: 0;
   left: 0;
-  background-color: #333;
+  background-color: #424242;
   text-align: center;
   color: #f2f2f2;
 }
 
 header h1{
-  color: #f2f2f2;
+  color: black;
   margin: 5px;
   
 }
