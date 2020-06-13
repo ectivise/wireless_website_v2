@@ -5,7 +5,6 @@
         <button @click.prevent="$emit('logout')" id="logout">Log out</button>
       </span>
       <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
-      <h2>Le Grove Serviced Residences</h2>
       <create_ap_button
         @open:popupwindow="openpopupwindow"
         v-if="user_type == 'admin'"
@@ -242,8 +241,8 @@ export default {
 img {
   position: absolute;
   width: 180px;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   background-color: whitesmoke;
   padding: 10px;
 }

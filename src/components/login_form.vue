@@ -4,7 +4,7 @@
     <div class="card" v-if="register_otp == false && register == false && login_otp == false">
       <div class="sign-in">
         <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
-        <h3>User Login</h3>
+        <h2>User Login</h2>
         <form action="">
           <input
             v-model="phone_number"
@@ -389,8 +389,7 @@ export default {
 img {
     position: relative;
     width: 300px;
-    background-color: whitesmoke;
-    padding: 10px;
+    padding: 10px 10px;
     margin-left: 30px;
 }
 
@@ -411,6 +410,7 @@ img {
   background-color: whitesmoke;
   border-radius: 20px;
   font-size: 1vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .card h6 {
   padding: 0px;
@@ -459,6 +459,16 @@ p {
   border-radius: 10px;
   background-color: whitesmoke;
   color: #4CAF50;
+}
+
+.container .login:hover {
+  background-color:#66BB6A;
+  border: 2px solid #66BB6A;
+}
+
+.container button:hover {
+  background-color:#4CAF50;
+  color: whitesmoke;
 }
 
 .container .login{

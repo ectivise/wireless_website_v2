@@ -284,7 +284,6 @@ export default {
   width: 180px;
   top: 5px;
   left: 5px;
-  background-color: whitesmoke;
   padding: 10px;
 }
 }
