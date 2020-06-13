@@ -4,7 +4,7 @@
     <div class="card" v-if="register_otp == false && register == false && login_otp == false">
       <div class="sign-in">
         <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
-        <h2>User Login</h2>
+        <h3>User Login</h3>
         <form action="">
           <input
             v-model="phone_number"
@@ -385,13 +385,17 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (min-width: 761px) {
-  img {
-    display: none;
-  }
+
+img {
+    position: relative;
+    width: 300px;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin-left: 30px;
 }
+
 .container {
-  height: 90vh;
+  height: 100vh;
   text-align: center;
   max-width: unset;
   background-image: linear-gradient(120deg, #66BB6A, #c5d5ea);

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>
+    <header  v-if="logged_in">
       <h1>Speedtest Monitoring</h1>
       <img src="@/assets/legrovelogo.png" alt="Le Grove Logo" />
       <div id="nav" v-if="logged_in">
@@ -13,7 +13,7 @@
     <login_form v-if="!logged_in" @login="login" @login_otp="loginotp" @testlogin="testlogin" @handle2fa="handle2fa"/>
     <router-view v-else @logout="logout" :key="$route.fullPath"/>
     </body>
-    <footer>
+    <footer  v-if="logged_in">
       <h6>copyright © 2020 Le Grove. All rights reserved</h6>
       <h6>by Ectivise Solutions Pte Ltd</h6>
       <h6 style="display:inline">Terms & Conditions | </h6>
@@ -236,25 +236,25 @@ export default {
     },
     async logout(){
 
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-      myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
+      // var myHeaders = new Headers();
+      // myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      // myHeaders.append("Cookie", "connect.sid=s%3A9ZCCTu10vRkP-58flVxctwh5ZK398sZ9.aUE9Qr7ozuEj1Djz%2BstettQL566xKmM%2B77E94vZF%2Byg");
 
-      var urlencoded = new URLSearchParams();
-      urlencoded.append("token", this.$store.state.frontend_token);
-      urlencoded.append("mobile", this.$store.state.login_result.data.mobile);
+      // var urlencoded = new URLSearchParams();
+      // urlencoded.append("token", this.$store.state.frontend_token);
+      // urlencoded.append("mobile", this.$store.state.login_result.data.mobile);
 
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
-      };
+      // var requestOptions = {
+      //   method: 'POST',
+      //   headers: myHeaders,
+      //   body: urlencoded,
+      //   redirect: 'follow'
+      // };
 
-      await fetch(this.$store.state.backend_api+"users/logout", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(JSON.parse(result).message))
-        .catch(error => console.log('error', error));
+      // await fetch(this.$store.state.backend_api+"users/logout", requestOptions)
+      //   .then(response => response.text())
+      //   .then(result => console.log(JSON.parse(result).message))
+      //   .catch(error => console.log('error', error));
 
       this.user_type = "";
       this.logged_in = false;
@@ -299,7 +299,7 @@ header {
   position: relative;
   padding: 10px 20px 0px 20px;
   text-align: center;
-  background-color: #607D8B;
+  background-color: #4CAF50;
 }
 
 footer {
