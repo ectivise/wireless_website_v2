@@ -4,17 +4,17 @@
       <thead>
         <tr>
           <th id="deviceid-col" v-if="usertype == 'admin'">Device ID</th>
-          <th id="ap-col">AP</th>
+          <th id="ap-col">Name</th>
           <th id="password-col" v-if="usertype == 'admin'">Password</th>
           <th id="ip-col" v-if="usertype == 'admin'">IP</th>
           <th id="building-col">Building</th>
           <th id="storey-col">Storey</th>
           <th id="status-col">Status</th>
-          <th id="runtime-col">Runtime</th>
+          <!-- <th id="runtime-col">Runtime</th> -->
           <th id="raspi-col" v-if="usertype == 'admin'">Raspi ID</th>
-          <th id="ping-col">Ping (ms)</th>
-          <th id="upload-col">Upload (mb/s)</th>
           <th id="download-col">Download (mb/s)</th>
+          <th id="upload-col">Upload (mb/s)</th>
+          <th id="ping-col">Ping (ms)</th>
           <th id="jitter-col">Jitter (ms)</th>
           <th id="action-col" v-if="usertype == 'admin'">Actions</th>
         </tr>
@@ -35,7 +35,7 @@
           <!-- ap col-->
           <td v-if="usertype == 'admin'">{{ access_point.device_id }}</td>
           <!-- ssid col-->
-          <td>{{ access_point.ssid }}</td>
+          <td>{{ access_point.name }}</td>
           <!-- password col -->
           <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.password" />
@@ -56,18 +56,18 @@
             </div>
           </td>
           <!-- runtime col -->
-          <td>{{ convertruntime[index] }}</td>
+          <!-- <td>{{ convertruntime[index] }}</td> -->
           <!-- iotdevice col -->
           <td v-if="editing == access_point.device_id && usertype == 'admin'">
             <input type="text" v-model="access_point.raspi" />
           </td>
           <td v-else-if="usertype == 'admin'">{{ access_point.raspi }}</td>
           <!-- Ping col -->
-          <td>{{ access_point.last_speedtest.ping }}</td>
+          <td>{{ access_point.last_speedtest.download }}</td>
           <!-- upload col -->
           <td>{{ access_point.last_speedtest.upload }}</td>
           <!-- download col -->
-          <td>{{ access_point.last_speedtest.download }}</td>
+          <td>{{ access_point.last_speedtest.ping }}</td>
           <!-- jitter col -->
           <td>{{ access_point.last_speedtest.jitter }}</td>
           <!-- editing and delete buttons -->
@@ -432,7 +432,7 @@ tr:nth-child(even) {
 }
 
 table .square {
-  text-align: center;
+  text-align: left;
 }
 
 #square-green {
