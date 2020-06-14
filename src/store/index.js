@@ -2,9 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate';
 
-
-
 Vue.use(Vuex)
+
 
 export default new Vuex.Store({
   state: {
@@ -12,8 +11,8 @@ export default new Vuex.Store({
     saveuser_result:{},
     login_result:{},
     getotp_result:{},
-    backend_api:"http://dev1.ectivisecloud.com:8081/api/",
-    frontend_token:"ectivisecloudDBAuthCode:b84846daf467cede0ee462d04bcd0ade",
+    backend_api:process.env.VUE_APP_BACKEND_API,
+    frontend_token: process.env.VUE_APP_FRONTEND_TOKEN,
     plugins: [createPersistedState()],
     login: false,
     user_type:"",
