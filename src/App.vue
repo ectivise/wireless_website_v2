@@ -39,8 +39,8 @@ export default {
     };
   },
   created () {
-    this.logged_in = JSON.parse(localStorage.getItem(STORAGE_KEY)).logged_in;
-    this.user_type = JSON.parse(localStorage.getItem(STORAGE_KEY)).user_type;
+    this.logged_in = JSON.parse(sessionStorage.getItem(STORAGE_KEY)).logged_in;
+    this.user_type = JSON.parse(sessionStorage.getItem(STORAGE_KEY)).user_type;
   },
   methods: {
     async testlogin(phone_number,password){
@@ -94,7 +94,7 @@ export default {
           user_type : role_type,
           logged_in : this.logged_in,
         }
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 
         let url = "/accesspoint";
         this.$router.push(url);
@@ -153,7 +153,7 @@ export default {
           user_type : role_type,
           logged_in : this.logged_in,
         }
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 
         let url = "/accesspoint";
         this.$router.push(url);
@@ -211,8 +211,8 @@ export default {
           user_type : role_type,
           logged_in : this.logged_in,
         }
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+        
         let url = "/accesspoint";
         this.$router.push(url);
 
@@ -267,7 +267,7 @@ export default {
           user_type : "",
           logged_in : this.logged_in,
         }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
 
       let url = "/";
       this.$router.push(url);
